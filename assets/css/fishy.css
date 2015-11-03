@@ -359,6 +359,7 @@
     padding-bottom: 56.25%;
     padding-top: 30px; height: 0; overflow: hidden;
 }
+
 .video-container iframe,
 .video-container object,
 .video-container embed {
@@ -368,4 +369,46 @@
     width: 100%;
     height: 100%;
     border-radius: 10px;
+}
+
+.service .img-container {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.service .img-container img {
+  width: 100%;
+}
+.service .team-presentation {
+  margin: 30px 0;
+}
+.service .clients-presentation {
+  margin: 30px 0;
+}
+.service .card-user {
+  margin: 70px 0px 0;
+}
+.service .hr-small {
+  margin: 15px 0;
+}
+.service .copyright a {
+  color: #FFFFFF;
+}
+.service .info .icon {
+  background: transparent;
+}
+.service .icon [class*="pe-"] {
+  color: #CCCCCC;
+  font-size: 74px;
+}
+.service .section-clients {
+  padding: 50px 0;
+}
+.service .section-clients .info .icon {
+  background: transparent;
+}
+.service .section-clients .icon i {
+  color: #AAAAAA;
+}
+.service .section-clients h3 {
+  margin-top: 10px;
 }
