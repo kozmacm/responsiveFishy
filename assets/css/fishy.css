@@ -412,3 +412,11 @@
 .service .section-clients h3 {
   margin-top: 10px;
 }
+
+.totm .img-container {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.totm .img-container img {
+  width: 100%;
+}
