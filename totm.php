@@ -93,7 +93,7 @@
         </div>    
         <div class="small-info">
             <h1>Tank of the Month</h1>
-            <h3>Send in your photos an descriptions and you might just be featured here!</h3>    
+            <h3>Send in your photos and you might be featured here!</h3>    
         </div>
     </div>
 

@@ -38,8 +38,8 @@
             unset($row['salt']); 
             unset($row['password']); 
             $_SESSION['user'] = $row;  
-            header("Location: dashboard.php"); 
-            die("Redirecting to: dashboard.php"); 
+            header("Location: admin.php"); 
+            die("Redirecting to: admin.php"); 
         } 
         else{ 
             print("Login Failed."); 
@@ -75,6 +75,11 @@
 <body class="home">
 
 <nav class="navbar navbar-inverse navbar-transparent navbar-fixed-top" role="navigation">
+    <div class="alert alert-success">
+        <div class="container">
+        <b>Registration Successful!</b> You are now registered for our site.
+        </div>
+    </div>
     <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -207,11 +212,9 @@
             </div>
                 <div class="modal-footer">
                     <div class="forgot login-footer">
-                    <!--
                     <span>Looking to 
                     <a href="javascript: showRegisterForm();">create an account</a>
                     ?</span>
-                    -->
                 </div>
                 <div class="forgot register-footer" style="display:none">
                     <span>Already have an account?</span>
