@@ -124,9 +124,9 @@
                             <div class="content">
                                 <div class="author">
                                     <a href="#">
-                                    <img class="avatar border-gray" src="../assets/img/guygriffin.png" alt="..."/>
-                                    <h4 class="title">Guy Griffin <br />
-                                        <small>Owner</small>
+                                    <img class="avatar border-gray" src="../assets/img/placeholder.png" alt="..."/>
+                                    <h4 class="title">First Person <br />
+                                        <small>Lead Service Technician</small>
                                     </h4> 
                                     </a>
                                 </div>  
@@ -149,8 +149,8 @@
                             <div class="content">
                                 <div class="author">
                                     <a href="#">
-                                        <img class="avatar border-gray" src="../assets/img/chuckmaier.png" alt="..."/>
-                                        <h4 class="title">Chuck Maier <br />
+                                        <img class="avatar border-gray" src="../assets/img/placeholder.png" alt="..."/>
+                                        <h4 class="title">Second Person <br />
                                             <small>Position with company</small>
                                         </h4> 
                                     </a>
@@ -173,7 +173,7 @@
                             <div class="content">
                                 <div class="author">
                                     <a href="#">
-                                        <img class="avatar border-gray" src="../assets/img/default-avatar.png" alt="..."/>
+                                        <img class="avatar border-gray" src="../assets/img/placeholder.png" alt="..."/>
                                         <h4 class="title">Another member of team <br />
                                             <small>Position with company</small>
                                         </h4> 

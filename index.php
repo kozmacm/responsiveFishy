@@ -102,12 +102,12 @@
                   </a>
                   <ul class="dropdown-menu dropdown-with-icons">
                     <li>
-                        <a href="#">
+                        <a href="gallery.php">
                              <i class="pe-7s-photo"></i> Gallery
                         </a>
                     </li>
                       <li>
-                        <a href="#">
+                        <a href="on-sale.php">
                              <i class="pe-7s-cash"></i> On Sale
                         </a>
                     </li>
@@ -264,9 +264,16 @@
                       </div>
                    </div>
                    <div class="col-md-6">
-                       <h2>On Sale</h2>
-                       <p>Stay Tuned for More Weekly Sales Soon!!! </p>
-                        </p></p>                    
+                       <h2>Tank Specials!</h2>
+                       <p>55 Gallon Tank 99.00 <br>
+                          75 Gallon Tank 129.00 <br>
+                          125 Gallon Tank 299.00 <br><br>
+                          75 Gallon R.R. 239.00 <br>
+                          90 Gallon R.R. 289.00 <br>
+                          125 Gallon R.R. 399.00 <br>
+                          180 Gallon R.R. 699.00
+                       </p>
+                       </p></p>                    
                    </div>
                </div>
            </div>
@@ -324,7 +331,7 @@
                         <div class="card text-center">
                             <div class="content">
                                 <div class="description">
-                                    <a href="#">
+                                    <a href="gallery.php">
                                     <img class="card-img-top" src="../assets/img/gallery.jpg" alt="..."/>
                                     <h4 class="title">Gallery <br />
                                         <small>Our all new gallery section contains the feature fish and the all new "Tank of the Month". Over time this section will only get better, so check back often for new updates!</small>
@@ -413,12 +420,12 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="gallery.php">
                                    Gallery
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="on-sale.php">
                                     On Sale
                                 </a>
                             </li>
