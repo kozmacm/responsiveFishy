@@ -34,7 +34,7 @@
         <span class="icon-bar bar2"></span>
         <span class="icon-bar bar3"></span>
       </button>
-    <a class="navbar-brand" href=""><img src="../assets/img/logo.png" alt="..." /></a>
+    <a class="navbar-brand" href="index.php"><img src="../assets/img/logo.png" alt="..." /></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -46,34 +46,39 @@
                 </a>
             </li>
             <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     More 
                     <b class="caret"></b>
-                  </a>
-                  <ul class="dropdown-menu dropdown-with-icons">
+                </a>
+                <ul class="dropdown-menu dropdown-with-icons">
                     <li>
-                        <a href="gallery.php">
-                             <i class="pe-7s-photo"></i> Gallery
-                        </a>
-                    </li>
-                      <li>
                         <a href="on-sale.php">
                              <i class="pe-7s-cash"></i> On Sale
                         </a>
                     </li>
                     <li>
+                        <a href="gallery.php">
+                            <i class="pe-7s-photo"></i> Gallery
+                        </a>
+                    </li>
+                    <li>
+                        <a href="totm.php">
+                            <i class="pe-7s-photo"></i> TOTM
+                        </a>
+                    </li>
+                    <li>
                         <a href="service.php">
-                             <i class="pe-7s-car"></i> Service
+                            <i class="pe-7s-car"></i> Service
                         </a>
                     </li>  
                     <li>
                         <a href="contact-us.php">
-                             <i class="pe-7s-mail-open-file"></i> Contact Us
+                           <i class="pe-7s-mail-open-file"></i> Contact Us
                         </a>
                     </li>
                     <li>
                         <a href="about-us.php">
-                            <i class="pe-7s-info"></i> About Us
+                           <i class="pe-7s-info"></i> About Us
                         </a>
                     </li>
                     <li class="divider"></li>
@@ -339,35 +344,25 @@
                 <nav class="pull-left">
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="index.php">
                                 Home
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                               Blog
+                            <a href="contact-us.php">
+                                Contact Us
                             </a>
                         </li>
                     </ul>
                 </nav>
                 <div class="social-area pull-right">                
-                    <a class="btn btn-social btn-facebook btn-simple">
+                    <a href="http://www.facebook.com/FishyBusinessSC/" class="btn btn-social btn-facebook btn-simple">
                         <i class="fa fa-facebook-square"></i>
                     </a>
-                    <a class="btn btn-social btn-twitter btn-simple">
+                    <a href="https://twitter.com/fishyguys" class="btn btn-social btn-twitter btn-simple">
                         <i class="fa fa-twitter"></i>
                     </a>
-                    <a class="btn btn-social btn-pinterest btn-simple">
+                    <a href="http://www.youtube.com/channel/UCKAoquCimTvJs8_J9iLX1Ag?feature=CAQQwRs%3D" class="btn btn-social btn-pinterest btn-simple">
                         <i class="fa fa-pinterest"></i>
                     </a>
                 </div>
@@ -376,9 +371,8 @@
                 </div>
             </div>
         </footer>
-    
-    
-</div> <!-- wrapper --> 
+</div> <!-- wrapper -->
+     
 </body>
     <!--  jQuery and Bootstrap core files    -->
     <script src="../assets/js/jquery-1.10.2.js" type="text/javascript"></script>
