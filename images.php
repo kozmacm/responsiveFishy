@@ -13,7 +13,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
 	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -30,10 +30,15 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"> 
     <link href='https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans:400,300' rel='stylesheet' type='text/css'>  
-    <link href="../assets/css/pe-icon-7-stroke.css" rel="stylesheet" />  
+    <link href="../assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    
+    <!-- Galleria -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../galleria/galleria-1.4.2.min.js"></script>
+    <script src="../galleria/plugins/facebook/galleria.facebook.js"></script>  
 </head>
 
-<body class="gallery">
+<body class="images">
 
 <nav class="navbar navbar-inverse navbar-transparent navbar-fixed-top" role="navigation">
     <div class="container">
@@ -111,62 +116,23 @@
     <div class="section">
         <div class="container">
             <div class="row">
-			    <h2 class="section-title">Photo Albums</h2> <br>
-			    <?php
-                    //Replace with your Facebook Page ID
-	                $facebook_page_owner = "122002154595568";
-	                /*
-	                //Set the cache time and the location of where the cache is stored.
-	                $cachetime = 10800; 
-	                $cachefile = "cache/albums";
-				
-	                //checks if file exists and the cache is "recent" enough
-	                if (file_exists($cachefile) && time() - $cachetime < filemtime($cachefile))
-	                {    
-	                	$string = file_get_contents($cachefile);
-	                }
-	                //if cache is too "old"
-	                else
-	                {
-		                */
-		                $fb_access_token = "access_token=495004623978549|cb978a96c6e39168590b1739eb6d7fa0";//"access_token=CAAHCND7GQDUBAJ3nLz05lQ21sPZAQOdf7E13x636nW3REsZCpu5QKI8I8Lqa0wTlyPkDKON30uuOONuM60qyGPZBIRZAR7ZANhLw3XbxOudWP3z45St5jXuD00dbyORrUeZBd9jWhUzpZArIJ2kUh4HZBLuNYftW0cV3QebND58jx1hoLZCViZBLz5nHZBUQDKeJcvnQa9BXjqAZCgZDZD";
-		                //get ID of albums, the names of albums and the limit of how many albums to get. If the limit isn't set, then only 25 albums are displayed (Thanks to "Jeremy" for solution)
-		                $string = file_get_contents('https://graph.facebook.com/'.$facebook_page_owner.'/albums?fields=id,name&limit=500&'.$fb_access_token);
-			
-		                //open the cache file and write the info of albums to the file (for quicker retrieval)
-	               /*	$fp = fopen($cachefile, 'w');    
-		                fwrite($fp, $string);    
-		                fclose($fp);    
-	                }
-	                */
-	                //decode the cached file
-	                $jdata = json_decode($string);
-			
-	                foreach( $jdata->data as $obj )
-	                {
-		                //get each album ID
-		                $albumID = $obj->id;
-		
-		                //If the album is not "blacklisted" then get the name of album
-		                $albumname = $obj->name;
-					
-		                //display the album thumbnail and the name. Style can be changed according to taste.   
-		                echo "	<div class='col-md-3'>
-                                    <div class='card card-plain'>
-				                        <a href='images.php?albumid=".$albumID."&albumname=".$albumname."'>
-				                            <div class='image'>
-				                                <img src='https://graph.facebook.com/".$albumID."/picture?type=album&" . $fb_access_token . "'/>
-				                            </div>
-                                            <div class='content'>
-                                                <span class='FB_pic_label'>".$albumname."</span>
-                                            </div>
-				                        </a>
-                                    </div>
-				                </div>";
-					
-	                }
-
-                ?>
+			    <h2 class="section-title"><?php echo $_GET['albumname']; ?></h2> <br>
+			    <script>
+                    Galleria.loadTheme('/galleria/themes/classic/galleria.classic.min.js');
+                    Galleria.run('#galleria', {
+                        facebook: 'album:<?php echo $_GET['albumid']; ?>',
+                        height: 0.5,
+                        responsive:true,
+                        autoplay: 3000,
+                        lightbox: true,
+                        pauseOnInteraction: true,
+                        facebookOptions: {
+                            max: 1000, // optional override for limit of 40 photos on an album
+                            facebook_access_token: '495004623978549|cb978a96c6e39168590b1739eb6d7fa0'
+                        }
+                    });
+                </script>
+                <div id="galleria"></div>
             </div>
         </div>
     </div>
