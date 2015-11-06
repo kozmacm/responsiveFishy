@@ -14,6 +14,7 @@
     <link href="../bootstrap3/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../assets/css/gsdk.css" rel="stylesheet"/>
     <link href="../assets/css/fishy.css" rel="stylesheet"/>
+    <link href="../assets/css/login-register.css" rel="stylesheet" />
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"> 
@@ -51,12 +52,12 @@
                   </a>
                   <ul class="dropdown-menu dropdown-with-icons">
                     <li>
-                        <a href="#">
+                        <a href="gallery.php">
                              <i class="pe-7s-photo"></i> Gallery
                         </a>
                     </li>
                       <li>
-                        <a href="#">
+                        <a href="on-sale.php">
                              <i class="pe-7s-cash"></i> On Sale
                         </a>
                     </li>
@@ -75,6 +76,19 @@
                             <i class="pe-7s-info"></i> About Us
                         </a>
                     </li>
+                    <li class="divider"></li>
+                    <!--
+                    <li>
+                        <a data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">
+                            <i class="pe-7s-info"></i> Register
+                        </a>
+                    </li>
+                    -->
+                    <li>
+                        <a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">
+                            <i class="pe-7s-info"></i> Login
+                        </a>
+                    </li>
                   </ul>
             </li>
             <li><a href="mailing-list.php" class="btn btn-round btn-default">Join our mailing list!</a></li>
@@ -83,6 +97,81 @@
     </div><!-- /.navbar-collapse -->
   </div>
 </nav>
+
+<!-- begin login/register modal -->
+<div class="modal fade login" id="loginModal">
+    <div class="modal-dialog login animated">
+        <div class="modal-content">
+    	    <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Login with</h4>
+            </div>
+            <div class="modal-body">  
+                <div class="box">
+                    <div class="content">
+                        <div class="social">
+                            <a class="circle github" href="/auth/github">
+                                <i class="fa fa-github fa-fw"></i>
+                            </a>
+                            <a id="google_login" class="circle google" href="/auth/google_oauth2">
+                                <i class="fa fa-google-plus fa-fw"></i>
+                            </a>
+                            <a id="facebook_login" class="circle facebook" href="/auth/facebook">
+                                <i class="fa fa-facebook fa-fw"></i>
+                            </a>
+                         </div>
+                         <div class="division">
+                            <div class="line l"></div>
+                            <span>or</span>
+                            <div class="line r"></div>
+                         </div>
+                         <div class="error"></div>
+                         <div class="form loginBox">
+                            <form action="index.php" method="post"> 
+                                Username:<br /> 
+                                <input type="text" id="username" class="form-control" name="username" value="<?php echo $submitted_username; ?>" /> 
+                                <br /><br /> 
+                                Password:<br /> 
+                                <input id="password" class="form-control" type="password" placeholder="Password" name="password" /> 
+                                <br /><br /> 
+                                <input type="submit" class="btn btn-default btn-login" value="Login" /> 
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="content registerBox" style="display:none;">
+                        <div class="form">
+                            <form action="register.php" method="post"> 
+                                <label>Username:</label> 
+                                <input id="username" class="form-control" type="text" placeholder="Username" name="username" /> 
+                                <label>Email: <strong style="color:darkred;">*</strong></label> 
+                                <input id="email" class="form-control" type="text" placeholder="Email" name="email" /> 
+                                <label>Password:</label> 
+                                <input id="password" class="form-control" type="password" placeholder="Password" name="password" /> <br /><br />
+                                <input type="submit" class="btn btn-default btn-register" value="Register" /> 
+                            </form>
+                        </div>
+                     </div>
+                </div>
+            </div>
+                <div class="modal-footer">
+                    <div class="forgot login-footer">
+                    <!--
+                    <span>Looking to 
+                    <a href="javascript: showRegisterForm();">create an account</a>
+                    ?</span>
+                    -->
+                </div>
+                <div class="forgot register-footer" style="display:none">
+                    <span>Already have an account?</span>
+                    <a href="javascript: showLoginForm();">Login</a>
+                </div>
+            </div>        
+        </div>
+    </div>
+</div>
+<!-- /.login/register modal -->
 
 <div class="wrapper">
     <div class="parallax">
@@ -280,6 +369,7 @@
 	<script src="../assets/js/chartist.min.js"></script>
     <script src="../assets/js/jquery.tagsinput.js"></script>
     <script src="../assets/js/retina.min.js"></script>
+    <script src="../assets/js/login-register.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     
 	<!--  Get Shit Done Kit PRO Core javascript 	 -->
