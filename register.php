@@ -74,8 +74,8 @@
             $result = $stmt->execute($query_params); 
         } 
         catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
-        header("Location: notification.php"); 
-        die("Redirecting to notification.php"); 
+        header("Location: dashboard.php?success=yes"); 
+        die("Redirecting to dashboard.php?success=no"); 
     } 
 
 ?>

@@ -1,3 +1,13 @@
+<?php
+    if(isset($_GET['success'])) 
+    {
+        echo"<div id='successAlert' class='alert alert-success'>
+                <a href='#' class='close' data-dismiss='alert'>&times;</a>
+                <strong>Success!</strong>&nbsp;You have registered a new user.&nbsp;&nbsp;<br>
+             </div>";
+    }
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -46,14 +56,14 @@
     
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="#" class="simple-text">
+                <a href="index.php" class="simple-text">
                     Fishy Business
                 </a>
             </div>
                        
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboard.html">
+                    <a href="dashboard.php">
                         <i class="pe-7s-graph"></i> 
                         <p>Dashboard</p>
                     </a>            
@@ -62,81 +72,6 @@
     	</div>
     </div>
     
-    <!-- begin login/register modal -->
-<div class="modal fade login" id="loginModal">
-    <div class="modal-dialog login animated">
-        <div class="modal-content">
-    	    <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Login with</h4>
-            </div>
-            <div class="modal-body">  
-                <div class="box">
-                    <div class="content">
-                        <div class="social">
-                            <a class="circle github" href="/auth/github">
-                                <i class="fa fa-github fa-fw"></i>
-                            </a>
-                            <a id="google_login" class="circle google" href="/auth/google_oauth2">
-                                <i class="fa fa-google-plus fa-fw"></i>
-                            </a>
-                            <a id="facebook_login" class="circle facebook" href="/auth/facebook">
-                                <i class="fa fa-facebook fa-fw"></i>
-                            </a>
-                         </div>
-                         <div class="division">
-                            <div class="line l"></div>
-                            <span>or</span>
-                            <div class="line r"></div>
-                         </div>
-                         <div class="error"></div>
-                         <div class="form loginBox">
-                            <form action="index.php" method="post"> 
-                                Username:<br /> 
-                                <input type="text" id="username" class="form-control" name="username" value="<?php echo $submitted_username; ?>" /> 
-                                <br /><br /> 
-                                Password:<br /> 
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password" /> 
-                                <br /><br /> 
-                                <input type="submit" class="btn btn-default btn-login" value="Login" /> 
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="content registerBox" style="display:none;">
-                        <div class="form">
-                            <form action="register.php" method="post"> 
-                                <label>Username:</label> 
-                                <input id="username" class="form-control" type="text" placeholder="Username" name="username" /> 
-                                <label>Email: <strong style="color:darkred;">*</strong></label> 
-                                <input id="email" class="form-control" type="text" placeholder="Email" name="email" /> 
-                                <label>Password:</label> 
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password" /> <br /><br />
-                                <input type="submit" class="btn btn-default btn-register" value="Register" /> 
-                            </form>
-                        </div>
-                     </div>
-                </div>
-            </div>
-                <div class="modal-footer">
-                    <div class="forgot login-footer">
-                    <span>Looking to 
-                    <a href="javascript: showRegisterForm();">create an account</a>
-                    ?</span>
-                </div>
-                <div class="forgot register-footer" style="display:none">
-                    <!--
-                    <span>Already have an account?</span>
-                    <a href="javascript: showLoginForm();">Login</a>
-                    -->
-                </div>
-            </div>        
-        </div>
-    </div>
-</div>
-<!-- /.login/register modal -->
-
     <div class="main-panel">
         <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">    
@@ -147,7 +82,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Dashboard</a>
+                    <a class="navbar-brand" href="dashboard.php">Dashboard</a>
                 </div>
                 <div class="collapse navbar-collapse">       
                     <ul class="nav navbar-nav navbar-left">
@@ -212,6 +147,64 @@
     </div>   
 </div>
 
+<!-- begin login/register modal -->
+<div class="modal fade login" id="loginModal">
+    <div class="modal-dialog login animated">
+        <div class="modal-content">
+    	    <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Login with</h4>
+            </div>
+            <div class="modal-body">  
+                <div class="box">
+                    <div class="content">
+                         <div class="error"></div>
+                         <div class="form loginBox">
+                            <form action="index.php" method="post"> 
+                                Username:<br /> 
+                                <input type="text" id="username" class="form-control" name="username" value="<?php echo $submitted_username; ?>" /> 
+                                <br /><br /> 
+                                Password:<br /> 
+                                <input id="password" class="form-control" type="password" placeholder="Password" name="password" /> 
+                                <br /><br /> 
+                                <input type="submit" class="btn btn-default btn-login" value="Login" /> 
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="content registerBox" style="display:none;">
+                        <div class="form">
+                            <form action="register.php" method="post"> 
+                                <label>Username:</label> 
+                                <input id="username" class="form-control" type="text" placeholder="Username" name="username" /> 
+                                <label>Email: <strong style="color:darkred;">*</strong></label> 
+                                <input id="email" class="form-control" type="text" placeholder="Email" name="email" /> 
+                                <label>Password:</label> 
+                                <input id="password" class="form-control" type="password" placeholder="Password" name="password" /> <br /><br />
+                                <input type="submit" class="btn btn-default btn-register" value="Register" /> 
+                            </form>
+                        </div>
+                     </div>
+                </div>
+            </div>
+                <div class="modal-footer">
+                    <div class="forgot login-footer">
+                    <span>Looking to 
+                    <a href="javascript: showRegisterForm();">create an account</a>
+                    ?</span>
+                </div>
+                <div class="forgot register-footer" style="display:none">
+                    <!--
+                    <span>Already have an account?</span>
+                    <a href="javascript: showLoginForm();">Login</a>
+                    -->
+                </div>
+            </div>        
+        </div>
+    </div>
+</div>
+<!-- /.login/register modal -->
 
 </body>
 
