@@ -38,8 +38,8 @@
             unset($row['salt']); 
             unset($row['password']); 
             $_SESSION['user'] = $row;  
-            header("Location: dashboard.php"); 
-            die("Redirecting to: dashboard.php"); 
+            header("Location: admin/dashboard.php"); 
+            die("Redirecting to: admin/dashboard.php"); 
         } 
         else{ 
             print("Login Failed."); 

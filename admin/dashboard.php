@@ -56,7 +56,7 @@
     
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="index.php" class="simple-text">
+                <a href="../index.php" class="simple-text">
                     Fishy Business
                 </a>
             </div>
@@ -100,7 +100,7 @@
                               </ul>
                         </li>
                         <li>
-                            <a href="logout.php">
+                            <a href="../logout.php">
                                 Log out
                             </a>
                         </li> 
@@ -160,7 +160,7 @@
                     <div class="content">
                          <div class="error"></div>
                          <div class="form loginBox">
-                            <form action="index.php" method="post"> 
+                            <form action="../index.php" method="post"> 
                                 Username:<br /> 
                                 <input type="text" id="username" class="form-control" name="username" value="<?php echo $submitted_username; ?>" /> 
                                 <br /><br /> 
@@ -175,7 +175,7 @@
                 <div class="box">
                     <div class="content registerBox" style="display:none;">
                         <div class="form">
-                            <form action="register.php" method="post"> 
+                            <form action="../register.php" method="post"> 
                                 <label>Username:</label> 
                                 <input id="username" class="form-control" type="text" placeholder="Username" name="username" /> 
                                 <label>Email: <strong style="color:darkred;">*</strong></label> 
