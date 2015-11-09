@@ -87,7 +87,7 @@
                     header('Location: ../error.php?err=Registration failure: INSERT');
                 }
             }
-            header('Location: admin/register_success.php');
+            header('Location: register_success.php');
         }
     }
 ?>

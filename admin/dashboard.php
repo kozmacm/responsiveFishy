@@ -44,9 +44,6 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="../assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
-
-    <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
-    <script type="text/JavaScript" src="assets/js/forms.js"></script>
     
 </head>
 <body> 
