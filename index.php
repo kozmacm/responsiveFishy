@@ -36,11 +36,6 @@
 </head>
 
 <body class="home">
-<?php
-    if (isset($_GET['error'])) {
-        echo '<p class="error">Error Logging In!</p>';
-    }
-?> 
 
 <nav class="navbar navbar-inverse navbar-transparent navbar-fixed-top" role="navigation">
     <div class="container">
@@ -145,21 +140,6 @@
                             </form>
                         </div>
                     </div>
-                </div>
-                <div class="box">
-                    <div class="content registerBox" style="display:none;">
-                        <div class="form">
-                            <form action="register.php" method="post"> 
-                                <label>Username:</label> 
-                                <input id="username" class="form-control" type="text" placeholder="Username" name="username" /> 
-                                <label>Email: <strong style="color:darkred;">*</strong></label> 
-                                <input id="email" class="form-control" type="text" placeholder="Email" name="email" /> 
-                                <label>Password:</label> 
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password" /> <br /><br />
-                                <input type="submit" class="btn btn-default btn-register" value="Register" /> 
-                            </form>
-                        </div>
-                     </div>
                 </div>
             </div>
                 <div class="modal-footer">
@@ -277,6 +257,28 @@
            </div>
     </div><!-- section -->
     
+    <hr>
+    <div class="space-50"></div>
+    
+    <div class="section section-description">
+           <div class="container">
+               <div class="row">
+                   <div class="col-md-6">
+                      <div class="img-container">
+                          <a href="biocube.php">
+                          <img src="../assets/img/biocube29.jpg" alt="..." /> </a>
+                      </div>
+                   </div>
+                   <div class="col-md-6">
+                       <h2>BioCube Aquariums</h2>
+                       </p>With all the necessary components built-in, spend your time setting up your ideal environment, then plug it in and enjoy the results. </p>
+                       <p>The Oceanic BioCube features high-quality components and can be used for saltwater or freshwater setups. Enhanced filtration system features dual filter intakes to draw aquarium water from the surface and mid-water for improved water circulation and filtration. Replaceable 2-stage filter cartridge provides easy-to-maintain mechanical and chemical filtration. Bio-ball wet/dry filtration system improves gas exchange and provides efficient biological filtration. Viewing window for filtration water pump to ensure optimum performance. UL-Listed submersible pumps. </p>                    
+                       <p>Click <a href="biocube.php">here </a>or on image for BioCube Specials! </p>
+                   </div>
+               </div>
+           </div>
+    </div><!-- section -->
+
     <hr>
     <div class="space-50"></div>
     

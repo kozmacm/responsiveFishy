@@ -424,3 +424,11 @@
 .galleria{ 
     width: 50%  
 }
+
+.biocube .img-container {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.biocube .img-container img {
+  width: 100%;
+}

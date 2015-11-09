@@ -19,7 +19,7 @@
 	<link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	
-	<title>On Sale - Fishy Business</title>
+	<title>Service - Fishy Business</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -35,7 +35,7 @@
     <link href="../assets/css/pe-icon-7-stroke.css" rel="stylesheet" />  
 </head>
 
-<body class="totm">
+<body class="biocube">
 
 <nav class="navbar navbar-inverse navbar-transparent navbar-fixed-top" role="navigation">
     <div class="container">
@@ -166,47 +166,47 @@
             <img src="../assets/img/thumb.jpg">
         </div>    
         <div class="small-info">
-            <h1>On Sale</h1>
-            <h3>Be the first to know what's on sale!</h3>    
+            <h1>BioCube</h1>
+            <h3>Check here for current BioCube specials!</h3>    
         </div>
     </div>
 
-    <div class="section">
-           <div class="container">
-               <h2 class="section-title">Current Sales Flyer</h2>
-               <div class="row">
-                   <div class="col-md-6">
-                       <div class="img-container">
-                           <a href="../assets/img/flyer-nosale.jpg">
-                           <img src="../assets/img/flyer-nosale.jpg" alt="..." /> </a>Click image for printable flyer...
-                       </div>
-                   </div>
+    <div class="space-50"></div>
 
+    <div class="section section-description">
+           <div class="container">
+               <div class="row">
+                    <div class="col-md-6">
+                       <h2>BioCube 14</h2>
+                       <p>Super special! </p>
+                       </p></p>
+                    </div>
                    <div class="col-md-6">
-                       <div>
-                           <h2>Tank Specials!</h2>
-                           <p>
-                               55 Gallon Tank 99.00 <br>
-                               75 Gallon Tank 129.00 <br>
-                               125 Gallon Tank 299.00 <br>
-                               <br>
-                               75 Gallon R.R. 239.00 <br>
-                               90 Gallon R.R. 289.00 <br>
-                               125 Gallon R.R. 399.00 <br>
-                               180 Gallon R.R. 699.00
-                           </p>
-                           <h2>Super Tank Combo!</h2>
-                           <p>
-                               29 Gallon Bio Cube complete mini reef - sand, 15lbs of live rock, <br>
-                               tank kit, Nutra Seawater - 399.99
-                           </p>
-                           </p></p>
-                       </div>
+                      <div class="img-container">
+                          <img src="../assets/img/biocube14.jpg" alt="..." /> </a>
+                      </div>
+                   </div>
+                </div>
+            
+                <!--<div class="space-50"></div>-->
+                <hr>
+                <div class="space-50"></div>
+                
+                <div class="row">
+                   <div class="col-md-6">
+                      <div class="img-container">
+                          <img src="../assets/img/biocube29.jpg" alt="..." />
+                      </div>
+                   </div>
+                   <div class="col-md-6">
+                       <h2>BioCube 29</h2>
+                       <p>Super special! </p>
+                       </p></p>                    
                    </div>
                </div>
-            </div>
+           </div>
+    </div><!-- section -->
     
-    <div class="space-50"></div>
     
     <footer class="footer footer-transparent" style="background-image: url('assets/img/thumb.jpg')">
             <div class="container">
@@ -240,9 +240,8 @@
                 </div>
             </div>
         </footer>
-    </div>
-</div> <!-- wrapper --> 
-
+</div> <!-- wrapper -->
+     
 </body>
     <!--  jQuery and Bootstrap core files    -->
     <script src="../assets/js/jquery-1.10.2.js" type="text/javascript"></script>

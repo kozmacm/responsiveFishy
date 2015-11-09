@@ -1,3 +1,16 @@
+<?php
+    include_once 'includes/db_connect.php';
+    include_once 'includes/functions.php';
+ 
+    sec_session_start();
+ 
+    if (login_check($mysqli) == true) {
+        $logged = 'in';
+    } else {
+        $logged = 'out';
+    }
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -116,32 +129,17 @@
                     <div class="content">
                          <div class="error"></div>
                          <div class="form loginBox">
-                            <form action="index.php" method="post"> 
-                                Username:<br /> 
-                                <input type="text" id="username" class="form-control" name="username" value="<?php echo $submitted_username; ?>" /> 
+                            <form action="includes/login.php" method="post" name="login_form"> 
+                                Email:<br /> 
+                                <input type="text" id="email" class="form-control" name="email" value="<?php echo $submitted_username; ?>" /> 
                                 <br /><br /> 
                                 Password:<br /> 
                                 <input id="password" class="form-control" type="password" placeholder="Password" name="password" /> 
                                 <br /><br /> 
-                                <input type="submit" class="btn btn-default btn-login" value="Login" /> 
+                                <input type="submit" class="btn btn-default btn-login" value="Login" onclick="formhash(this.form, this.form.password);" /> 
                             </form>
                         </div>
                     </div>
-                </div>
-                <div class="box">
-                    <div class="content registerBox" style="display:none;">
-                        <div class="form">
-                            <form action="register.php" method="post"> 
-                                <label>Username:</label> 
-                                <input id="username" class="form-control" type="text" placeholder="Username" name="username" /> 
-                                <label>Email: <strong style="color:darkred;">*</strong></label> 
-                                <input id="email" class="form-control" type="text" placeholder="Email" name="email" /> 
-                                <label>Password:</label> 
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password" /> <br /><br />
-                                <input type="submit" class="btn btn-default btn-register" value="Register" /> 
-                            </form>
-                        </div>
-                     </div>
                 </div>
             </div>
                 <div class="modal-footer">
@@ -374,6 +372,8 @@
     <script src="../assets/js/jquery.tagsinput.js"></script>
     <script src="../assets/js/retina.min.js"></script>
     <script src="../assets/js/login-register.js" type="text/javascript"></script>
+    <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
+    <script type="text/JavaScript" src="assets/js/forms.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     
 	<!--  Get Shit Done Kit PRO Core javascript 	 -->

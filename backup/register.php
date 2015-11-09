@@ -1,81 +1,62 @@
 <?php
-    require("config.php");
-    if(!empty($_POST)) 
-    { 
-        // Ensure that the user fills out fields 
-        if(empty($_POST['username'])) 
-        { die("Please enter a username."); } 
-        if(empty($_POST['password'])) 
-        { die("Please enter a password."); } 
-        if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) 
-        { die("Invalid E-Mail Address"); } 
-          
-        // Check if the username is already taken
-        $query = " 
-            SELECT 
-                1 
-            FROM users 
-            WHERE 
-                username = :username 
-        "; 
-        $query_params = array( ':username' => $_POST['username'] ); 
-        try { 
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params); 
-        } 
-        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
-        $row = $stmt->fetch(); 
-        if($row){ die("This username is already in use"); } 
-        $query = " 
-            SELECT 
-                1 
-            FROM users 
-            WHERE 
-                email = :email 
-        "; 
-        $query_params = array( 
-            ':email' => $_POST['email'] 
-        ); 
-        try { 
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params); 
-        } 
-        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage());} 
-        $row = $stmt->fetch(); 
-        if($row){ die("This email address is already registered"); } 
-          
-        // Add row to database 
-        $query = " 
-            INSERT INTO users ( 
-                username, 
-                password, 
-                salt, 
-                email 
-            ) VALUES ( 
-                :username, 
-                :password, 
-                :salt, 
-                :email 
-            ) 
-        "; 
-          
-        // Security measures
-        $salt = dechex(mt_rand(0, 2147483647)) . dechex(mt_rand(0, 2147483647)); 
-        $password = hash('sha256', $_POST['password'] . $salt); 
-        for($round = 0; $round < 65536; $round++){ $password = hash('sha256', $password . $salt); } 
-        $query_params = array( 
-            ':username' => $_POST['username'], 
-            ':password' => $password, 
-            ':salt' => $salt, 
-            ':email' => $_POST['email'] 
-        ); 
-        try {  
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params); 
-        } 
-        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
-        header("Location: admin/dashboard.php?success=yes"); 
-        die("Redirecting to admin/dashboard.php?success=no"); 
-    } 
-
+    include_once 'includes/register.inc.php';
+    include_once 'includes/functions.php';
 ?>
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Secure Login: Registration Form</title>
+        <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
+        <script type="text/JavaScript" src="assets/js/forms.js"></script>
+        <link rel="stylesheet" href="styles/main.css" />
+    </head>
+    <body>
+        <!-- Registration form to be output if the POST variables are not
+        set or if the registration script caused an error. -->
+        <h1>Register with us</h1>
+        <?php
+        if (!empty($error_msg)) {
+            echo $error_msg;
+        }
+        ?>
+        <ul>
+            <li>Usernames may contain only digits, upper and lowercase letters and underscores</li>
+            <li>Emails must have a valid email format</li>
+            <li>Passwords must be at least 6 characters long</li>
+            <li>Passwords must contain
+                <ul>
+                    <li>At least one uppercase letter (A..Z)</li>
+                    <li>At least one lowercase letter (a..z)</li>
+                    <li>At least one number (0..9)</li>
+                </ul>
+            </li>
+            <li>Your password and confirmation must match exactly</li>
+        </ul>
+        <form action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>" 
+                method="post" 
+                name="registration_form">
+            Username: <input type='text' 
+                name='username' 
+                id='username' /><br>
+            Email: <input type="text" name="email" id="email" /><br>
+            Password: <input type="password"
+                             name="password" 
+                             id="password"/><br>
+            Confirm password: <input type="password" 
+                                     name="confirmpwd" 
+                                     id="confirmpwd" /><br>
+            <input type="button" 
+                   value="Register" 
+                   onclick="return regformhash(this.form,
+                                   this.form.username,
+                                   this.form.email,
+                                   this.form.password,
+                                   this.form.confirmpwd);" /> 
+        </form>
+        <p>Return to the <a href="index.php">login page</a>.</p>
+    </body>
+</html>
+
