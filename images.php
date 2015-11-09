@@ -1,13 +1,5 @@
 <?php
-    require("config.php"); 
-
-    //Connecting to your database
-    $con =   mysql_connect($host, $username, $password) ;
-    if (!$con)
-    {
-        die('Could not connect: ' . mysql_error());
-    }
-    mysql_select_db($dbname, $con);
+    
 ?>
 
 <!doctype html>

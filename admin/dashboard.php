@@ -1,4 +1,10 @@
 <?php
+    include_once '../includes/db_connect.php';
+    include_once '../includes/register.inc.php';
+    include_once '../includes/functions.php';
+ 
+    sec_session_start();
+
     if(isset($_GET['success'])) 
     {
         echo"<div id='successAlert' class='alert alert-success'>
@@ -30,22 +36,29 @@
     <!--  Light Bootstrap Table core CSS    -->
     <link href="../assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
     
-    
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="../assets/css/demo.css" rel="stylesheet" />
     <link href="../assets/css/login-register.css" rel="stylesheet" />
-    
-        
+            
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="../assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
+    <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
+    <script type="text/JavaScript" src="assets/js/forms.js"></script>
     
 </head>
 <body> 
+<?php if (login_check($mysqli) == true) : ?>
+<?php
+    if (!empty($error_msg)) {
+        echo $error_msg;
+    }
+?>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="blue" data-image="assets/img/sidebar.jpg">    
+    <div class="sidebar" data-color="blue" data-image="../assets/img/sidebar.jpg">    
     
     <!--   
         
@@ -100,7 +113,7 @@
                               </ul>
                         </li>
                         <li>
-                            <a href="../logout.php">
+                            <a href="../includes/logout.php">
                                 Log out
                             </a>
                         </li> 
@@ -160,7 +173,7 @@
                     <div class="content">
                          <div class="error"></div>
                          <div class="form loginBox">
-                            <form action="../index.php" method="post"> 
+                            <form action="../includes/login.php" method="post"> 
                                 Username:<br /> 
                                 <input type="text" id="username" class="form-control" name="username" value="<?php echo $submitted_username; ?>" /> 
                                 <br /><br /> 
@@ -175,14 +188,21 @@
                 <div class="box">
                     <div class="content registerBox" style="display:none;">
                         <div class="form">
-                            <form action="../register.php" method="post"> 
+                            <form action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>" method="post" name="registration_form"> 
                                 <label>Username:</label> 
                                 <input id="username" class="form-control" type="text" placeholder="Username" name="username" /> 
                                 <label>Email: <strong style="color:darkred;">*</strong></label> 
                                 <input id="email" class="form-control" type="text" placeholder="Email" name="email" /> 
                                 <label>Password:</label> 
                                 <input id="password" class="form-control" type="password" placeholder="Password" name="password" /> <br /><br />
-                                <input type="submit" class="btn btn-default btn-register" value="Register" /> 
+                                <label>Confirm Password:</label> 
+                                <input id="confirmpwd" class="form-control" type="password" placeholder="Confirm Password" name="confirmpwd" /> <br /><br />
+                                <input type="submit" class="btn btn-default btn-register" value="Register" 
+                                   onclick="return regformhash(this.form,
+                                   this.form.username,
+                                   this.form.email,
+                                   this.form.password,
+                                   this.form.confirmpwd);"/> 
                             </form>
                         </div>
                      </div>
@@ -205,6 +225,11 @@
     </div>
 </div>
 <!-- /.login/register modal -->
+<?php else : ?>
+    <p>
+        <span class="error">You are not authorized to access this page.</span> Please <a href="../index.php">login</a>.
+    </p>
+<?php endif; ?>
 
 </body>
 
@@ -226,6 +251,9 @@
 	
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 	<script src="../assets/js/light-bootstrap-dashboard.js"></script>
+
+    <script type="text/JavaScript" src="../assets/js/sha512.js"></script> 
+    <script type="text/JavaScript" src="../assets/js/forms.js"></script>
 	
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="../assets/js/demo.js"></script>

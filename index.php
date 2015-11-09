@@ -1,51 +1,14 @@
 <?php
-    require("config.php"); 
-    $submitted_username = ''; 
-    if(!empty($_POST)){ 
-        $query = " 
-            SELECT 
-                id, 
-                username, 
-                password, 
-                salt, 
-                email 
-            FROM users 
-            WHERE 
-                username = :username 
-        "; 
-        $query_params = array( 
-            ':username' => $_POST['username'] 
-        ); 
-          
-        try{ 
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params); 
-        } 
-        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
-        $login_ok = false; 
-        $row = $stmt->fetch(); 
-        if($row){ 
-            $check_password = hash('sha256', $_POST['password'] . $row['salt']); 
-            for($round = 0; $round < 65536; $round++){
-                $check_password = hash('sha256', $check_password . $row['salt']);
-            } 
-            if($check_password === $row['password']){
-                $login_ok = true;
-            } 
-        } 
+    include_once 'includes/db_connect.php';
+    include_once 'includes/functions.php';
  
-        if($login_ok){ 
-            unset($row['salt']); 
-            unset($row['password']); 
-            $_SESSION['user'] = $row;  
-            header("Location: admin/dashboard.php"); 
-            die("Redirecting to: admin/dashboard.php"); 
-        } 
-        else{ 
-            print("Login Failed."); 
-            $submitted_username = htmlentities($_POST['username'], ENT_QUOTES, 'UTF-8'); 
-        } 
-    } 
+    sec_session_start();
+ 
+    if (login_check($mysqli) == true) {
+        $logged = 'in';
+    } else {
+        $logged = 'out';
+    }
 ?>
 
 <!doctype html>
@@ -73,6 +36,11 @@
 </head>
 
 <body class="home">
+<?php
+    if (isset($_GET['error'])) {
+        echo '<p class="error">Error Logging In!</p>';
+    }
+?> 
 
 <nav class="navbar navbar-inverse navbar-transparent navbar-fixed-top" role="navigation">
     <div class="container">
@@ -166,14 +134,14 @@
                     <div class="content">
                          <div class="error"></div>
                          <div class="form loginBox">
-                            <form action="index.php" method="post"> 
-                                Username:<br /> 
-                                <input type="text" id="username" class="form-control" name="username" value="<?php echo $submitted_username; ?>" /> 
+                            <form action="includes/login.php" method="post" name="login_form"> 
+                                Email:<br /> 
+                                <input type="text" id="email" class="form-control" name="email" value="<?php echo $submitted_username; ?>" /> 
                                 <br /><br /> 
                                 Password:<br /> 
                                 <input id="password" class="form-control" type="password" placeholder="Password" name="password" /> 
                                 <br /><br /> 
-                                <input type="submit" class="btn btn-default btn-login" value="Login" /> 
+                                <input type="submit" class="btn btn-default btn-login" value="Login" onclick="formhash(this.form, this.form.password);" /> 
                             </form>
                         </div>
                     </div>
@@ -524,6 +492,8 @@
     <script src="../assets/js/jquery.tagsinput.js"></script>
     <script src="../assets/js/retina.min.js"></script>
     <script src="../assets/js/login-register.js" type="text/javascript"></script>
+    <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
+    <script type="text/JavaScript" src="assets/js/forms.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     
 	<!--  Get Shit Done Kit PRO Core javascript 	 -->
