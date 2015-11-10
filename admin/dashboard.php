@@ -127,23 +127,8 @@
                 <nav class="pull-left">
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="../index.php">
                                 Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                               Blog
                             </a>
                         </li>
                     </ul>
@@ -191,7 +176,7 @@
                                 <label>Email: <strong style="color:darkred;">*</strong></label> 
                                 <input id="email" class="form-control" type="text" placeholder="Email" name="email" /> 
                                 <label>Password:</label> 
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password" /> <br /><br />
+                                <input id="password" class="form-control" type="password" placeholder="Password" name="password" />
                                 <label>Confirm Password:</label> 
                                 <input id="confirmpwd" class="form-control" type="password" placeholder="Confirm Password" name="confirmpwd" /> <br /><br />
                                 <input type="submit" class="btn btn-default btn-register" value="Register" 
@@ -263,7 +248,7 @@
         	
         	$.notify({
             	icon: 'pe-7s-gift',
-            	message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
+            	message: "Welcome Fishy Business Dashboard."
             	
             },{
                 type: 'info',

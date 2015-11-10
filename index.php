@@ -177,16 +177,26 @@
            <div class="container">
                <div class="row">
                     <div class="col-md-6">
-                       <h2>Weekly Updates</h2>
-                       <p>Checkout our Highlight Videos featuring the New Stock! </p>
+                        <h2>Weekly Updates</h2>
+                        <p>Checkout our Highlight Videos featuring the New Stock! </p>
                         </p>Click <a href="https://www.facebook.com/media/set/?set=vb.122002154595568&type=2">here </a>or image for New stock and highlight videos. </p>
-                    
+                        <p>It's been forever I know, but the weekly update is back! </p>
+                        <p>Fishy Business has been going through a few visual changes in the last month and the store has NEVER looked better! We have depth in both our fish selection and in our aquarium selection and if you haven't been in here in a while, I would strongly urge you to come by and check us out! </p>  
                    </div>
                    <div class="col-md-6">
                       <div class="img-container">
                           <a href="https://www.facebook.com/media/set/?set=vb.122002154595568&type=2">
                           <img src="assets/img/nem.jpg" alt="..." /> </a>
                       </div>
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Our aquariums are the lowest priced in town and our fish selection is the best!! We have also added a new line of decorations - ORIGINS - which manufactures high- end resin creations that are the coolest decorations we've ever had! </p>
+                        <p>For those of you who came in last week, you saw the incredible selection of Saltwater fish that arrived. This week will be even bigger!!! Saltwater availability is the best its been in a long time and we are doing everything we can to bring the most diverse selection of fish and corals to the Midlands! </p>
+                   </div>
+                   <div class="col-md-6">
+                      <p>Watch this spot for upcoming pictures mid-week and make it a point to come by and see why Fishy Business is your one- stop- shop for ALL your aquarium needs!! </p>
                    </div>
                 </div>
             
@@ -210,6 +220,8 @@
                           125 Gallon R.R. 399.00 <br>
                           180 Gallon R.R. 699.00
                        </p>
+                       <p>29 GALLON BIO-CUBE Kit/ Live Sand/ Live Rock/ Live Seawater 399.00 </p>
+                       <p>75 GALLON FRESHWATER SET-UP Pine Cabinet Stand/ Tank / Glass Tops/ LED Lights/ Quiet Flow Filter/ Heater/ Thermometer 499.00 </p>
                        </p></p>                    
                    </div>
                </div>

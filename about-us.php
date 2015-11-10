@@ -267,55 +267,38 @@
         </div>
     </div> <!-- end section meet our team -->
     
-    <div class="subscribe-line subscribe-line-default">
-             <div class="container">
-                <div class="row">
-                     <div class="col-md-9">
-                        <form class="">                  
-                             <div class="form-group">
-                                  <input type="text" value="" class="form-control" placeholder="Enter your email here...">
-                             </div> 
-                         </form>
-                     </div>
-                     <div class="col-md-3">
-                         <button type="button" class="btn btn-info btn-fill btn-block">Join our team!</button>
-                     </div>
-                </div>
-             </div>
-         </div>
-    
-        <footer class="footer footer-transparent" style="background-image: url('assets/img/thumb.jpg')">
-            <div class="container">
-                <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="index.php">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="contact-us.php">
-                                Contact Us
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="social-area pull-right">                
-                    <a href="http://www.facebook.com/FishyBusinessSC/" class="btn btn-social btn-facebook btn-simple">
-                        <i class="fa fa-facebook-square"></i>
-                    </a>
-                    <a href="https://twitter.com/fishyguys" class="btn btn-social btn-twitter btn-simple">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="http://www.youtube.com/channel/UCKAoquCimTvJs8_J9iLX1Ag?feature=CAQQwRs%3D" class="btn btn-social btn-pinterest btn-simple">
-                        <i class="fa fa-pinterest"></i>
-                    </a>
-                </div>
-                <div class="copyright">
-                    &copy; 2015 <a href="http://www.fishybusinesssc.com">Fishy Business</a>
-                </div>
+    <footer class="footer footer-transparent" style="background-image: url('assets/img/thumb.jpg')">
+        <div class="container">
+            <nav class="pull-left">
+                <ul>
+                    <li>
+                        <a href="index.php">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact-us.php">
+                            Contact Us
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="social-area pull-right">                
+                <a href="http://www.facebook.com/FishyBusinessSC/" class="btn btn-social btn-facebook btn-simple">
+                    <i class="fa fa-facebook-square"></i>
+                </a>
+                <a href="https://twitter.com/fishyguys" class="btn btn-social btn-twitter btn-simple">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="http://www.youtube.com/channel/UCKAoquCimTvJs8_J9iLX1Ag?feature=CAQQwRs%3D" class="btn btn-social btn-pinterest btn-simple">
+                    <i class="fa fa-pinterest"></i>
+                </a>
             </div>
-        </footer>
+            <div class="copyright">
+                &copy; 2015 <a href="http://www.fishybusinesssc.com">Fishy Business</a>
+            </div>
+        </div>
+    </footer>
 </div> <!-- wrapper -->
      
 </body>

@@ -177,7 +177,7 @@
                        <p>
                            You can contact us with anything related to our Products. We'll get in touch with you as soon as possible.<br><br>
                         </p>
-                        <form role="form" id="contact-form" method="post">
+                        <form role="form" id="contact-form" method="post" action="includes/email.php">
     						<div class="form-group">
     				    		<label for="name">Your name</label>
     				    		<input type="text" name="name" class="form-control" id="name" placeholder="First Name and Last Name"/>
@@ -187,15 +187,11 @@
     				    		<input type="email" name="email" class="form-control" id="email" placeholder="Your personal email address"/>
     				  		</div>
     				  		<div class="form-group">
-    				    		<label for="phone">Phone</label>
-    				    		<input type="text" name="phone" class="form-control" id="phone" placeholder="Phone number"/>
-    				  		</div>
-    				  		<div class="form-group">
     				    		<label for="message">Your message</label>
     				    		<textarea name="message" class="form-control" id="message" rows="6"></textarea>
     				  		</div>
     				  		<div class="submit">
-    				  			<input type="submit" class="btn btn-info btn-fill" value="Contact Us" />
+    				  			<input type="submit" name="submit" class="btn btn-info btn-fill" value="Contact Us" />
     				  		</div>
     					</form>
                    </div>
