@@ -178,29 +178,11 @@
 			    <?php
                     //Replace with your Facebook Page ID
 	                $facebook_page_owner = "122002154595568";
-	                
-	                //Set the cache time and the location of where the cache is stored.
-	                $cachetime = 10800; 
-	                $cachefile = "cache/albums";
-				
-	                //checks if file exists and the cache is "recent" enough
-	                if (file_exists($cachefile) && time() - $cachetime < filemtime($cachefile))
-	                {    
-	                	$string = file_get_contents($cachefile);
-	                }
-	                //if cache is too "old"
-	                else
-	                {
-		                $fb_access_token = "access_token=495004623978549|cb978a96c6e39168590b1739eb6d7fa0";//"access_token=CAAHCND7GQDUBAJ3nLz05lQ21sPZAQOdf7E13x636nW3REsZCpu5QKI8I8Lqa0wTlyPkDKON30uuOONuM60qyGPZBIRZAR7ZANhLw3XbxOudWP3z45St5jXuD00dbyORrUeZBd9jWhUzpZArIJ2kUh4HZBLuNYftW0cV3QebND58jx1hoLZCViZBLz5nHZBUQDKeJcvnQa9BXjqAZCgZDZD";
-		                //get ID of albums, the names of albums and the limit of how many albums to get. If the limit isn't set, then only 25 albums are displayed (Thanks to "Jeremy" for solution)
-		                $string = file_get_contents('https://graph.facebook.com/'.$facebook_page_owner.'/albums?fields=id,name&limit=500&'.$fb_access_token);
+	                $fb_access_token = "access_token=495004623978549|cb978a96c6e39168590b1739eb6d7fa0";//"access_token=CAAHCND7GQDUBAJ3nLz05lQ21sPZAQOdf7E13x636nW3REsZCpu5QKI8I8Lqa0wTlyPkDKON30uuOONuM60qyGPZBIRZAR7ZANhLw3XbxOudWP3z45St5jXuD00dbyORrUeZBd9jWhUzpZArIJ2kUh4HZBLuNYftW0cV3QebND58jx1hoLZCViZBLz5nHZBUQDKeJcvnQa9BXjqAZCgZDZD";
+		            
+                    //get ID of albums, the names of albums and the limit of how many albums to get. If the limit isn't set, then only 25 albums are displayed (Thanks to "Jeremy" for solution)
+		            $string = file_get_contents('https://graph.facebook.com/'.$facebook_page_owner.'/albums?fields=id,name&limit=500&'.$fb_access_token);
 			
-		                //open the cache file and write the info of albums to the file (for quicker retrieval)
-	               	    $fp = fopen($cachefile, 'w');    
-		                fwrite($fp, $string);    
-		                fclose($fp);    
-	                }
-	                
 	                //decode the cached file
 	                $jdata = json_decode($string);
 			
