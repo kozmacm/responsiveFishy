@@ -15,8 +15,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicon.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	
 	<title>Gallery - Fishy Business</title>
@@ -24,15 +24,15 @@
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     
-    <link href="../bootstrap3/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/css/gsdk.css" rel="stylesheet"/>
-    <link href="../assets/css/fishy.css" rel="stylesheet"/>
-    <link href="../assets/css/login-register.css" rel="stylesheet" />
+    <link href="bootstrap3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/gsdk.css" rel="stylesheet"/>
+    <link href="assets/css/fishy.css" rel="stylesheet"/>
+    <link href="assets/css/login-register.css" rel="stylesheet" />
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"> 
     <link href='https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans:400,300' rel='stylesheet' type='text/css'>  
-    <link href="../assets/css/pe-icon-7-stroke.css" rel="stylesheet" />  
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />  
 </head>
 
 <body class="gallery">
@@ -47,7 +47,7 @@
         <span class="icon-bar bar2"></span>
         <span class="icon-bar bar3"></span>
       </button>
-    <a class="navbar-brand" href="index.php"><img src="../assets/img/logo.png" alt="..." /></a>
+    <a class="navbar-brand" href="index.php"><img src="assets/img/logo.png" alt="..." /></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -163,7 +163,7 @@
 <div class="wrapper">
     <div class="parallax filter-black">
         <div class="parallax-image">
-            <img src="../assets/img/thumb.jpg">
+            <img src="assets/img/thumb.jpg">
         </div>    
         <div class="small-info">
             <h1>Gallery</h1>
@@ -181,7 +181,7 @@
 	                
 	                //Set the cache time and the location of where the cache is stored.
 	                $cachetime = 10800; 
-	                $cachefile = "../cache/albums";
+	                $cachefile = "cache/albums";
 				
 	                //checks if file exists and the cache is "recent" enough
 	                if (file_exists($cachefile) && time() - $cachetime < filemtime($cachefile))
@@ -272,27 +272,27 @@
 </div> <!-- wrapper --> 
 </body>
     <!--  jQuery and Bootstrap core files    -->
-    <script src="../assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-	<script src="../assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
-	<script src="../bootstrap3/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+	<script src="bootstrap3/js/bootstrap.min.js" type="text/javascript"></script>
 		
 	<!--  Plugins -->
-	<script src="../assets/js/gsdk-checkbox.js"></script>
-	<script src="../assets/js/gsdk-morphing.js"></script>
-	<script src="../assets/js/gsdk-radio.js"></script>
-	<script src="../assets/js/gsdk-bootstrapswitch.js"></script>
-	<script src="../assets/js/bootstrap-select.js"></script>
-	<script src="../assets/js/bootstrap-datepicker.js"></script>
-	<script src="../assets/js/chartist.min.js"></script>
-    <script src="../assets/js/jquery.tagsinput.js"></script>
-    <script src="../assets/js/retina.min.js"></script>
-    <script src="../assets/js/login-register.js" type="text/javascript"></script>
+	<script src="assets/js/gsdk-checkbox.js"></script>
+	<script src="assets/js/gsdk-morphing.js"></script>
+	<script src="assets/js/gsdk-radio.js"></script>
+	<script src="assets/js/gsdk-bootstrapswitch.js"></script>
+	<script src="assets/js/bootstrap-select.js"></script>
+	<script src="assets/js/bootstrap-datepicker.js"></script>
+	<script src="assets/js/chartist.min.js"></script>
+    <script src="assets/js/jquery.tagsinput.js"></script>
+    <script src="assets/js/retina.min.js"></script>
+    <script src="assets/js/login-register.js" type="text/javascript"></script>
     <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
     <script type="text/JavaScript" src="assets/js/forms.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     
 	<!--  Get Shit Done Kit PRO Core javascript 	 -->
-	<script src="../assets/js/get-shit-done.js"></script>
+	<script src="assets/js/get-shit-done.js"></script>
     
     <script type="text/javascript">
         var big_image;

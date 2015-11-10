@@ -15,8 +15,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicon.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	
 	<title>Fishy Business</title>
@@ -24,15 +24,15 @@
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     
-    <link href="../bootstrap3/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/css/gsdk.css" rel="stylesheet"/>
-    <link href="../assets/css/fishy.css" rel="stylesheet"/>
-    <link href="../assets/css/login-register.css" rel="stylesheet" />
+    <link href="bootstrap3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/gsdk.css" rel="stylesheet"/>
+    <link href="assets/css/fishy.css" rel="stylesheet"/>
+    <link href="assets/css/login-register.css" rel="stylesheet" />
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"> 
     <link href='https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans:400,300' rel='stylesheet' type='text/css'>  
-    <link href="../assets/css/pe-icon-7-stroke.css" rel="stylesheet" />  
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />  
 </head>
 
 <body class="home">
@@ -47,7 +47,7 @@
         <span class="icon-bar bar2"></span>
         <span class="icon-bar bar3"></span>
       </button>
-    <a class="navbar-brand" href="index.php"><img src="../assets/img/logo.png" alt="..." /></a>
+    <a class="navbar-brand" href="index.php"><img src="assets/img/logo.png" alt="..." /></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -163,7 +163,7 @@
 <div class="wrapper">
     <div class="parallax filter-black">
         <div class="parallax-image">
-            <img src="../assets/img/thumb.jpg" alt="..." />
+            <img src="assets/img/thumb.jpg" alt="..." />
         </div>    
         <div class="small-info">
             <h1>Fishy Business</h1>
@@ -185,7 +185,7 @@
                    <div class="col-md-6">
                       <div class="img-container">
                           <a href="https://www.facebook.com/media/set/?set=vb.122002154595568&type=2">
-                          <img src="../assets/img/nem.jpg" alt="..." /> </a>
+                          <img src="assets/img/nem.jpg" alt="..." /> </a>
                       </div>
                    </div>
                 </div>
@@ -197,7 +197,7 @@
                 <div class="row">
                    <div class="col-md-6">
                       <div class="img-container">
-                          <img src="../assets/img/entrance.jpg" alt="..." />
+                          <img src="assets/img/entrance.jpg" alt="..." />
                       </div>
                    </div>
                    <div class="col-md-6">
@@ -250,7 +250,7 @@
                 <div class="row">
                    <div class="col-md-12">
                       <div class="img-container">
-                          <img src="../assets/img/redsea.png" alt="..." />
+                          <img src="assets/img/redsea.png" alt="..." />
                       </div>
                    </div>
                </div>
@@ -266,7 +266,7 @@
                    <div class="col-md-6">
                       <div class="img-container">
                           <a href="biocube.php">
-                          <img src="../assets/img/biocube29.jpg" alt="..." /> </a>
+                          <img src="assets/img/biocube29.jpg" alt="..." /> </a>
                       </div>
                    </div>
                    <div class="col-md-6">
@@ -291,7 +291,7 @@
                             <div class="content">
                                 <div class="description">
                                     <a href="gallery.php">
-                                    <img class="card-img-top" src="../assets/img/gallery.jpg" alt="..."/>
+                                    <img class="card-img-top" src="assets/img/gallery.jpg" alt="..."/>
                                     <h4 class="title">Gallery <br />
                                         <small>Our all new gallery section contains the feature fish and the all new "Tank of the Month". Over time this section will only get better, so check back often for new updates!</small>
                                     </h4> 
@@ -305,7 +305,7 @@
                             <div class="content">
                                 <div class="description">
                                     <a href="totm.php">
-                                        <img class="card-img-top" src="../assets/img/totm.jpg" alt="..."/>
+                                        <img class="card-img-top" src="assets/img/totm.jpg" alt="..."/>
                                         <h4 class="title">Tank of the Month <br />
                                             <small>A new feature that will be available is our "Tank of the Month." Send in your photos an descriptions and you might just be featured here! This has the element of a contest as the winner of our feature will be given a gift certificate, exposure on our website and bragging rites galore! :)</small>
                                         </h4> 
@@ -320,7 +320,7 @@
                             <div class="content">
                                 <div class="description">
                                     <a href="service.php">
-                                        <img class="card-img-top" src="../assets/img/truck.jpg" alt="..."/>
+                                        <img class="card-img-top" src="assets/img/truck.jpg" alt="..."/>
                                         <h4 class="title">Service <br />
                                             <small>Fishy Business is the absolute best when it comes to service. From your business to your home, we come to you and take care of any and all of your aquarium needs. What could be simpler than that?</small>
                                         </h4> 
@@ -479,27 +479,27 @@
 </div> <!-- wrapper --> 
 </body>
     <!--  jQuery and Bootstrap core files    -->
-    <script src="../assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-	<script src="../assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
-	<script src="../bootstrap3/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+	<script src="bootstrap3/js/bootstrap.min.js" type="text/javascript"></script>
 		
 	<!--  Plugins -->
-	<script src="../assets/js/gsdk-checkbox.js"></script>
-	<script src="../assets/js/gsdk-morphing.js"></script>
-	<script src="../assets/js/gsdk-radio.js"></script>
-	<script src="../assets/js/gsdk-bootstrapswitch.js"></script>
-	<script src="../assets/js/bootstrap-select.js"></script>
-	<script src="../assets/js/bootstrap-datepicker.js"></script>
-	<script src="../assets/js/chartist.min.js"></script>
-    <script src="../assets/js/jquery.tagsinput.js"></script>
-    <script src="../assets/js/retina.min.js"></script>
-    <script src="../assets/js/login-register.js" type="text/javascript"></script>
+	<script src="assets/js/gsdk-checkbox.js"></script>
+	<script src="assets/js/gsdk-morphing.js"></script>
+	<script src="assets/js/gsdk-radio.js"></script>
+	<script src="assets/js/gsdk-bootstrapswitch.js"></script>
+	<script src="assets/js/bootstrap-select.js"></script>
+	<script src="assets/js/bootstrap-datepicker.js"></script>
+	<script src="assets/js/chartist.min.js"></script>
+    <script src="assets/js/jquery.tagsinput.js"></script>
+    <script src="assets/js/retina.min.js"></script>
+    <script src="assets/js/login-register.js" type="text/javascript"></script>
     <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
     <script type="text/JavaScript" src="assets/js/forms.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     
 	<!--  Get Shit Done Kit PRO Core javascript 	 -->
-	<script src="../assets/js/get-shit-done.js"></script>
+	<script src="assets/js/get-shit-done.js"></script>
     
     <script type="text/javascript">
         var big_image;
