@@ -48,43 +48,40 @@ for($i=0; $i<count($_FILES['file']['name']); $i++)
                         echo "Stored in: " . "../uploads/" . $_FILES["file"]["name"][$i];
                     }
                 }    
-            }      
+            } 
+            //Adds entry into database in table 'totm'
+            // Check connection
+            if ($mysqli->connect_error) {
+                die("Connection failed: " . $mysqli->connect_error);
+            } 
+            else
+            {
+                $file = $_FILES["file"]["name"][$i] . "";
+                $size = $_FILES["file"]["size"][$i] . "";
+                $type = $_FILES["file"]["type"][$i] . "";
+                $fullName = $_POST['fullName'];
+                $email = $_POST['email'];
+                $message = $_POST['message'];
+                $ip = $_SERVER['REMOTE_ADDR'];
+
+                $sql = "INSERT INTO uploads (file, size, type, name, email, description, ip) 
+                    VALUES ('$file','$size','$type','$fullName','$email','$message','$ip')";
+
+                if ($mysqli->query($sql) === TRUE) {} 
+                else 
+                {
+
+                    echo "Error: " . $sql . "<br>" . $mysqli->error;
+                }
+
+        
+            }            
         }
     }
     else
     {
         echo "Error - Invalid file";
     }
-
-    //Adds entry into database in table 'totm'
-    // Check connection
-    if ($mysqli->connect_error) {
-        die("Connection failed: " . $mysqli->connect_error);
-    } 
-    else
-    {
-        $file = $_FILES["file"]["name"][$i] . "";
-        $size = $_FILES["file"]["size"][$i] . "";
-        $type = $_FILES["file"]["type"][$i] . "";
-        $fullName = $_POST['fullName'];
-        $email = $_POST['email'];
-        $message = $_POST['message'];
-        $ip = $_SERVER['REMOTE_ADDR'];
-
-        $sql = "INSERT INTO uploads (file, size, type, name, email, description, ip) 
-            VALUES ('$file','$size','$type','$fullName','$email','$message','$ip')";
-
-        if ($mysqli->query($sql) === TRUE) {} 
-        else 
-        {
-
-            echo "Error: " . $sql . "<br>" . $mysqli->error;
-        }
-
-        
-    }
-
-
 }
 $mysqli->close();
 ?> 
