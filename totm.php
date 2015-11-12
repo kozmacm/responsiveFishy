@@ -208,8 +208,8 @@
                                 <input id="input-2" type="file" name="file[]" class="file" multiple="true" data-show-upload="false" data-show-caption="true">
     				  		</div>
                             <div class="form-group">
-    				    		<label for="name">Full Name</label>
-    				    		<input type="text" name="name" class="form-control" id="name" placeholder="Full Name"/>
+    				    		<label for="fullName">Full Name</label>
+    				    		<input type="text" name="fullName" class="form-control" id="fullName" placeholder="Full Name"/>
     				  		</div>
     				  		<div class="form-group">
     				    		<label for="email">Email address</label>

@@ -1,62 +1,87 @@
 <?php
+include_once 'db_connect.php';    
+
 for($i=0; $i<count($_FILES['file']['name']); $i++)
 {
+    //Uploads one or more images or videos to the ../uploads/ folder
+    $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
+    $extension = pathinfo($_FILES['file']['name'][$i], PATHINFO_EXTENSION);
     $tmpFilePath = $_FILES['file']['tmp_name'][$i];
 
-    //Make sure we have a filepath
-    if($tmpFilePath != "")
+    if (($_FILES['file']['type'][$i] == "video/mp4") || 
+        ($_FILES['file']['type'][$i] == "audio/mp3") || 
+        ($_FILES['file']['type'][$i] == "audio/wma") || 
+        ($_FILES['file']['type'][$i] == "image/pjpeg") || 
+        ($_FILES['file']['type'][$i] == "image/gif") || 
+        ($_FILES['file']['type'][$i] == "image/jpeg")
+    //Limit size to 2 Mb
+    && ($_FILES['file']['size'][$i] < 2000000)
+    && in_array($extension, $allowedExts))
     {
-        //Setup out new file path
-        $newFilePath = "../uploads/" . $_FILES['file']['name'][$i];
-
-        //Upload file to temp dir
-        if(move_uploaded_file($tmpFilePath, $newFilePath))
+        if ($_FILES["file"]["error"][$i] > 0)
         {
-            //Handle other code here
+            echo "Return Code: " . $_FILES["file"]["error"][$i] . "<br />";
+        }
+        else
+        {
+            echo "Upload: " . $_FILES["file"]["name"][$i] . "<br />";
+            echo "Type: " . $_FILES["file"]["type"][$i] . "<br />";
+            echo "Size: " . ($_FILES["file"]["size"][$i] / 1024) . " Kb<br />";
+            echo "Temp file: " . $_FILES["file"]["tmp_name"][$i] . "<br />";
+
+            if (file_exists("../uploads/" . $_FILES["file"]["name"]))
+            {
+                echo $_FILES["file"]["name"] . " already exists. ";
+            }
+            else
+            {
+                //Make sure we have a filepath
+                if($tmpFilePath != "")
+                {
+                    //Setup out new file path
+                    $newFilePath = "../uploads/" . $_FILES['file']['name'][$i];
+
+                    //Upload file to temp dir
+                    if(move_uploaded_file($tmpFilePath, $newFilePath))
+                    {
+                        //Handle other code here
+                        echo "Stored in: " . "../uploads/" . $_FILES["file"]["name"][$i];
+                    }
+                }    
+            }      
         }
     }
-}
-/*
-$allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
-$extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
-
-if ((($_FILES["file"]["type"] == "video/mp4")
-|| ($_FILES["file"]["type"] == "audio/mp3")
-|| ($_FILES["file"]["type"] == "audio/wma")
-|| ($_FILES["file"]["type"] == "image/pjpeg")
-|| ($_FILES["file"]["type"] == "image/gif")
-|| ($_FILES["file"]["type"] == "image/jpeg"))
-
-&& ($_FILES["file"]["size"] < 500000)
-&& in_array($extension, $allowedExts))
-
-{
-  if ($_FILES["file"]["error"] > 0)
-    {
-    echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
-    }
-  else
-    {
-    echo "Upload: " . $_FILES["file"]["name"] . "<br />";
-    echo "Type: " . $_FILES["file"]["type"] . "<br />";
-    echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
-    echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
-
-    if (file_exists("../uploads/" . $_FILES["file"]["name"]))
-      {
-      echo $_FILES["file"]["name"] . " already exists. ";
-      }
     else
-      {
-      move_uploaded_file($_FILES["file"]["tmp_name"],
-      "../uploads/" . $_FILES["file"]["name"]);
-      echo "Stored in: " . "../uploads/" . $_FILES["file"]["name"];
-      }
+    {
+        echo "Error - Invalid file";
     }
-  }
-else
-  {
-  echo "Invalid file";
-  }
-*/
+
+    //Adds entry into database in table 'totm'
+    // Check connection
+    if ($mysqli->connect_error) {
+        die("Connection failed: " . $mysqli->connect_error);
+    } 
+    else
+    {
+        $file = $_FILES["file"]["name"][$i] . "";
+        $size = $_FILES["file"]["size"][$i] . "";
+        $type = $_FILES["file"]["type"][$i] . "";
+        $fullName = $_POST['fullName'];
+        $email = $_POST['email'];
+        $message = $_POST['message'];
+
+        $sql = "INSERT INTO uploads (file, size, type, name, email, description) 
+            VALUES ('$file','$size','$type','$fullName','$email','$message')";
+
+        if ($mysqli->query($sql) === TRUE) {} 
+        else 
+        {
+            echo "Error: " . $sql . "<br>" . $mysqli->error;
+        }
+
+        $mysqli->close();
+    }
+
+
+}
 ?> 
