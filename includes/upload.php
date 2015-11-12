@@ -73,8 +73,6 @@ for($i=0; $i<count($_FILES['file']['name']); $i++)
 
                     echo "Error: " . $sql . "<br>" . $mysqli->error;
                 }
-
-        
             }            
         }
     }

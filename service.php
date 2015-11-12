@@ -166,7 +166,7 @@
             <img src="assets/img/thumb.jpg">
         </div>    
         <div class="small-info">
-            <h1>Service</h1>
+            <h1>Aquarium Service</h1>
             <h3></h3>    
         </div>
     </div>
