@@ -69,19 +69,22 @@ for($i=0; $i<count($_FILES['file']['name']); $i++)
         $fullName = $_POST['fullName'];
         $email = $_POST['email'];
         $message = $_POST['message'];
+        $ip = $_SERVER['REMOTE_ADDR'];
 
-        $sql = "INSERT INTO uploads (file, size, type, name, email, description) 
-            VALUES ('$file','$size','$type','$fullName','$email','$message')";
+        $sql = "INSERT INTO uploads (file, size, type, name, email, description, ip) 
+            VALUES ('$file','$size','$type','$fullName','$email','$message','$ip')";
 
         if ($mysqli->query($sql) === TRUE) {} 
         else 
         {
+
             echo "Error: " . $sql . "<br>" . $mysqli->error;
         }
 
-        $mysqli->close();
+        
     }
 
 
 }
+$mysqli->close();
 ?> 
