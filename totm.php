@@ -202,25 +202,25 @@
                        <p>
                            <span class="asterisk">*</span> indicates required<br><br>
                         </p>
-                        <form method="post" id="form" name="form">
+                        <form method="post" id="form" name="form" action="includes/upload.php" enctype="multipart/form-data" >
     						<div class="form-group">
                                 <label class="control-label">Select File</label>
-                                <input id="input-2" type="file" class="file" multiple="true" data-show-upload="false" data-show-caption="true">
+                                <input id="input-2" type="file" name="file[]" class="file" multiple="true" data-show-upload="false" data-show-caption="true">
     				  		</div>
                             <div class="form-group">
-    				    		<label for="LNAME">Full Name</label>
-    				    		<input type="text" name="LNAME" class="form-control" id="lname" placeholder="Full Name"/>
+    				    		<label for="name">Full Name</label>
+    				    		<input type="text" name="name" class="form-control" id="name" placeholder="Full Name"/>
     				  		</div>
     				  		<div class="form-group">
-    				    		<label for="EMAIL">Email address</label>
-    				    		<input type="email" name="EMAIL" class="form-control" id="email" placeholder="Your personal email address"/>
+    				    		<label for="email">Email address</label>
+    				    		<input type="email" name="email" class="form-control" id="email" placeholder="Your personal email address"/>
     				  		</div>
                             <div class="form-group">
     				    		<label for="message">Tank Description</label>
     				    		<textarea name="message" class="form-control" id="message" rows="6" placeholder="Enter details about your tank setup here"></textarea>
     				  		</div>
     				  		<div class="submit">
-    				  			<input type="submit" class="btn btn-info btn-fill" value="Submit" id="mc-embedded-subscribe" />
+    				  			<input type="submit" name="submit" class="btn btn-info btn-fill" value="Submit" id="submit" />
     				  		</div>
 
                             <div class="space-50"></div>
@@ -322,7 +322,12 @@
         };
 
     </script>
-    
+    <script>
+    $("#file-0").fileinput({
+        'allowedFileExtensions' : ['jpg', 'png','gif'],
+    });
+    </script>
+
     <!-- If you are using TypeKit.com uncomment this code otherwise you can delete it -->
     <!--
     <script src="https://use.typekit.net/[your kit code here].js"></script>
