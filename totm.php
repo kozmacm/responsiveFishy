@@ -45,7 +45,11 @@
 
                 if (file_exists("uploads/" . $_FILES["file"]["name"]))
                 {
-                    echo $_FILES["file"]["name"] . " already exists. ";
+                    echo '<div class="alert alert-danger fade in">
+                      <a href="#" class="close" data-dismiss="alert">&times;</a>
+                      <strong>Error: </strong> Your file '.$_FILES["file"]["name"][$i].' already exists.
+                      </div>';
+                    //echo $_FILES["file"]["name"] . " already exists. ";
                 }
                 else
                 {
@@ -125,6 +129,7 @@
     <link href="assets/css/fishy.css" rel="stylesheet"/>
     <link href="assets/css/fileinput.min.css" media="all" rel ="stylesheet" type="text/css"/>
     <link href="assets/css/login-register.css" rel="stylesheet" />
+    <link href="assets/css/toastr.min.css" rel="stylesheet" />
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"> 
@@ -387,6 +392,7 @@
     <script src="assets/js/retina.min.js"></script>
     <script src="assets/js/fileinput.min.js" type="text/javascript"></script>
     <script src="assets/js/login-register.js" type="text/javascript"></script>
+    <script src="assets/js/toastr.min.js" type="text/javascript"></script>
     <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
     <script type="text/JavaScript" src="assets/js/forms.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
