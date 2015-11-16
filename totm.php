@@ -100,10 +100,21 @@
         }
         else
         {
+            //echo "
+            //<script>
+            //$.notify({
+	        //    title: '<strong>Heads up!</strong>',
+	        //    message: 'You can use any of bootstraps other alert styles as well by default.'
+            //},{
+	        //    type: 'success'
+            //});
+            //</script>";
+            
             echo '<div class="alert alert-danger fade in">
                   <a href="#" class="close" data-dismiss="alert">&times;</a>
                   <strong>Error: </strong> - Invalid File.
-                  </div>';
+            
+            [      </div>';
             
             //echo "Error - Invalid file";
         }
@@ -387,12 +398,12 @@
 	<script src="assets/js/gsdk-bootstrapswitch.js"></script>
 	<script src="assets/js/bootstrap-select.js"></script>
 	<script src="assets/js/bootstrap-datepicker.js"></script>
+    <script src="assets/js/bootstrap-notify.js"></script>
 	<script src="assets/js/chartist.min.js"></script>
     <script src="assets/js/jquery.tagsinput.js"></script>
     <script src="assets/js/retina.min.js"></script>
     <script src="assets/js/fileinput.min.js" type="text/javascript"></script>
     <script src="assets/js/login-register.js" type="text/javascript"></script>
-    <script src="assets/js/toastr.min.js" type="text/javascript"></script>
     <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
     <script type="text/JavaScript" src="assets/js/forms.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
