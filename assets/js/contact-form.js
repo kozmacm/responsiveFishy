@@ -9,7 +9,12 @@ $(document).ready(function () {
         var dataString = 'name1=' + name + '&email1=' + email + '&message1=' + message;
 
         if (name == '' || email == '' || message == '') {
-            alert("Please Fill All Fields");
+            $.notify({
+                title: '<strong>Error!</strong>',
+                message: 'Please fill out all fields.'
+            }, {
+                type: 'danger'
+            });
         }
         else {
             // AJAX Code To Submit Form.
