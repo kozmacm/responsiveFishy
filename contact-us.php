@@ -9,25 +9,7 @@
     } else {
         $logged = 'out';
     }
-    /*
-    //Send email and generate alert on form submit
-    if(isset($_POST['submit'])){
-        $to = "support@fishybusinesssc.com"; // this is your Email address
-        $from = $_POST['email']; // this is the sender's Email address
-        $name = $_POST['name'];
-        $subject = "Web Inquiry";
-        $message = $name . " wrote the following:" . "\n\n" . $_POST['message'];
     
-        $headers = "From:" . $from;
-        mail($to,$subject,$message,$headers);
-    
-        echo '<script language="javascript">';
-        echo 'alert("Message successfully sent")';
-        echo '</script>';
-        //echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
-        // You can also use header('Location: thank_you.php'); to redirect to another page.
-    }
-    */
     if($_POST)
     {
         //Fetching Values from URL
@@ -39,9 +21,6 @@
     
         $headers = "From:" . $from;
         mail($to,$subject,$message,$headers);
-
-        //echo "Form Submitted Succesfully"
-        echo "Mail Sent. Thank you " . $name . ", we will contact you shortly.";
     }
 ?>
 
@@ -70,15 +49,7 @@
 </head>
 
 <body class="contact-us">
-    <script>
-    <?php if ($error) { ?>
-    window.onload = function() {
-        alert('<?php echo $error?>');
-    }        
-    <?php } ?>
-    </script>
-
-
+    
 <nav class="navbar navbar-inverse navbar-transparent navbar-fixed-top" role="navigation">
     <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->

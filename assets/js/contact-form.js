@@ -19,7 +19,12 @@ $(document).ready(function () {
                 data: dataString,
                 cache: false,
                 success: function (result) {
-                    alert("Mail Sent. Thank you " + name + ", we will contact you shortly.");
+                    $.notify({
+	                    title: '<strong>Mail Sent!</strong>',
+	                    message: 'Thank you ' + name + ', we will contact you shortly.'
+                    },{
+	                    type: 'success'
+                    });
                 }
             });
         }
