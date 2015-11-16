@@ -9,7 +9,7 @@
     } else {
         $logged = 'out';
     }
-    /*
+
     //Send email and generate alert on form submit
     if(isset($_POST['submit'])){
         $to = "support@fishybusinesssc.com"; // this is your Email address
@@ -26,22 +26,6 @@
         echo '</script>';
         //echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
         // You can also use header('Location: thank_you.php'); to redirect to another page.
-    }
-    */
-    if($_POST)
-    {
-        //Fetching Values from URL
-        $to = "support@fishybusinesssc.com"; // this is your Email address
-        $from = $_POST['email1']; // this is the sender's Email address
-        $name = $_POST['name1'];
-        $subject = "Web Inquiry";
-        $message = $name . " wrote the following:" . "\n\n" . $_POST['message1'];
-    
-        $headers = "From:" . $from;
-        mail($to,$subject,$message,$headers);
-
-        //echo "Form Submitted Succesfully"
-        echo "Mail Sent. Thank you " . $name . ", we will contact you shortly.";
     }
 ?>
 
@@ -159,7 +143,6 @@
 </nav>
 
 <!-- begin login/register modal -->
-<!--
 <div class="modal fade login" id="loginModal">
     <div class="modal-dialog login animated">
         <div class="modal-content">
@@ -192,7 +175,6 @@
                     <a href="javascript: showRegisterForm();">create an account</a>
                     ?</span>
                     -->
-<!--
                 </div>
                 <div class="forgot register-footer" style="display:none">
                     <span>Already have an account?</span>
@@ -221,7 +203,7 @@
                        <p>
                            You can contact us with anything related to our Products. We'll get in touch with you as soon as possible.<br><br>
                         </p>
-                        <form role="form" id="contact-form" >
+                        <form role="form" id="contact-form" method="post" >
     						<div class="form-group">
     				    		<label for="name">Your name</label>
     				    		<input type="text" name="name" class="form-control" id="name" placeholder="First Name and Last Name"/>
@@ -235,7 +217,7 @@
     				    		<textarea name="message" class="form-control" id="message" rows="6"></textarea>
     				  		</div>
     				  		<div class="submit">
-    				  			<input id="submit" type="submit" name="submit" class="btn btn-info btn-fill" value="Contact Us" />
+    				  			<input type="submit" name="submit" class="btn btn-info btn-fill" value="Contact Us" />
     				  		</div>
     					</form>
                    </div>
@@ -388,14 +370,12 @@
 	<script src="assets/js/gsdk-bootstrapswitch.js"></script>
 	<script src="assets/js/bootstrap-select.js"></script>
 	<script src="assets/js/bootstrap-datepicker.js"></script>
-    <script src="assets/js/bootstrap-notify.js"></script>
 	<script src="assets/js/chartist.min.js"></script>
     <script src="assets/js/jquery.tagsinput.js"></script>
     <script src="assets/js/retina.min.js"></script>
     <script src="assets/js/login-register.js" type="text/javascript"></script>
     <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
     <script type="text/JavaScript" src="assets/js/forms.js"></script>
-    <script src="assets/js/contact-form.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     
 	<!--  Get Shit Done Kit PRO Core javascript 	 -->
