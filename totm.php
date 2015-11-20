@@ -10,6 +10,7 @@
         $logged = 'out';
     }
 
+    
     for($i=0; $i<count($_FILES['file']['name']); $i++)
     {
         //Uploads one or more images or videos to the ../uploads/ folder
@@ -118,6 +119,7 @@
             //echo "Error - Invalid file";
         }
     }
+    
     $mysqli->close();
 ?>
 
@@ -230,6 +232,7 @@
 </nav>
 
 <!-- begin login/register modal -->
+<!--
 <div class="modal fade login" id="loginModal">
     <div class="modal-dialog login animated">
         <div class="modal-content">
@@ -262,7 +265,7 @@
                     <a href="javascript: showRegisterForm();">create an account</a>
                     ?</span>
                     -->
-                </div>
+<!--                </div>
                 <div class="forgot register-footer" style="display:none">
                     <span>Already have an account?</span>
                     <a href="javascript: showLoginForm();">Login</a>
@@ -405,6 +408,7 @@
     <script src="assets/js/login-register.js" type="text/javascript"></script>
     <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
     <script type="text/JavaScript" src="assets/js/forms.js"></script>
+    <script src="assets/js/totm-form.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     
 	<!--  Get Shit Done Kit PRO Core javascript 	 -->

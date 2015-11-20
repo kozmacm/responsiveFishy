@@ -1,39 +1,42 @@
 $(document).ready(function () {
     $("#submit").click(function () {
-        var fileSelect = $("#file").val();
-        var files = fileSelect.files;
+        var filedata = document.getElementsByName("file"),
+            formdata = false;
         var name = $("#fullName").val();
         var email = $("#email").val();
         var message = $("#message").val();
 
-        var formData = new FormData();
+        if (window.FormData) {
+            formdata = new FormData();
+        }
+        
+        var i = 0, len = filedata.files.length, img, reader, file;
 
         // Loop through each of the selected files.
-        for (var i = 0; i < files.length; i++) {
-          var file = files[i];
+        for (; i < len; i++) {
+          var file = filedata.files[i];
 
-          // Check the file type.
-          if (!file.type.match('image.*')) {
-            continue;
-          }
-
-          // Add the file to the request.
-          formData.append('file[]', file, file.name);
+          if (window.FileReader) {
+            reader = new FileReader();
+            reader.onloadend = function(e) {
+                showUploadedItem(e.target.result, file.fileName);
+            };
+            reader.readAsDataURL(file);
+            }
+            if (formdata) {
+                formdata.append("file", file);
+            }
         }
 
-        // Returns successful data submission message when the entered information is stored in database.
-        var dataString = 'file1=' + file + '&name1=' + name + '&email1=' + email + '&message1=' + message;
-
-        if (file == '' || name == '' || email == '' || message == '') {
-            alert("Please Fill All Fields");
-        }
-        else {
+        if (formdata) {
             // AJAX Code To Submit Form.
             $.ajax({
                 type: "POST",
-                url: "totm.php",
-                data: dataString,
-                cache: false,
+                url: "../uploads/",
+                data: formdata,
+                processData: false,
+                contentType: false,
+
                 success: function (result) {
                     $.notify({
                         title: '<strong>File Sent!</strong>',
