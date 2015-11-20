@@ -25,6 +25,9 @@ $(document).ready(function () {
             }
             if (formdata) {
                 formdata.append("file", file);
+                formdata.append("name", name);
+                formdata.append("email", email);
+                formdata.append("message", message);
             }
         }
 
