@@ -191,86 +191,32 @@
     
     <div class="section section-gray">
         <div class="container">
-            <h2 class="section-title">Our Service Team <small> (example)</small></h2>
+            <h2 class="section-title">Our Service Manager <small> </small></h2>
             <div class="team-presentation">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-md-offset-4">
                         <div class="card card-user card-plain">
                             <div class="content">
                                 <div class="author">
                                     <a href="#">
-                                    <img class="avatar border-gray" src="assets/img/placeholder.png" alt="..."/>
-                                    <h4 class="title">First Person <br />
-                                        <small>Lead Service Technician</small>
+                                    <img class="avatar border-gray" src="assets/img/mike.jpg" alt="..."/>
+                                    <h4 class="title">Mike Griffin <br />
+                                        <small>Chief Service Tech</small>
                                     </h4> 
                                     </a>
                                 </div>  
                                 <p class="description text-center"> 
-                                    <i class="fa fa-map-marker fa-fw text-muted"></i> Columbia, South Carolina <br/>
-                                    <i class="fa fa-envelope-o fa-fw text-muted"></i> emailaddress.com
+                                    Mike Griffin is the backbone of Fishy Business. Mike is an expert aquarist with 30 years experience maintaining and designing aquaria. He is also our chief service tech and there is absolutely no aspect of aquarium design, service, or problem-solving he cannot perform!
                                 </p>
-                            </div>
-                            <hr>
-                            <div class="text-center">
-                                <button href="#" class="btn btn-social btn-facebook btn-simple"><i class="fa fa-facebook-square"></i></button>
-                                <button href="#" class="btn btn-social btn-twitter btn-simple"><i class="fa fa-twitter"></i></button>
-                                <button href="#" class="btn btn-social btn-google btn-simple"><i class="fa fa-google-plus-square"></i></button>
-
                             </div>
                         </div> <!-- end card--> 
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-user card-plain">
-                            <div class="content">
-                                <div class="author">
-                                    <a href="#">
-                                        <img class="avatar border-gray" src="assets/img/placeholder.png" alt="..."/>
-                                        <h4 class="title">Second Person <br />
-                                            <small>Position with company</small>
-                                        </h4> 
-                                    </a>
-                                </div>  
-                                <p class="description text-center"> 
-                                    <i class="fa fa-map-marker fa-fw text-muted"></i> Irmo, South Carolina <br/>
-                                    <i class="fa fa-envelope-o fa-fw text-muted"></i> emailaddress.com
-                                </p>
-                            </div>
-                            <hr>
-                            <div class="text-center">
-                                <button href="#" class="btn btn-social btn-facebook btn-simple"><i class="fa fa-facebook-square"></i></button>
-                                <button href="#" class="btn btn-social btn-twitter btn-simple"><i class="fa fa-twitter"></i></button>
-                            </div>
-                        </div> <!-- end card -->
-                    </div> 
-                    <div class="col-md-4">
-                        <div class="card card-user card-plain">
-                            <!-- <div class="image"></div> -->
-                            <div class="content">
-                                <div class="author">
-                                    <a href="#">
-                                        <img class="avatar border-gray" src="assets/img/placeholder.png" alt="..."/>
-                                        <h4 class="title">Another member of team <br />
-                                            <small>Position with company</small>
-                                        </h4> 
-                                    </a>
-                                </div>  
-                                <p class="description text-center"> 
-                                    <i class="fa fa-map-marker fa-fw text-muted"></i> Columbia, South Carolina  <br/>
-                                    <i class="fa fa-envelope-o fa-fw text-muted"></i> emailaddress.com
-                                </p>
-                            </div>
-                            <hr>
-                            <div class="text-center">
-                                <button href="#" class="btn btn-social btn-twitter btn-simple"><i class="fa fa-twitter"></i></button>
-                                <button href="#" class="btn btn-social btn-github btn-simple"><i class="fa fa-github"></i></button>
-                            </div>
-                        </div> 
                     </div>
                 </div>
             </div>
         </div>
     </div> <!-- end section meet our team -->
 
+    <!-- uncomment this section if you want to add important clients
     <div class="section section-clients">
         <div class="container">
             <h2 class="section-title">Our Clients</h2>

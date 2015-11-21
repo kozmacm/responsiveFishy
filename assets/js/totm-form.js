@@ -35,7 +35,7 @@ $(document).ready(function () {
             // AJAX Code To Submit Form.
             $.ajax({
                 type: "POST",
-                url: "../uploads/",
+                url: "/uploads/",
                 data: formdata,
                 processData: false,
                 contentType: false,

@@ -24,14 +24,23 @@ for($i=0; $i<count($_FILES['file']['name']); $i++)
         }
         else
         {
-            echo "Upload: " . $_FILES["file"]["name"][$i] . "<br />";
-            echo "Type: " . $_FILES["file"]["type"][$i] . "<br />";
-            echo "Size: " . ($_FILES["file"]["size"][$i] / 1024) . " Kb<br />";
-            echo "Temp file: " . $_FILES["file"]["tmp_name"][$i] . "<br />";
+            echo '<div class="alert alert-success fade in">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <strong>Success!</strong> Your file '.$_FILES["file"]["name"][$i].' has been sent successfully.
+                    </div>';
+                             
+            //echo "Upload: " . $_FILES["file"]["name"][$i] . "<br />";
+            //echo "Type: " . $_FILES["file"]["type"][$i] . "<br />";
+            //echo "Size: " . ($_FILES["file"]["size"][$i] / 1024) . " Kb<br />";
+            //echo "Temp file: " . $_FILES["file"]["tmp_name"][$i] . "<br />";
 
-            if (file_exists("../uploads/" . $_FILES["file"]["name"]))
+            if (file_exists("uploads/" . $_FILES["file"]["name"]))
             {
-                echo $_FILES["file"]["name"] . " already exists. ";
+                echo '<div class="alert alert-danger fade in">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <strong>Error: </strong> Your file '.$_FILES["file"]["name"][$i].' already exists.
+                    </div>';
+                //echo $_FILES["file"]["name"] . " already exists. ";
             }
             else
             {
@@ -39,13 +48,13 @@ for($i=0; $i<count($_FILES['file']['name']); $i++)
                 if($tmpFilePath != "")
                 {
                     //Setup out new file path
-                    $newFilePath = "../uploads/" . $_FILES['file']['name'][$i];
+                    $newFilePath = "uploads/" . $_FILES['file']['name'][$i];
 
                     //Upload file to temp dir
                     if(move_uploaded_file($tmpFilePath, $newFilePath))
                     {
                         //Handle other code here
-                        echo "Stored in: " . "../uploads/" . $_FILES["file"]["name"][$i];
+                        //echo "Stored in: " . "uploads/" . $_FILES["file"]["name"][$i];
                     }
                 }    
             } 
@@ -70,16 +79,36 @@ for($i=0; $i<count($_FILES['file']['name']); $i++)
                 if ($mysqli->query($sql) === TRUE) {} 
                 else 
                 {
+                    echo '<div class="alert alert-danger fade in">
+                            <a href="#" class="close" data-dismiss="alert">&times;</a>
+                            <strong>Error: </strong> '.$sql.' <br> '.$mysqli.'->error.
+                            </div>';
 
-                    echo "Error: " . $sql . "<br>" . $mysqli->error;
+                    //echo "Error: " . $sql . "<br>" . $mysqli->error;
                 }
             }            
         }
     }
     else
     {
-        echo "Error - Invalid file";
+        //echo "
+        //<script>
+        //$.notify({
+	    //    title: '<strong>Heads up!</strong>',
+	    //    message: 'You can use any of bootstraps other alert styles as well by default.'
+        //},{
+	    //    type: 'success'
+        //});
+        //</script>";
+            
+        echo '<div class="alert alert-danger fade in">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>Error: </strong> - Invalid File.
+                </div>';
+            
+        //echo "Error - Invalid file";
     }
 }
+    
 $mysqli->close();
 ?> 

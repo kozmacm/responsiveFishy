@@ -187,7 +187,7 @@
     
     <div class="section section-gray">
         <div class="container">
-            <h2 class="section-title">Meet our Team <small> (example)</small></h2>
+            <h2 class="section-title">Meet our Team <small> </small></h2>
             <div class="team-presentation">
                 <div class="row">
                     <div class="col-md-4">
@@ -202,16 +202,8 @@
                                     </a>
                                 </div>  
                                 <p class="description text-center"> 
-                                    <i class="fa fa-map-marker fa-fw text-muted"></i> Columbia, South Carolina <br/>
-                                    <i class="fa fa-envelope-o fa-fw text-muted"></i> emailaddress.com
+                                    Guy Griffin is the CEO and founder of Fishy Business. Guy has spent the majority of his life keeping fish, catching fish, displaying fish and managing all the day to day operations that have made Fishy Business the Midlands largest aquatic pet retailer. With 40 years experience under his belt, He has Fishy Business poised to become the largest aquatic retailer in South Carolina with the greatest selection of aquariums, fish and supplies!
                                 </p>
-                            </div>
-                            <hr>
-                            <div class="text-center">
-                                <button href="#" class="btn btn-social btn-facebook btn-simple"><i class="fa fa-facebook-square"></i></button>
-                                <button href="#" class="btn btn-social btn-twitter btn-simple"><i class="fa fa-twitter"></i></button>
-                                <button href="#" class="btn btn-social btn-google btn-simple"><i class="fa fa-google-plus-square"></i></button>
-
                             </div>
                         </div> <!-- end card--> 
                     </div>
@@ -227,14 +219,8 @@
                                     </a>
                                 </div>  
                                 <p class="description text-center"> 
-                                    <i class="fa fa-map-marker fa-fw text-muted"></i> Irmo, South Carolina <br/>
-                                    <i class="fa fa-envelope-o fa-fw text-muted"></i> emailaddress.com
+                                    Chuck Maier is co-owner and Vice President of Fishy Business. His tenure with Fishy Business spans 25 years and his experience with saltwater aquatics spans longer than that. His specialty is in aquatic creative design and saltwater reef keeping with day to day support of the service side of Fishy Business.
                                 </p>
-                            </div>
-                            <hr>
-                            <div class="text-center">
-                                <button href="#" class="btn btn-social btn-facebook btn-simple"><i class="fa fa-facebook-square"></i></button>
-                                <button href="#" class="btn btn-social btn-twitter btn-simple"><i class="fa fa-twitter"></i></button>
                             </div>
                         </div> <!-- end card -->
                     </div> 
@@ -244,21 +230,69 @@
                             <div class="content">
                                 <div class="author">
                                     <a href="#">
-                                        <img class="avatar border-gray" src="assets/img/placeholder.png" alt="..."/>
-                                        <h4 class="title">Another member of team <br />
-                                            <small>Position with company</small>
+                                        <img class="avatar border-gray" src="assets/img/scott.jpg" alt="..."/>
+                                        <h4 class="title">Scott Gibbs <br />
+                                            <small>General Manager</small>
                                         </h4> 
                                     </a>
                                 </div>  
                                 <p class="description text-center"> 
-                                    <i class="fa fa-map-marker fa-fw text-muted"></i> Columbia, South Carolina  <br/>
-                                    <i class="fa fa-envelope-o fa-fw text-muted"></i> emailaddress.com
+                                    Scott Gibbs is the General Manager of Fishy Business and has been here 15 years with over 25 years experience maintaining and designing aquariums. His knowledge of aquatics and aquarium design are unequaled and his friendly disposition and attention to customer make him the perfect person to consult any aquarium design.
                                 </p>
                             </div>
-                            <hr>
-                            <div class="text-center">
-                                <button href="#" class="btn btn-social btn-twitter btn-simple"><i class="fa fa-twitter"></i></button>
-                                <button href="#" class="btn btn-social btn-github btn-simple"><i class="fa fa-github"></i></button>
+                        </div> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card card-user card-plain">
+                            <div class="content">
+                                <div class="author">
+                                    <a href="#">
+                                    <img class="avatar border-gray" src="assets/img/mike.jpg" alt="..."/>
+                                    <h4 class="title">Mike Griffin <br />
+                                        <small>Chief Service Tech</small>
+                                    </h4> 
+                                    </a>
+                                </div>  
+                                <p class="description text-center"> 
+                                    Mike Griffin is the backbone of Fishy Business. Mike is an expert aquarist with 30 years experience maintaining and designing aquaria. He is also our chief service tech and there is absolutely no aspect of aquarium design, service, or problem-solving he cannot perform!
+                                </p>
+                            </div>
+                        </div> <!-- end card--> 
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-user card-plain">
+                            <div class="content">
+                                <div class="author">
+                                    <a href="#">
+                                        <img class="avatar border-gray" src="assets/img/kevin.jpg" alt="..."/>
+                                        <h4 class="title">Kevin Walker <br />
+                                            <small>Freshwater Manager</small>
+                                        </h4> 
+                                    </a>
+                                </div>  
+                                <p class="description text-center"> 
+                                    Kevin Walker is our Freshwater manager par excellence. With over 30 years taking care of aquariums( with special emphasis on hard to keep species), he is the 1# guy to see at Fishy Business with any questions, problems or advice on aquarium keeping.
+                                </p>
+                            </div>
+                        </div> <!-- end card -->
+                    </div> 
+                    <div class="col-md-4">
+                        <div class="card card-user card-plain">
+                            <!-- <div class="image"></div> -->
+                            <div class="content">
+                                <div class="author">
+                                    <a href="#">
+                                        <img class="avatar border-gray" src="assets/img/gracie.jpg" alt="..."/>
+                                        <h4 class="title">Gracie Cubbler <br />
+                                            <small>Saltwater Manager</small>
+                                        </h4> 
+                                    </a>
+                                </div>  
+                                <p class="description text-center"> 
+                                    Gracie Cubbler is not only the prettiest face at Fishy Business she is also the manager of all our Saltwater and Reef aquatic systems. Her strong emphasis and attention towards customer service and a background as a certified Scuba diver, make her the ideal candidate to speak with when you have questions or concerns with saltwater reef keeping and design. 
+                                </p>
                             </div>
                         </div> 
                     </div>
