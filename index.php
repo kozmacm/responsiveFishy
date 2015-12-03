@@ -180,8 +180,9 @@
                         <h2>Weekly Updates</h2>
                         <p>Checkout our Highlight Videos featuring the New Stock! </p>
                         </p>Click <a href="https://www.facebook.com/media/set/?set=vb.122002154595568&type=2">here </a>or image for New stock and highlight videos. </p>
-                        <p>It's been forever I know, but the weekly update is back! </p>
-                        <p>Fishy Business has been going through a few visual changes in the last month and the store has NEVER looked better! We have depth in both our fish selection and in our aquarium selection and if you haven't been in here in a while, I would strongly urge you to come by and check us out! </p>  
+                        <p>First, let me thank everyone who came by the store this past weekend and took advantage of our sale specials! 50% off fish isn't a special we run with great regularity so I hope everyone got what they wanted and is happy! </p>
+                        <p>Now on to THIS week...! </p>
+                        <p>Our big special this week is on Corals. Starting today (11/30) ALL CORAL FRAGS ARE BUY 1 GET 1 FREE, until Saturday Dec. 5th!!!! Whooo-hooo!!!! </p>                        
                    </div>
                    <div class="col-md-6">
                       <div class="img-container">
@@ -192,12 +193,15 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <p>Our aquariums are the lowest priced in town and our fish selection is the best!! We have also added a new line of decorations - ORIGINS - which manufactures high- end resin creations that are the coolest decorations we've ever had! </p>
-                        <p>For those of you who came in last week, you saw the incredible selection of Saltwater fish that arrived. This week will be even bigger!!! Saltwater availability is the best its been in a long time and we are doing everything we can to bring the most diverse selection of fish and corals to the Midlands! </p>
-                   </div>
-                   <div class="col-md-6">
-                      <p>Watch this spot for upcoming pictures mid-week and make it a point to come by and see why Fishy Business is your one- stop- shop for ALL your aquarium needs!! </p>
-                   </div>
+                        <p>In addition to the coral special, our 75 gallon fresh water set-up (Pine stand/tank/glass tops/LED lights/quiet flow filter/heater/ thermometer) is on special for only 499.00!!!!! This would make a great and affordable present for anyone on your Christmas list! </p>
+                        <p>Also I would encourage each of you to check out our NEW 75% off rack located next to the pond. Lots of goodies and fantastic buys for a fraction of their original cost! </p>  
+                        <p>Fishy Business has now started bringing in one-of-a-kind aquarium furniture in the form of limited edition stand and canopy combinations. We have never had better looking aquarium furniture before, and its worth stopping by just to check out what we're introducing to the local market. I think you will see the possibilities are endless!!! </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Saltwater fish are arriving Wed/Thursday and Freshwater fish are arriving Weds. </p>
+                        <p>Have a great week everyone! Look forward to seeing you soon! </p>
+                        <p>Ciao!!! </p>
+                    </div>
                 </div>
             
                 <!--<div class="space-50"></div>-->
@@ -285,7 +289,7 @@
                        <h2>BioCube Aquariums</h2>
                        </p>With all the necessary components built-in, spend your time setting up your ideal environment, then plug it in and enjoy the results. </p>
                        <p>The Oceanic BioCube features high-quality components and can be used for saltwater or freshwater setups. Enhanced filtration system features dual filter intakes to draw aquarium water from the surface and mid-water for improved water circulation and filtration. Replaceable 2-stage filter cartridge provides easy-to-maintain mechanical and chemical filtration. Bio-ball wet/dry filtration system improves gas exchange and provides efficient biological filtration. Viewing window for filtration water pump to ensure optimum performance. UL-Listed submersible pumps. </p>                    
-                       <p>Click <a href="biocube.php">here </a>or on image for BioCube Specials! </p>
+                       <p><strong>29 GALLON BIO-CUBE Kit/ Live Sand/ Live Rock/ Live Seawater 399.00</strong> </p>
                    </div>
                </div>
            </div>
