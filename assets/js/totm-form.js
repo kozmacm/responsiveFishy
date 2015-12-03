@@ -1,48 +1,32 @@
 $(document).ready(function () {
     $("#submit").click(function () {
-        var filedata = document.getElementsByName("file"),
-            formdata = false;
+        var filedata = $("#files").val();
         var name = $("#fullName").val();
         var email = $("#email").val();
         var message = $("#message").val();
 
-        if (window.FormData) {
-            formdata = new FormData();
+
+        // Returns successful data submission message when the entered information is stored in database.
+        var dataString = 'filedata1=' + filedata + '&name1=' + name + '&email1=' + email + '&message1=' + message;
+
+        if (filedata == '' || name == '' || email == '' || message == '') {
+            $.notify({
+                title: '<strong>Error!</strong>',
+                message: 'Please fill out all fields.'
+            }, {
+                type: 'danger'
+            });
         }
-        
-        var i = 0, len = filedata.files.length, img, reader, file;
-
-        // Loop through each of the selected files.
-        for (; i < len; i++) {
-          var file = filedata.files[i];
-
-          if (window.FileReader) {
-            reader = new FileReader();
-            reader.onloadend = function(e) {
-                showUploadedItem(e.target.result, file.fileName);
-            };
-            reader.readAsDataURL(file);
-            }
-            if (formdata) {
-                formdata.append("file", file);
-                formdata.append("name", name);
-                formdata.append("email", email);
-                formdata.append("message", message);
-            }
-        }
-
-        if (formdata) {
+        else {
             // AJAX Code To Submit Form.
             $.ajax({
                 type: "POST",
-                url: "/uploads/",
-                data: formdata,
-                processData: false,
-                contentType: false,
-
+                url: "totm.php",
+                data: dataString,
+                cache: false,
                 success: function (result) {
                     $.notify({
-                        title: '<strong>File Sent!</strong>',
+                        title: '<strong>Mail Sent!</strong>',
                         message: 'Thank you ' + name + ', we will contact you shortly.'
                     }, {
                         type: 'success'
@@ -53,3 +37,4 @@ $(document).ready(function () {
         return false;
     });
 });
+

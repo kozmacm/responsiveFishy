@@ -1,117 +1,144 @@
 <?php
-include_once 'db_connect.php';    
+    include_once 'includes/db_connect.php';
+    include_once 'includes/functions.php';
+ 
+    sec_session_start();
+ 
+    if (login_check($mysqli) == true) {
+        $logged = 'in';
+    } else {
+        $logged = 'out';
+    }
 
-for($i=0; $i<count($_FILES['file']['name']); $i++)
-{
-    //Uploads one or more images or videos to the ../uploads/ folder
-    $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
-    $extension = pathinfo($_FILES['file']['name'][$i], PATHINFO_EXTENSION);
-    $tmpFilePath = $_FILES['file']['tmp_name'][$i];
-
-    if (($_FILES['file']['type'][$i] == "video/mp4") || 
-        ($_FILES['file']['type'][$i] == "audio/mp3") || 
-        ($_FILES['file']['type'][$i] == "audio/wma") || 
-        ($_FILES['file']['type'][$i] == "image/pjpeg") || 
-        ($_FILES['file']['type'][$i] == "image/gif") || 
-        ($_FILES['file']['type'][$i] == "image/jpeg")
-    //Limit size to 2 Mb
-    && ($_FILES['file']['size'][$i] < 2000000)
-    && in_array($extension, $allowedExts))
+    if($_POST)
     {
-        if ($_FILES["file"]["error"][$i] > 0)
+        //Fetching Values from URL
+        $filedata2 = $_POST['filedata1'];
+        $files = explode(',', $filedata2);
+        $email2 = $_POST['email1'];
+        $name2 = $_POST['name1'];
+        $message2 = $_POST['message1'];
+        
+        foreach($files as $var)
         {
-            echo "Return Code: " . $_FILES["file"]["error"][$i] . "<br />";
+            
         }
-        else
-        {
-            echo '<div class="alert alert-success fade in">
-                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-                    <strong>Success!</strong> Your file '.$_FILES["file"]["name"][$i].' has been sent successfully.
-                    </div>';
-                             
-            //echo "Upload: " . $_FILES["file"]["name"][$i] . "<br />";
-            //echo "Type: " . $_FILES["file"]["type"][$i] . "<br />";
-            //echo "Size: " . ($_FILES["file"]["size"][$i] / 1024) . " Kb<br />";
-            //echo "Temp file: " . $_FILES["file"]["tmp_name"][$i] . "<br />";
+        
 
-            if (file_exists("uploads/" . $_FILES["file"]["name"]))
+    }
+        /*
+        for($i=0; $i<count($_FILES['file']['name']); $i++)
+        {
+            //Uploads one or more images or videos to the ../uploads/ folder
+            $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
+            $extension = pathinfo($_FILES['file']['name'][$i], PATHINFO_EXTENSION);
+            $tmpFilePath = $_FILES['file']['tmp_name'][$i];
+
+            if (($_FILES['file']['type'][$i] == "video/mp4") || 
+                ($_FILES['file']['type'][$i] == "audio/mp3") || 
+                ($_FILES['file']['type'][$i] == "audio/wma") || 
+                ($_FILES['file']['type'][$i] == "image/pjpeg") || 
+                ($_FILES['file']['type'][$i] == "image/gif") || 
+                ($_FILES['file']['type'][$i] == "image/jpeg")
+            //Limit size to 2 Mb
+            && ($_FILES['file']['size'][$i] < 2000000)
+            && in_array($extension, $allowedExts))
             {
-                echo '<div class="alert alert-danger fade in">
-                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-                    <strong>Error: </strong> Your file '.$_FILES["file"]["name"][$i].' already exists.
-                    </div>';
-                //echo $_FILES["file"]["name"] . " already exists. ";
+                if ($_FILES["file"]["error"][$i] > 0)
+                {
+                    echo "Return Code: " . $_FILES["file"]["error"][$i] . "<br />";
+                }
+                else
+                {
+                    echo '<div class="alert alert-success fade in">
+                          <a href="#" class="close" data-dismiss="alert">&times;</a>
+                          <strong>Success!</strong> Your file '.$_FILES["file"]["name"][$i].' has been sent successfully.
+                          </div>';
+                             
+                    //echo "Upload: " . $_FILES["file"]["name"][$i] . "<br />";
+                    //echo "Type: " . $_FILES["file"]["type"][$i] . "<br />";
+                    //echo "Size: " . ($_FILES["file"]["size"][$i] / 1024) . " Kb<br />";
+                    //echo "Temp file: " . $_FILES["file"]["tmp_name"][$i] . "<br />";
+
+                    if (file_exists("uploads/" . $_FILES["file"]["name"]))
+                    {
+                        echo '<div class="alert alert-danger fade in">
+                          <a href="#" class="close" data-dismiss="alert">&times;</a>
+                          <strong>Error: </strong> Your file '.$_FILES["file"]["name"][$i].' already exists.
+                          </div>';
+                        //echo $_FILES["file"]["name"] . " already exists. ";
+                    }
+                    else
+                    {
+                        //Make sure we have a filepath
+                        if($tmpFilePath != "")
+                        {
+                            //Setup our new file path
+                            $newFilePath = "uploads/" . $_FILES['file']['name'][$i];
+
+                            //Upload file to temp dir
+                            if(move_uploaded_file($tmpFilePath, $newFilePath))
+                            {
+                                //Handle other code here
+                                //echo "Stored in: " . "uploads/" . $_FILES["file"]["name"][$i];
+                            }
+                        }    
+                    } 
+                    //Adds entry into database in table 'totm'
+                    // Check connection
+                    if ($mysqli->connect_error) {
+                        die("Connection failed: " . $mysqli->connect_error);
+                    } 
+                    else
+                    {
+                        $file = $_FILES["file"]["name"][$i] . "";
+                        $size = $_FILES["file"]["size"][$i] . "";
+                        $type = $_FILES["file"]["type"][$i] . "";
+                        $fullName = $_POST['fullName'];
+                        $email = $_POST['email'];
+                        $message = $_POST['message'];
+                        $ip = $_SERVER['REMOTE_ADDR'];
+
+                        $sql = "INSERT INTO uploads (file, size, type, name, email, description, ip) 
+                            VALUES ('$file','$size','$type','$fullName','$email','$message','$ip')";
+
+                        if ($mysqli->query($sql) === TRUE) {} 
+                        else 
+                        {
+                            echo '<div class="alert alert-danger fade in">
+                                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                  <strong>Error: </strong> '.$sql.' <br> '.$mysqli.'->error.
+                                  </div>';
+
+                            //echo "Error: " . $sql . "<br>" . $mysqli->error;
+                        }
+                    }            
+                }
             }
             else
             {
-                //Make sure we have a filepath
-                if($tmpFilePath != "")
-                {
-                    //Setup out new file path
-                    $newFilePath = "../uploads/" . $_FILES['file']['name'][$i];
-
-                    //Upload file to temp dir
-                    if(move_uploaded_file($tmpFilePath, $newFilePath))
-                    {
-                        //Handle other code here
-                        //echo "Stored in: " . "uploads/" . $_FILES["file"]["name"][$i];
-                    }
-                }    
-            } 
-            //Adds entry into database in table 'totm'
-            // Check connection
-            if ($mysqli->connect_error) {
-                die("Connection failed: " . $mysqli->connect_error);
-            } 
-            else
-            {
-                $file = $_FILES["file"]["name"][$i] . "";
-                $size = $_FILES["file"]["size"][$i] . "";
-                $type = $_FILES["file"]["type"][$i] . "";
-                $fullName = $_POST['fullName'];
-                $email = $_POST['email'];
-                $message = $_POST['message'];
-                $ip = $_SERVER['REMOTE_ADDR'];
-
-                $sql = "INSERT INTO uploads (file, size, type, name, email, description, ip) 
-                    VALUES ('$file','$size','$type','$fullName','$email','$message','$ip')";
-
-                if ($mysqli->query($sql) === TRUE) {} 
-                else 
-                {
-                    echo '<div class="alert alert-danger fade in">
-                            <a href="#" class="close" data-dismiss="alert">&times;</a>
-                            <strong>Error: </strong> '.$sql.' <br> '.$mysqli.'->error.
-                            </div>';
-
-                    //echo "Error: " . $sql . "<br>" . $mysqli->error;
-                }
-            }            
+                //echo "
+                //<script>
+                //$.notify({
+	            //    title: '<strong>Heads up!</strong>',
+	            //    message: 'You can use any of bootstraps other alert styles as well by default.'
+                //},{
+	            //    type: 'success'
+                //});
+                //</script>";
+            
+                echo '<div class="alert alert-danger fade in">
+                      <a href="#" class="close" data-dismiss="alert">&times;</a>
+                      <strong>Error: </strong> - Invalid File.
+                      </div>';
+            
+                //echo "Error - Invalid file";
+            }
         }
     }
-    else
-    {
-        //echo "
-        //<script>
-        //$.notify({
-	    //    title: '<strong>Heads up!</strong>',
-	    //    message: 'You can use any of bootstraps other alert styles as well by default.'
-        //},{
-	    //    type: 'success'
-        //});
-        //</script>";
-            
-        echo '<div class="alert alert-danger fade in">
-                <a href="#" class="close" data-dismiss="alert">&times;</a>
-                <strong>Error: </strong> - Invalid File.
-                </div>';
-            
-        //echo "Error - Invalid file";
-    }
-}
-    
-$mysqli->close();
-?> 
+    $mysqli->close();
+    */
+?>
 
 <!doctype html>
 <html lang="en">
@@ -283,7 +310,7 @@ $mysqli->close();
                <div class="row">
                    <div class="col-md-12">
                        <div class="img-container">
-                           <a href="https://www.facebook.com/media/set/?set=vb.122002154595568&type=2">
+                           <a href="">
                            <img src="assets/img/thumb.jpg" alt="..." /> </a>
                        </div>
                    </div>
@@ -305,12 +332,12 @@ $mysqli->close();
                <div class="row">
                    <div class="col-md-12">
                        <p>
-                           <span class="asterisk">*</span> indicates required<br><br>
+                           All fields are required<br><br>
                         </p>
-                        <form method="post" id="form" name="form" action="includes/upload.php" enctype="multipart/form-data" >
+                        <form role="form" id="form" >
     						<div class="form-group">
-                                <label class="control-label">Select File</label>
-                                <input id="input-2" type="file" name="file[]" class="file" multiple="true" data-show-upload="false" data-show-caption="true">
+                                <label class="control-label">Select Images</label>
+                                <input id="files" type="file" multiple name="files[]" class="file" data-show-upload="false" data-show-caption="true" >
     				  		</div>
                             <div class="form-group">
     				    		<label for="fullName">Full Name</label>
@@ -327,13 +354,6 @@ $mysqli->close();
     				  		<div class="submit">
     				  			<input type="submit" name="submit" class="btn btn-info btn-fill" value="Submit" id="submit" />
     				  		</div>
-
-                            <div class="space-50"></div>
-
-                            <div id="mce-responses" class="clear">
-		                        <div class="response" id="mce-error-response" style="display:none"></div>
-		                        <div class="response" id="mce-success-response" style="display:none"></div>
-	                        </div>
     					</form>
                    </div>
                    
@@ -398,6 +418,7 @@ $mysqli->close();
     <script src="assets/js/login-register.js" type="text/javascript"></script>
     <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
     <script type="text/JavaScript" src="assets/js/forms.js"></script>
+    <script src="assets/js/totm-form.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     
 	<!--  Get Shit Done Kit PRO Core javascript 	 -->
@@ -429,8 +450,10 @@ $mysqli->close();
 
     </script>
     <script>
-        $("#file-0").fileinput({
-            'allowedFileExtensions' : ['jpg', 'png','gif'],
+        $("#file").fileinput({
+            allowedFileExtensions : ['jpg', 'png','gif'],
+            uploadAsync: true,
+            maxFileCount: 3
         });
     </script>
     

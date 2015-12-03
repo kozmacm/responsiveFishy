@@ -237,7 +237,7 @@
                                     </a>
                                 </div>  
                                 <p class="description text-center"> 
-                                    Scott Gibbs is the General Manager of Fishy Business and has been here 15 years with over 25 years experience maintaining and designing aquariums. His knowledge of aquatics and aquarium design are unequaled and his friendly disposition and attention to customer service makes him the perfect person to consult any aquarium design.
+                                    Scott Gibbs is the General Manager of Fishy Business and has been here 15 years with over 25 years experience maintaining and designing aquariums. His knowledge of aquatics and aquarium design are unequaled and his friendly disposition and attention to customer service makes him the perfect person to consult on aquarium design.
                                 </p>
                             </div>
                         </div> 

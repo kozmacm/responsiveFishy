@@ -34,10 +34,12 @@
             }
             else
             {
-                echo '<div class="alert alert-success fade in">
-                      <a href="#" class="close" data-dismiss="alert">&times;</a>
-                      <strong>Success!</strong> Your file '.$_FILES["file"]["name"][$i].' has been sent successfully.
-                      </div>';
+                echo '<script>alert("Success! Your file '.$_FILES["file"]["name"][$i].' has been sent successfully");</script>';
+                
+                //echo '<div class="alert alert-success fade in">
+                //      <a href="#" class="close" data-dismiss="alert">&times;</a>
+                //      <strong>Success!</strong> Your file '.$_FILES["file"]["name"][$i].' has been sent successfully.
+                //      </div>';
                              
                 //echo "Upload: " . $_FILES["file"]["name"][$i] . "<br />";
                 //echo "Type: " . $_FILES["file"]["type"][$i] . "<br />";
@@ -46,10 +48,12 @@
 
                 if (file_exists("uploads/" . $_FILES["file"]["name"]))
                 {
-                    echo '<div class="alert alert-danger fade in">
-                      <a href="#" class="close" data-dismiss="alert">&times;</a>
-                      <strong>Error: </strong> Your file '.$_FILES["file"]["name"][$i].' already exists.
-                      </div>';
+                    echo '<script>alert("Error: Your file '.$_FILES["file"]["name"][$i].' already exists.");</script>';
+                    
+                    //echo '<div class="alert alert-danger fade in">
+                    //  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    //  <strong>Error: </strong> Your file '.$_FILES["file"]["name"][$i].' already exists.
+                    //  </div>';
                     //echo $_FILES["file"]["name"] . " already exists. ";
                 }
                 else
@@ -57,7 +61,7 @@
                     //Make sure we have a filepath
                     if($tmpFilePath != "")
                     {
-                        //Setup out new file path
+                        //Setup our new file path
                         $newFilePath = "uploads/" . $_FILES['file']['name'][$i];
 
                         //Upload file to temp dir
@@ -89,10 +93,12 @@
                     if ($mysqli->query($sql) === TRUE) {} 
                     else 
                     {
-                        echo '<div class="alert alert-danger fade in">
-                              <a href="#" class="close" data-dismiss="alert">&times;</a>
-                              <strong>Error: </strong> '.$sql.' <br> '.$mysqli.'->error.
-                              </div>';
+                        echo 'Error: '.$sql.' <br> '.$mysqli.'->error.';
+                        
+                        //echo '<div class="alert alert-danger fade in">
+                        //      <a href="#" class="close" data-dismiss="alert">&times;</a>
+                        //      <strong>Error: </strong> '.$sql.' <br> '.$mysqli.'->error.
+                        //      </div>';
 
                         //echo "Error: " . $sql . "<br>" . $mysqli->error;
                     }
@@ -101,20 +107,12 @@
         }
         else
         {
-            //echo "
-            //<script>
-            //$.notify({
-	        //    title: '<strong>Heads up!</strong>',
-	        //    message: 'You can use any of bootstraps other alert styles as well by default.'
-            //},{
-	        //    type: 'success'
-            //});
-            //</script>";
+            echo 'Error: - Invalid File.';
             
-            echo '<div class="alert alert-danger fade in">
-                  <a href="#" class="close" data-dismiss="alert">&times;</a>
-                  <strong>Error: </strong> - Invalid File.
-                  </div>';
+            //echo '<div class="alert alert-danger fade in">
+            //      <a href="#" class="close" data-dismiss="alert">&times;</a>
+            //      <strong>Error: </strong> - Invalid File.
+            //      </div>';
             
             //echo "Error - Invalid file";
         }
@@ -408,7 +406,6 @@
     <script src="assets/js/login-register.js" type="text/javascript"></script>
     <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
     <script type="text/JavaScript" src="assets/js/forms.js"></script>
-    <script src="assets/js/totm-form.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     
 	<!--  Get Shit Done Kit PRO Core javascript 	 -->
