@@ -180,26 +180,43 @@
                         <h2>Weekly Updates</h2>
                         <p>Checkout our Highlight Videos featuring the New Stock! </p>
                         </p>Click <a href="https://www.facebook.com/media/set/?set=vb.122002154595568&type=2">here </a>or image for New stock and highlight videos. </p>
-                        <p>First, let me thank everyone who came by the store this past weekend and took advantage of our sale specials! 50% off fish isn't a special we run with great regularity so I hope everyone got what they wanted and is happy! </p>
-                        <p>Now on to THIS week...! </p>
-                        <p>Our big special this week is on Corals. Starting today (11/30) ALL CORAL FRAGS ARE BUY 1 GET 1 FREE, until Saturday Dec. 5th!!!! Whooo-hooo!!!! </p>                        
+                        <p>Fishy Business is moving in a new direction with our aquarium designs with the introduction of our Fishy Business Limited Edition Customs! Each of these stand combinations is a work of art and because of this, we are limiting the color, design, and quantity of each one of these new productions. These pieces are all branded with a signature from the artist and are available on a first come - first serve basis. No two designs are the same. </p>
+                        
                    </div>
                    <div class="col-md-6">
-                      <div class="img-container">
-                          <a href="https://www.facebook.com/media/set/?set=vb.122002154595568&type=2">
-                          <img src="assets/img/nem.jpg" alt="..." /> </a>
-                      </div>
+                      <div id="description-carousel" class="carousel fade" data-ride="carousel">                            
+                              <!-- Wrapper for slides -->
+                              <div class="carousel-inner">
+                                <div class="item active">
+                                  <img src="../assets/img/newAquarium2.jpg" alt="..." />
+                                </div>
+                                <div class="item">
+                                  <img src="../assets/img/newAquarium3.jpg" alt="..." />
+                                </div>
+                                <div class="item">
+                                  <img src="../assets/img/newAquarium1.jpg" alt="..." />
+                                </div>
+                              </div>
+                            
+                              <ol class="carousel-indicators">
+                                <li data-target="#description-carousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#description-carousel" data-slide-to="1"></li>
+                                <li data-target="#description-carousel" data-slide-to="2"></li>
+                              </ol>
+                        </div>
                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <p>In addition to the coral special, our 75 gallon fresh water set-up (Pine stand/tank/glass tops/LED lights/quiet flow filter/heater/ thermometer) is on special for only 499.00!!!!! This would make a great and affordable present for anyone on your Christmas list! </p>
-                        <p>Also I would encourage each of you to check out our NEW 75% off rack located next to the pond. Lots of goodies and fantastic buys for a fraction of their original cost! </p>  
-                        <p>Fishy Business has now started bringing in one-of-a-kind aquarium furniture in the form of limited edition stand and canopy combinations. We have never had better looking aquarium furniture before, and its worth stopping by just to check out what we're introducing to the local market. I think you will see the possibilities are endless!!! </p>
+                        <p>"The Book Case" is our first in the series and currently houses a 120 gallon aquarium. </p>
+                        <p>"Gothique" is our second piece in another series and this particular design currently houses a 210 gallon aquarium. </p>
+                        <p>"Contemporary" is our third design, currently housing a 90 gallon. </p>
+                        <p>As we move forward with these new and exciting aquarium designs, I would urge you to keep checking back with us as new designs will be appearing here and on our Facebook page! </p>
                     </div>
                     <div class="col-md-6">
-                        <p>Saltwater fish are arriving Wed/Thursday and Freshwater fish are arriving Weds. </p>
-                        <p>Have a great week everyone! Look forward to seeing you soon! </p>
+                        <p>There are some CRAZY cool Saltwater fish on the availability list this week and we're putting in the order today so you can expect a fantastic variety to arrive on Weds. Also a new batch of clownfish are on the way. New plants arrived this Friday - Holy Cow!!!! Freshwater fish will be here Weds! </p>
+                        <p>Whew! </p>
+                        <p>I wish everyone a great week and come check us out!!! </p>
                         <p>Ciao!!! </p>
                     </div>
                 </div>

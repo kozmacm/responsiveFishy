@@ -120,7 +120,9 @@
         </nav>
                             
         <!--put body stuff here-->
-        
+        <div>
+            <p>This is the secure backend for administrators. You are currently logged in. </p>
+        </div>
         
         <footer class="footer">
             <div class="container-fluid">
