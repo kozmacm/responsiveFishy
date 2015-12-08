@@ -199,7 +199,7 @@
                             <div class="content">
                                 <div class="author">
                                     <a href="#">
-                                    <img class="avatar border-gray" src="assets/img/mike.jpg" alt="..."/>
+                                    <img class="avatar border-gray" src="assets/img/faces/mike.jpg" alt="..."/>
                                     <h4 class="title">Mike Griffin <br />
                                         <small>Chief Service Tech</small>
                                     </h4> 

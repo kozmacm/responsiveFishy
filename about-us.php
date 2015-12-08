@@ -195,7 +195,7 @@
                             <div class="content">
                                 <div class="author">
                                     <a href="#">
-                                    <img class="avatar border-gray" src="assets/img/guygriffin.png" alt="..."/>
+                                    <img class="avatar border-gray" src="assets/img/faces/guygriffin.png" alt="..."/>
                                     <h4 class="title">Guy Griffin <br />
                                         <small>Owner/President</small>
                                     </h4> 
@@ -212,7 +212,7 @@
                             <div class="content">
                                 <div class="author">
                                     <a href="#">
-                                        <img class="avatar border-gray" src="assets/img/chuckmaier.png" alt="..."/>
+                                        <img class="avatar border-gray" src="assets/img/faces/chuckmaier.png" alt="..."/>
                                         <h4 class="title">Chuck Maier <br />
                                             <small>Owner/Vice President</small>
                                         </h4> 
@@ -230,7 +230,7 @@
                             <div class="content">
                                 <div class="author">
                                     <a href="#">
-                                        <img class="avatar border-gray" src="assets/img/scott.jpg" alt="..."/>
+                                        <img class="avatar border-gray" src="assets/img/faces/scott.jpg" alt="..."/>
                                         <h4 class="title">Scott Gibbs <br />
                                             <small>General Manager</small>
                                         </h4> 
@@ -249,7 +249,7 @@
                             <div class="content">
                                 <div class="author">
                                     <a href="#">
-                                    <img class="avatar border-gray" src="assets/img/mike.jpg" alt="..."/>
+                                    <img class="avatar border-gray" src="assets/img/faces/mike.jpg" alt="..."/>
                                     <h4 class="title">Mike Griffin <br />
                                         <small>Chief Service Tech</small>
                                     </h4> 
@@ -266,7 +266,7 @@
                             <div class="content">
                                 <div class="author">
                                     <a href="#">
-                                        <img class="avatar border-gray" src="assets/img/kevin.jpg" alt="..."/>
+                                        <img class="avatar border-gray" src="assets/img/faces/kevin.jpg" alt="..."/>
                                         <h4 class="title">Kevin Walker <br />
                                             <small>Freshwater Manager</small>
                                         </h4> 
@@ -284,7 +284,7 @@
                             <div class="content">
                                 <div class="author">
                                     <a href="#">
-                                        <img class="avatar border-gray" src="assets/img/gracie.jpg" alt="..."/>
+                                        <img class="avatar border-gray" src="assets/img/faces/gracie.jpg" alt="..."/>
                                         <h4 class="title">Gracie Cubbler <br />
                                             <small>Saltwater Manager</small>
                                         </h4> 
