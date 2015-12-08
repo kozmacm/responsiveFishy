@@ -148,71 +148,33 @@
                                         if (!$stmt = $mysqli->query("SELECT * FROM uploads")) {
                                             echo "Query Failed!: (" . $mysqli->errno . ") ". $mysqli->error;
                                         }
-                                        else {
-                                            echo "<table class='table table-hover'>";
-                                            echo "<thead>
-                                                    <th>ID</th>
-                                    	            <th>Name</th>
-                                    	            <th>Email</th>
-                                    	            <th>IP</th>
-                                    	            <th>Date</th>
-                                                    <th>Description</th>
-                                                  </thead>
-                                                  <tbody>";
-                                            while ($row = mysqli_fetch_array($stmt)) {
-                                                echo "<tr>";
-                                                echo "<td>" . $row["id"] . "</td>";
-                                                echo "<td>" . $row["name"] . "</td>";
-                                                echo "<td>" . $row["email"] . "</td>";
-                                                echo "<td>" . $row["ip"] . "</td>";
-                                                echo "<td>" . $row["date"] . "</td>";
-                                                echo "<td>" . $row["description"] . "</td>";
-                                                echo "</tr>";
-                                            }
-                                            echo "</tbody>";
-                                            echo "</table>";
-                                            //else {
-                                            //    echo "No records found";
-                                            //}
-
+                                        
+                                        echo "<table class='table table-hover'>";
+                                        echo "<thead>
+                                                <th>ID</th>
+                                    	        <th>Name</th>
+                                    	        <th>Email</th>
+                                    	        <th>IP</th>
+                                    	        <th>Date</th>
+                                                <th>Description</th>
+                                                </thead>
+                                                <tbody>";
+                                        while ($row = mysqli_fetch_array($stmt)) {
+                                            echo "<tr>";
+                                            echo "<td>" . $row["id"] . "</td>";
+                                            echo "<td>" . $row["name"] . "</td>";
+                                            echo "<td>" . $row["email"] . "</td>";
+                                            echo "<td>" . $row["ip"] . "</td>";
+                                            echo "<td>" . $row["date"] . "</td>";
+                                            echo "<td>" . $row["description"] . "</td>";
+                                            echo "</tr>";
                                         }
+                                        echo "</tbody>";
+                                        echo "</table>";
 
-                
-                                        /*while($tableName = mysql_fetch_row($result)) {
-                                            $tableName = $tableName[0];
-                    
-                                            echo '<h3>',$table,'</h3>';
-	                                        $result2 = mysql_query('SHOW COLUMNS FROM '.$table) or die('cannot show columns from '.$table);
-	                                        if(mysql_num_rows($result2)) {
-		                                        echo '<table cellpadding="0" cellspacing="0" class="db-table">';
-		                                        echo '<tr><th>Field</th><th>Type</th><th>Null</th><th>Key</th><th>Default<th>Extra</th></tr>';
-		                                        while($row2 = mysql_fetch_row($result2)) {
-			                                        echo '<tr>';
-			                                        foreach($row2 as $key=>$value) {
-				                                        echo '<td>',$value,'</td>';
-			                                        }
-			                                        echo '</tr>';
-		                                        }
-		                                        echo '</table><br />';
-
-                                            }
-                                            */
-                                        /*
-                                        $sql = "SELECT * FROM users";
-                                        $result = $conn->query($sql);
-
-                                        if ($result->num_rows > 0) {
-                                            echo "<table><tr><th>ID</th><th>Name</th></tr>";
-                                            // output data of each row
-                                            while($row = $result->fetch_assoc()) {
-                                                echo "<tr><td>".$row["id"]."</td><td>".$row["username"]." ".$row["email"]."</td></tr>";
-                                            }
-                                            echo "</table>";
-                                        } else {
-                                            echo "0 results";
+                                        if (mysqli_num_rows($stmt) == 0) {
+                                            echo "No records found.";
                                         }
-                                            $conn->close();
-                                        */
                                     } 
                                 $stmt->free();
                                 $mysqli->close();    
