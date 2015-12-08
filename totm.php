@@ -292,7 +292,7 @@
                    <div class="col-md-12">
                        <div class="img-container">
                            <a href="https://www.facebook.com/media/set/?set=vb.122002154595568&type=2">
-                           <img src="assets/img/thumb.jpg" alt="..." /> </a>
+                           <img src="assets/img/rimless.jpg" alt="..." /> </a>
                        </div>
                    </div>
 
@@ -300,7 +300,7 @@
 
                    <div class="col-md-12">
                        <div>
-                           <p>Current tank of the month description goes here...</p>
+                           <p>Our tank of the month competition has officially started! Enjoy this Red Sea rimless beauty until the first winner is announced! </p>
                        </div>
                    </div>
                </div>
