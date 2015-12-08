@@ -55,7 +55,7 @@
 ?>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="blue" data-image="../assets/img/sidebar.jpg">    
+    <div class="sidebar" data-color="blue" data-image="../assets/img/sidebarBeach.jpg">    
     
     <!--   
         
@@ -241,6 +241,7 @@
 	
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="../assets/js/demo.js"></script>
+
     <script src="../assets/js/login-register.js" type="text/javascript"></script>
 	
 	<script type="text/javascript">
