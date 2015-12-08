@@ -21,7 +21,7 @@
 	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Dashboard - Fishy Business</title>
+	<title>TOTM - Fishy Business</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -100,7 +100,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="dashboard.php">Dashboard</a>
+                    <a class="navbar-brand" href="totm.php">Tank of the Month</a>
                 </div>
                 <div class="collapse navbar-collapse">       
                     <ul class="nav navbar-nav navbar-left">
@@ -128,8 +128,127 @@
         </nav>
                             
         <!--put body stuff here-->
-        <div>
-            <p>This is the secure backend for administrators. You are currently logged in. </p>
+        <?php
+            
+            // Check connection
+            if ($mysqli->connect_error) {
+                die("Connection failed: " . $mysqli->connect_error);
+            } 
+            else
+            {
+                $query = "SELECT * FROM users";
+                $result = mysql_query($query) or die(mysql_error());
+                
+                /*while($tableName = mysql_fetch_row($result)) {
+                    $tableName = $tableName[0];
+                    
+                    echo '<h3>',$table,'</h3>';
+	                $result2 = mysql_query('SHOW COLUMNS FROM '.$table) or die('cannot show columns from '.$table);
+	                if(mysql_num_rows($result2)) {
+		                echo '<table cellpadding="0" cellspacing="0" class="db-table">';
+		                echo '<tr><th>Field</th><th>Type</th><th>Null</th><th>Key</th><th>Default<th>Extra</th></tr>';
+		                while($row2 = mysql_fetch_row($result2)) {
+			                echo '<tr>';
+			                foreach($row2 as $key=>$value) {
+				                echo '<td>',$value,'</td>';
+			                }
+			                echo '</tr>';
+		                }
+		                echo '</table><br />';
+
+                    }
+                    */
+                /*
+                $sql = "SELECT * FROM users";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    echo "<table><tr><th>ID</th><th>Name</th></tr>";
+                    // output data of each row
+                    while($row = $result->fetch_assoc()) {
+                        echo "<tr><td>".$row["id"]."</td><td>".$row["username"]." ".$row["email"]."</td></tr>";
+                    }
+                    echo "</table>";
+                } else {
+                    echo "0 results";
+                }
+                    $conn->close();
+                */
+            } 
+                
+        ?>
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">                   
+                    <div class="col-md-12">
+                        <div class="card card-plain">
+                            <div class="header">
+                                <h4 class="title">Current Entries</h4>
+                                <p class="category">Here you will find the current entries for the Tank of the Month contest</p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <th>ID</th>
+                                    	<th>Name</th>
+                                    	<th>Salary</th>
+                                    	<th>Country</th>
+                                    	<th>City</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        	<td>1</td>
+                                        	<td>Dakota Rice</td>
+                                        	<td>$36,738</td>
+                                        	<td>Niger</td>
+                                        	<td>Oud-Turnhout</td>
+                                        </tr>
+                                        <tr>
+                                        	<td>2</td>
+                                        	<td>Minerva Hooper</td>
+                                        	<td>$23,789</td>
+                                        	<td>Curaçao</td>
+                                        	<td>Sinaai-Waas</td>
+                                        </tr>
+                                        <tr>
+                                        	<td>3</td>
+                                        	<td>Sage Rodriguez</td>
+                                        	<td>$56,142</td>
+                                        	<td>Netherlands</td>
+                                        	<td>Baileux</td>
+                                        </tr>
+                                        <tr>
+                                        	<td>4</td>
+                                        	<td>Philip Chaney</td>
+                                        	<td>$38,735</td>
+                                        	<td>Korea, South</td>
+                                        	<td>Overland Park</td>
+                                        </tr>
+                                        <tr>
+                                        	<td>5</td>
+                                        	<td>Doris Greene</td>
+                                        	<td>$63,542</td>
+                                        	<td>Malawi</td>
+                                        	<td>Feldkirchen in Kärnten</td>
+                                        </tr>
+                                        <tr>
+                                        	<td>6</td>
+                                        	<td>Mason Porter</td>
+                                        	<td>$78,615</td>
+                                        	<td>Chile</td>
+                                        	<td>Gloucester</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                   
+                            </div>
+                        </div>
+                    </div> 
+                    
+                                 
+                </div>                    
+            </div>
         </div>
         
         <footer class="footer">
