@@ -78,8 +78,6 @@
                         <p>Dashboard</p>
                     </a>            
                 </li>
-            </ul> 
-            <ul class="nav">
                 <li class="active">
                     <a href="totm.php">
                         <i class="pe-7s-graph"></i> 
