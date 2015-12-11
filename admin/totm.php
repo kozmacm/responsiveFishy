@@ -138,6 +138,7 @@
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <?php
+                                    $i = 0;
                                     // Check connection
                                     if ($mysqli->connect_error) {
                                         die("Connection failed: " . $mysqli->connect_error);
@@ -156,17 +157,20 @@
                                     	        <th>IP</th>
                                     	        <th>Date</th>
                                                 <th>Description</th>
+                                                <th>Edit</th>
                                                 </thead>
                                                 <tbody>";
                                         while ($row = mysqli_fetch_array($stmt)) {
-                                            echo "<tr>";
+                                            echo "<tr id='$i'>";
                                             echo "<td> <a href='../uploads/" . $row["file"] . "'><img class='thumbnail' src='../uploads/" . $row["file"] . "' alt='" . $row["file"] . "' /> </td>";
                                             echo "<td>" . $row["name"] . "</td>";
                                             echo "<td>" . $row["email"] . "</td>";
                                             echo "<td>" . $row["ip"] . "</td>";
                                             echo "<td>" . $row["date"] . "</td>";
                                             echo "<td>" . $row["description"] . "</td>";
+                                            echo "<td><button class='btn btn-round btn-danger deleteitem'>Delete</button></td>";
                                             echo "</tr>";
+                                            $i++;
                                         }
                                         echo "</tbody>";
                                         echo "</table>";
@@ -304,6 +308,7 @@
 	<script src="../assets/js/demo.js"></script>
 
     <script src="../assets/js/login-register.js" type="text/javascript"></script>
+    <script src="../assets/js/deleterow.js" type="text/javascript"></script>
 	
 	<script type="text/javascript">
     	$(document).ready(function(){
