@@ -39,6 +39,7 @@
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="../assets/css/demo.css" rel="stylesheet" />
     <link href="../assets/css/login-register.css" rel="stylesheet" />
+    <link href="../assets/css/backend.css" rel="stylesheet"/>
             
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -46,7 +47,7 @@
     <link href="../assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
     
 </head>
-<body> 
+<body class="totm"> 
 <?php if (login_check($mysqli) == true) : ?>
 <?php
     if (!empty($error_msg)) {
@@ -146,10 +147,10 @@
                                         if (!$stmt = $mysqli->query("SELECT * FROM uploads")) {
                                             echo "Query Failed!: (" . $mysqli->errno . ") ". $mysqli->error;
                                         }
-                                        
+                                                                                
                                         echo "<table class='table table-hover'>";
                                         echo "<thead>
-                                                <th>ID</th>
+                                                <th>Image</th>
                                     	        <th>Name</th>
                                     	        <th>Email</th>
                                     	        <th>IP</th>
@@ -159,7 +160,7 @@
                                                 <tbody>";
                                         while ($row = mysqli_fetch_array($stmt)) {
                                             echo "<tr>";
-                                            echo "<td>" . $row["id"] . "</td>";
+                                            echo "<td> <a href='../uploads/" . $row["file"] . "'><img class='thumbnail' src='../uploads/" . $row["file"] . "' alt='" . $row["file"] . "' /> </td>";
                                             echo "<td>" . $row["name"] . "</td>";
                                             echo "<td>" . $row["email"] . "</td>";
                                             echo "<td>" . $row["ip"] . "</td>";
