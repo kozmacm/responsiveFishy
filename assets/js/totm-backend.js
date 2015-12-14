@@ -18,8 +18,20 @@ $(".deleteitem").click(function () {
 });
 
 $(".chooseitem").click(function () {
+    var parent = $(this).closest('TR');
+    var id = parent.attr('id');
+    var file = parent.attr('file');
+
     if (confirm("Are you sure you want to promote this to Tank of the Month?")) {
-     
+        $.ajax({
+            type: "POST",
+            data: { promote_id: id, promote_file : file },
+            URL: "totm.php",
+
+            success: function (msg) {
+                
+            }
+        });
     }
     return false;
 });
