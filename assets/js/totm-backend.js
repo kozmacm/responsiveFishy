@@ -16,3 +16,10 @@ $(".deleteitem").click(function () {
     }
     return false;
 });
+
+$(".chooseitem").click(function () {
+    if (confirm("Are you sure you want to promote this to Tank of the Month?")) {
+     
+    }
+    return false;
+});

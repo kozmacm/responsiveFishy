@@ -143,7 +143,7 @@
                         <div class="card card-plain">
                             <div class="header">
                                 <h4 class="title">Current Entries</h4>
-                                <p class="category">Here you will find the current entries for the Tank of the Month contest. Select one as the new Tank of The Month and delete the rest! </p>
+                                <p class="category">Here you will find the current entries for the Tank of the Month contest. Select one as the new Tank of The Month and delete the rest. Keep it clean around here! </p>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <?php
@@ -321,7 +321,7 @@
 	<script src="../assets/js/demo.js"></script>
 
     <script src="../assets/js/login-register.js" type="text/javascript"></script>
-    <script src="../assets/js/deleterow.js" type="text/javascript"></script>
+    <script src="../assets/js/totm-backend.js" type="text/javascript"></script>
 	
 	<script type="text/javascript">
     	$(document).ready(function(){
