@@ -13,7 +13,7 @@
              </div>";
     }
 
-    if (isset($_POST[id])) {
+    if (isset($_POST['id'])) {
         $query = "DELETE FROM uploads WHERE id='$id'";
         mysqli_query($query) or die('Error, insert query failed');
     }
