@@ -22,6 +22,16 @@
         $sql = $mysqli->query("DELETE FROM uploads WHERE id=".$id);
         unlink('../uploads/' . $file);
     }
+
+    //if an item from TOTM table is chosen for TOTM
+    if (isset($_POST['promote_id'])) 
+    {
+        $id = $_POST['promote_id'];
+        $file = $_POST['promote_file'];
+        $desc = $_POST['promote_desc'];
+        //$sql = $mysqli->query("DELETE FROM uploads WHERE id=".$id);
+        //unlink('../uploads/' . $file);
+    }
 ?>
 
 <!doctype html>
