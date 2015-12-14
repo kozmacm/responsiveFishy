@@ -5,7 +5,7 @@
  
     sec_session_start();
 
-    //new user is registered
+    //if a new user is registered
     if(isset($_GET['success'])) 
     {
         echo"<div id='successAlert' class='alert alert-success'>
@@ -14,11 +14,13 @@
              </div>";
     }
 
-    //item from TOTM table is deleted
+    //if an item from TOTM table is deleted
     if (isset($_POST['delete_id'])) 
     {
         $id = $_POST['delete_id'];
+        $file = $_POST['delete_file'];
         $sql = $mysqli->query("DELETE FROM uploads WHERE id=".$id);
+        unlink('../uploads/' . $file);
     }
 ?>
 
@@ -169,7 +171,8 @@
                                                 <tbody>";
                                         while ($row = mysqli_fetch_array($stmt)) {
                                             $i = $row["id"];
-                                            echo "<tr id='$i'>";
+                                            $f = $row["file"];
+                                            echo "<tr id='$i' file='$f'>";
                                             echo "<td> <a href='../uploads/" . $row["file"] . "'><img class='thumbnail' src='../uploads/" . $row["file"] . "' alt='" . $row["file"] . "' /> </td>";
                                             echo "<td>" . $row["name"] . "</td>";
                                             echo "<td>" . $row["email"] . "</td>";

@@ -1,11 +1,12 @@
 $(".deleteitem").click(function () {
     var parent = $(this).closest('TR');
     var id = parent.attr('id');
+    var file = parent.attr('file');
 
     if (confirm("Are you sure you want to delete this?")) {
         $.ajax({
             type: "POST",
-            data: { delete_id: id },
+            data: { delete_id: id, delete_file : file },
             URL: "totm.php",
 
             success: function (msg) {
