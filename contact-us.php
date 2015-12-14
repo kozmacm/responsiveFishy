@@ -114,12 +114,12 @@
                             <i class="pe-7s-info"></i> Register
                         </a>
                     </li>
-                    -->
                     <li>
                         <a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">
                             <i class="pe-7s-info"></i> Login
                         </a>
                     </li>
+                    -->
                   </ul>
             </li>
             <li><a href="mailing-list.php" class="btn btn-round btn-default">Join our mailing list!</a></li>
