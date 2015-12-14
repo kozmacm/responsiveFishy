@@ -171,7 +171,8 @@
                                         while ($row = mysqli_fetch_array($stmt)) {
                                             $i = $row["id"];
                                             $f = $row["file"];
-                                            echo "<tr id='$i' file='$f'>";
+                                            $d = $row["description"];
+                                            echo "<tr id='$i' file='$f' desc='$d'>";
                                             echo "<td> <a href='../uploads/" . $row["file"] . "'><img class='thumbnail' src='../uploads/" . $row["file"] . "' alt='" . $row["file"] . "' /> </td>";
                                             echo "<td>" . $row["name"] . "</td>";
                                             echo "<td>" . $row["email"] . "</td>";

@@ -21,15 +21,16 @@ $(".chooseitem").click(function () {
     var parent = $(this).closest('TR');
     var id = parent.attr('id');
     var file = parent.attr('file');
+    var desc = parent.attr('desc');
 
     if (confirm("Are you sure you want to promote this to Tank of the Month?")) {
         $.ajax({
             type: "POST",
-            data: { promote_id: id, promote_file : file },
+            data: { promote_id: id, promote_file: file, promote_desc: desc },
             URL: "totm.php",
 
             success: function (msg) {
-                
+
             }
         });
     }
