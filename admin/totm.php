@@ -5,6 +5,7 @@
  
     sec_session_start();
 
+    //new user is registered
     if(isset($_GET['success'])) 
     {
         echo"<div id='successAlert' class='alert alert-success'>
@@ -13,9 +14,11 @@
              </div>";
     }
 
-    if (isset($_POST['id'])) {
-        $query = "DELETE FROM uploads WHERE id='$id'";
-        mysqli_query($query) or die('Error, insert query failed');
+    //item from TOTM table is deleted
+    if (isset($_POST['delete_id'])) 
+    {
+        $id = $_POST['delete_id'];
+        $sql = $mysqli->query("DELETE FROM uploads WHERE id=".$id);
     }
 ?>
 
