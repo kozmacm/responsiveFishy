@@ -47,9 +47,8 @@
     <link href="../assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
     
     <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="../assets/css/demo.css" rel="stylesheet" />
+    <link href="../assets/css/backend.css" rel="stylesheet" />
     <link href="../assets/css/login-register.css" rel="stylesheet" />
-    <link href="../assets/css/backend.css" rel="stylesheet"/>
             
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -144,7 +143,7 @@
                         <div class="card card-plain">
                             <div class="header">
                                 <h4 class="title">Current Entries</h4>
-                                <p class="category">Here you will find the current entries for the Tank of the Month contest</p>
+                                <p class="category">Here you will find the current entries for the Tank of the Month contest. Select one as the new Tank of The Month and delete the rest! </p>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <?php
@@ -166,7 +165,7 @@
                                     	        <th>IP</th>
                                     	        <th>Date</th>
                                                 <th>Description</th>
-                                                <th>Edit</th>
+                                                <th>Action</th>
                                                 </thead>
                                                 <tbody>";
                                         while ($row = mysqli_fetch_array($stmt)) {
@@ -179,7 +178,11 @@
                                             echo "<td>" . $row["ip"] . "</td>";
                                             echo "<td>" . $row["date"] . "</td>";
                                             echo "<td>" . $row["description"] . "</td>";
-                                            echo "<td><button class='btn btn-round btn-danger deleteitem'>Delete</button></td>";
+                                            echo "<td>
+                                                      <button class='btn btn-round btn-danger deleteitem'>Delete</button>
+                                                      <div class='space-20'></div>
+                                                      <button class='btn btn-round btn-success chooseitem'>Select</button>
+                                                  </td>";
                                             echo "</tr>";
                                         }
                                         echo "</tbody>";

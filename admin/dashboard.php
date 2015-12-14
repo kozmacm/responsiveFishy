@@ -37,7 +37,7 @@
     <link href="../assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
     
     <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="../assets/css/demo.css" rel="stylesheet" />
+    <link href="../assets/css/backend.css" rel="stylesheet" />
     <link href="../assets/css/login-register.css" rel="stylesheet" />
             
     <!--     Fonts and icons     -->
