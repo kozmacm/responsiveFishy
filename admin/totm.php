@@ -19,7 +19,11 @@
     {
         $id = $_POST['delete_id'];
         $file = $_POST['delete_file'];
+        
+        //delete record from database
         $sql = $mysqli->query("DELETE FROM uploads WHERE id=".$id);
+
+        //delete file
         unlink('../uploads/' . $file);
     }
 
@@ -29,8 +33,18 @@
         $id = $_POST['promote_id'];
         $file = $_POST['promote_file'];
         $desc = $_POST['promote_desc'];
-        //$sql = $mysqli->query("DELETE FROM uploads WHERE id=".$id);
-        //unlink('../uploads/' . $file);
+        
+        //delete record from database
+        $sql = $mysqli->query("DELETE FROM uploads WHERE id=".$id);
+
+        //update record with id=1 in totm table
+        $sql = $mysqli->query("UPDATE totm SET file='$file', description='$desc' WHERE id='1'");
+        
+        //delete old totm file that is getting replaced in database
+        array_map('unlink', glob("../assets/img/totm/*"));
+
+        //move file to assets/img/totm folder for safekeeping
+        rename('../uploads/' . $file, '../assets/img/totm/' . $file);
     }
 ?>
 
@@ -147,6 +161,58 @@
                             
         <!--put body stuff here-->
         <div class="content">
+            <div class="container-fluid">
+                <div class="row">                   
+                    <div class="col-md-12">
+                        <div class="card card-plain">
+                            <div class="header">
+                                <h4 class="title">Current Tank of the Month</h4>
+                                <p class="category">This is your current tank of the month. </p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <?php
+                                    // Check connection
+                                    if ($mysqli->connect_error) {
+                                        die("Connection failed: " . $mysqli->connect_error);
+                                    } 
+                                    else
+                                    {
+                                        if (!$stmt = $mysqli->query("SELECT * FROM totm")) {
+                                            echo "Query Failed!: (" . $mysqli->errno . ") ". $mysqli->error;
+                                        }
+                                                                                
+                                        echo "<table class='table table-hover'>";
+                                        echo "<thead>
+                                                <th>Image</th>
+                                    	        <th>Filename</th>
+                                    	        <th>Description</th>
+                                                </thead>
+                                                <tbody>";
+                                        while ($row = mysqli_fetch_array($stmt)) {
+                                            $i = $row["id"];
+                                            $f = $row["file"];
+                                            $d = $row["description"];
+                                            echo "<tr id='$i' file='$f' desc='$d'>";
+                                            echo "<td> <a href='../assets/img/totm/" . $row["file"] . "'><img class='thumbnail' src='../assets/img/totm/" . $row["file"] . "' alt='" . $row["file"] . "' /> </td>";
+                                            echo "<td>" . $row["file"] . "</td>";
+                                            echo "<td>" . $row["description"] . "</td>";
+                                            echo "</tr>";
+                                        }
+                                        echo "</tbody>";
+                                        echo "</table>";
+
+                                        if (mysqli_num_rows($stmt) == 0) {
+                                            echo "No records found.";
+                                        }
+                                    } 
+                                $stmt->free();
+                                //$mysqli->close();    
+                                ?>       
+                            </div>
+                        </div>
+                    </div>                
+                </div>                    
+            </div>
             <div class="container-fluid">
                 <div class="row">                   
                     <div class="col-md-12">

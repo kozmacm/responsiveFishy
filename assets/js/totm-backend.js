@@ -18,7 +18,7 @@ $(".deleteitem").click(function () {
 });
 
 $(".chooseitem").click(function () {
-    var parent = $(this).closest('TR');
+    var parent = $(this).closest('tr');
     var id = parent.attr('id');
     var file = parent.attr('file');
     var desc = parent.attr('desc');
@@ -30,7 +30,7 @@ $(".chooseitem").click(function () {
             URL: "totm.php",
 
             success: function (msg) {
-
+                parent.fadeOut('slow', function () { $('#' + id).remove() });
             }
         });
     }
