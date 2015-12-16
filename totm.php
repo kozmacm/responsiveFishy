@@ -102,7 +102,8 @@
 
                         //echo "Error: " . $sql . "<br>" . $mysqli->error;
                     }
-                }            
+                }
+                $mysqli->close();            
             }
         }
         else
@@ -113,12 +114,8 @@
             //      <a href="#" class="close" data-dismiss="alert">&times;</a>
             //      <strong>Error: </strong> - Invalid File.
             //      </div>';
-            
-            //echo "Error - Invalid file";
         }
     }
-    
-    $mysqli->close();
 ?>
 
 <!doctype html>
@@ -289,20 +286,42 @@
            <div class="container">
                <h2 class="section-title">Current Tank of the Month</h2>
                <div class="row">
-                   <div class="col-md-12">
-                       <div class="img-container">
-                           <a href="https://www.facebook.com/media/set/?set=vb.122002154595568&type=2">
-                           <img src="assets/img/rimless.jpg" alt="..." /> </a>
-                       </div>
-                   </div>
-
-                   <div class="space-50"></div>
-
-                   <div class="col-md-12">
-                       <div>
-                           <p>Our tank of the month competition has officially started! Enjoy this Red Sea rimless beauty until the first winner is announced! </p>
-                       </div>
-                   </div>
+                   <?php
+                       // Check connection
+                       if ($mysqli->connect_error) {
+                           die("Connection failed: " . $mysqli->connect_error);
+                       } 
+                       else
+                       {
+                           if (!$stmt = $mysqli->query("SELECT * FROM totm")) {
+                               echo "Query Failed!: (" . $mysqli->errno . ") ". $mysqli->error;
+                           }
+                                                                              
+                           while ($row = mysqli_fetch_array($stmt)) {
+                               $file = "assets/img/totm/" . $row['file'];
+                               $desc = $row['description'];
+                                                                     
+                               echo "<div class='col-md-12'>    
+                                         <div class='img-container'>
+                                             <img src='$file' alt='Image failed to load from DB' />
+                                         </div>
+                                     </div>
+                                     <div class='space-50'></div>
+                                     <div class='col-md-12'>
+                                         <div>
+                                             <p>" . $desc . "</p>
+                                         </div>
+                                     </div>
+                                     ";
+                           }
+                                   if (mysqli_num_rows($stmt) == 0) {
+                               echo "No records found.";
+                           }
+                                  
+                       } 
+                   $stmt->free();
+                   $mysqli->close();    
+                   ?>               
                </div>
             </div>
         </div>
