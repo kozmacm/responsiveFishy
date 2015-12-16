@@ -303,7 +303,9 @@
                                                                      
                                echo "<div class='col-md-12'>    
                                          <div class='img-container'>
+                                             <a href='$file' >
                                              <img src='$file' alt='Image failed to load from DB' />
+                                             </a>
                                          </div>
                                      </div>
                                      <div class='space-50'></div>
