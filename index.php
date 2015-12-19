@@ -176,12 +176,43 @@
     <div class="section section-description">
            <div class="container">
                <div class="row">
-                    <div class="col-md-6">
-                        <h2>Weekly Updates</h2>
-                        <p>Checkout our Highlight Videos featuring the New Stock! </p>
-                        </p>Click <a href="https://www.facebook.com/media/set/?set=vb.122002154595568&type=2">here </a>or image for New stock and highlight videos. </p>
-                        <p>Fishy Business is moving in a new direction with our aquarium designs with the introduction of our Fishy Business Limited Edition Customs! Each of these stand combinations is a work of art and because of this, we are limiting the color, design, and quantity of each one of these new productions. These pieces are all branded with a signature from the artist and are available on a first come - first serve basis. No two designs are the same. </p>
+                   <div class="col-md-6">
+                       <h2>Weekly Updates</h2>
+                       <p>Checkout our Highlight Videos featuring the New Stock! </p>
+                       </p>Click <a href="https://www.facebook.com/media/set/?set=vb.122002154595568&type=2">here </a>or image for New stock and highlight videos. </p>
+                       <p>It's hard to believe we're only two weeks away from Christmas but here we are - two weeks away from Christmas!!! </p>
+                       <p>Freshwater fish, Saltwater fish, and Inverts are all arriving Weds. There is still an amazing selection of fish we're bringing in and I would urge you to check out Facebook or come visit the store to see what's come in. </p>
                         
+                   </div>
+                   <div class="col-md-6">
+                       <br>
+                       <br>
+                       <br>
+                       <br>
+                       <p>A quick reminder also; Gift Certificates are still on special for two more weeks  - 35$ gift certificates for only 25$ -  a perfect stocking stuffer!!! </p>
+                       <p>We still have Bio-Cubes on sale and tank packages galore so if you're in the market for a new aquarium or want to give the gift of one, now is the time to come check out the specials before they're gone! </p>
+                       <p>Have a great week and come check us out!!! </p>
+                       <p>Ciao! </p>
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        
+                        
+                    </div>
+                    <div class="col-md-6">
+                        
+                    </div>
+                </div>
+
+                <hr>
+                <div class="space-50"></div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>New Aquarium Designs</h2>
+                        <p>Fishy Business is moving in a new direction with our aquarium designs with the introduction of our Fishy Business Limited Edition Customs! Each of these stand combinations is a work of art and because of this, we are limiting the color, design, and quantity of each one of these new productions. These pieces are all branded with a signature from the artist and are available on a first come - first serve basis. No two designs are the same. </p>
+                        <p>"The Book Case" is our first in the series and currently houses a 120 gallon aquarium. </p>
                    </div>
                    <div class="col-md-6">
                       <div id="description-carousel" class="carousel fade" data-ride="carousel">                            
@@ -208,19 +239,14 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <p>"The Book Case" is our first in the series and currently houses a 120 gallon aquarium. </p>
                         <p>"Gothique" is our second piece in another series and this particular design currently houses a 210 gallon aquarium. </p>
                         <p>"Contemporary" is our third design, currently housing a 90 gallon. </p>
-                        <p>As we move forward with these new and exciting aquarium designs, I would urge you to keep checking back with us as new designs will be appearing here and on our Facebook page! </p>
                     </div>
                     <div class="col-md-6">
-                        <p>There are some CRAZY cool Saltwater fish on the availability list this week and we're putting in the order today so you can expect a fantastic variety to arrive on Weds. Also a new batch of clownfish are on the way. New plants arrived this Friday - Holy Cow!!!! Freshwater fish will be here Weds! </p>
-                        <p>Whew! </p>
-                        <p>I wish everyone a great week and come check us out!!! </p>
-                        <p>Ciao!!! </p>
+                        <p>As we move forward with these new and exciting aquarium designs, I would urge you to keep checking back with us as new designs will be appearing here and on our Facebook page! </p>
                     </div>
                 </div>
-            
+
                 <!--<div class="space-50"></div>-->
                 <hr>
                 <div class="space-50"></div>
