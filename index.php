@@ -182,7 +182,6 @@
                        </p>Click <a href="https://www.facebook.com/media/set/?set=vb.122002154595568&type=2">here </a>or image for New stock and highlight videos. </p>
                        <p>It's hard to believe we're only two weeks away from Christmas but here we are - two weeks away from Christmas!!! </p>
                        <p>Freshwater fish, Saltwater fish, and Inverts are all arriving Weds. There is still an amazing selection of fish we're bringing in and I would urge you to check out Facebook or come visit the store to see what's come in. </p>
-                        
                    </div>
                    <div class="col-md-6">
                        <br>
@@ -195,16 +194,7 @@
                        <p>Ciao! </p>
                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        
-                        
-                    </div>
-                    <div class="col-md-6">
-                        
-                    </div>
-                </div>
-
+                
                 <hr>
                 <div class="space-50"></div>
 
