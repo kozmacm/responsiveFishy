@@ -31,6 +31,12 @@ $(".chooseitem").click(function () {
 
             success: function (msg) {
                 parent.fadeOut('slow', function () { $('#' + id).remove() });
+                $.notify({
+	                    title: '<strong>Tank of The Month has been updated!</strong>',
+	                    message: 'Refresh the page in order to confirm that your update has posted.'
+                    },{
+	                    type: 'success'
+                    });
             }
         });
     }

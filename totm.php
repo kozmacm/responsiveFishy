@@ -103,7 +103,7 @@
                         //echo "Error: " . $sql . "<br>" . $mysqli->error;
                     }
                 }
-                $mysqli->close();            
+                //$mysqli->close();            
             }
         }
         else
