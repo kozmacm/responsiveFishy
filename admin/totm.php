@@ -114,13 +114,13 @@
                 </li>
                 <li class="active">
                     <a href="totm.php">
-                        <i class="pe-7s-graph"></i> 
+                        <i class="pe-7s-photo"></i> 
                         <p>Tank of the Month</p>
                     </a>            
                 </li>
                 <li class="active">
                     <a href="news.php">
-                        <i class="pe-7s-graph"></i> 
+                        <i class="pe-7s-news-paper"></i> 
                         <p>Weekly News Updates</p>
                     </a>            
                 </li>

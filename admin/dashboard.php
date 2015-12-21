@@ -80,13 +80,13 @@
                 </li>
                 <li class="active">
                     <a href="totm.php">
-                        <i class="pe-7s-graph"></i> 
+                        <i class="pe-7s-photo"></i> 
                         <p>Tank of the Month</p>
                     </a>            
                 </li>
                 <li class="active">
                     <a href="news.php">
-                        <i class="pe-7s-graph"></i> 
+                        <i class="pe-7s-news-paper"></i> 
                         <p>Weekly News Updates</p>
                     </a>            
                 </li>
@@ -132,10 +132,16 @@
         </nav>
                             
         <!--put body stuff here-->
-        <div>
-            <p>This is the secure backend for administrators. You are currently logged in. </p>
+        <div class="content">
+            <div class="container-fluid">    
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>This is the secure backend for administrators. You are currently logged in. </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        
+                
         <footer class="footer">
             <div class="container-fluid">
                 <nav class="pull-left">
