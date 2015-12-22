@@ -547,6 +547,14 @@
     <script type="text/JavaScript" src="assets/js/forms.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     
+
+    <!-- Christmas Theme Start -->
+        
+    <script src="assets/js/christmas/wow.min.js"></script>
+    <script src="assets/js/christmas/snowstorm-min.js"></script>
+    <script>new WOW().init();</script>  
+    
+    <!-- Christmas Theme End -->
 	<!--  Get Shit Done Kit PRO Core javascript 	 -->
 	<script src="assets/js/get-shit-done.js"></script>
     
