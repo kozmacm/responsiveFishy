@@ -39,6 +39,7 @@
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="../assets/css/backend.css" rel="stylesheet" />
     <link href="../assets/css/login-register.css" rel="stylesheet" />
+    <link href="../assets/css/fileinput.min.css" media="all" rel ="stylesheet" type="text/css"/>
             
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -46,7 +47,7 @@
     <link href="../assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
     
 </head>
-<body> 
+<body class="news"> 
 <?php if (login_check($mysqli) == true) : ?>
 <?php
     if (!empty($error_msg)) {
@@ -138,7 +139,19 @@
                     <div class="col-md-12">
                         <p>This is the weekly news updates section. </p>
                         <div class="form-group">
-                            <input type="text" value="" placeholder="First Paragraph" class="form-control" />
+                            <label class="checkbox checkbox-blue" for="checkbox1">
+                                <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox" >
+                                    I want to include an image.
+                            </label>
+                        </div>
+                        <div class="form-group" id="file_container">
+                            <input id="fileInput" type="file" name="file[]" class="file" data-show-upload="false" data-show-caption="true" >
+                        </div>    
+                        <div class="form-group">    
+                            <textarea id="count_me" class="form-control" rows="5" placeholder="Enter your weekly update here" required></textarea>
+                        </div>    
+                        <div class="form-group">    
+                            <input type="submit" name="submit" class="btn btn-info btn-fill" value="Submit" id="submit" />
                         </div>  
 
 
@@ -265,9 +278,46 @@
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="../assets/js/demo.js"></script>
 
+    <script src="../assets/js/fileinput.min.js" type="text/javascript"></script>
     <script src="../assets/js/login-register.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="../assets/js/jquery.charactercounter.js"></script>
 	
-	<script type="text/javascript">
+    
+    <script> 
+        $(function(){ 
+            $("#count_me").characterCounter({ 
+            
+            exceeded:false,
+            
+            //character limit
+            limit: 150,
+
+            //the CSS class to apply to counter
+            counterCssClass: 'help-block',
+
+            counterExceededCssClass: 'exceeded'
+            }); 
+        }); 
+    </script> 
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#file_container').hide();
+
+            $("#checkbox1").change(function(event) {
+
+                if ($(this).is(":checked"))
+                {
+                    $('#file_container').show();
+                } else {
+                    $('#file_container').hide();
+                }
+            });
+        }); 
+    </script>
+
+    <script type="text/javascript">
     	$(document).ready(function(){
         	
         	demo.initChartist();
