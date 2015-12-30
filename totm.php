@@ -334,35 +334,35 @@
                    <div class="col-md-12">
                        <p>
                            <span class="asterisk">*</span> indicates required<br><br>
-                        </p>
-                        <form method="post" id="form" name="form" action="" enctype="multipart/form-data" >
-    						<div class="form-group">
-                                <label class="control-label">Select File</label>
-                                <input id="input-2" type="file" name="file[]" class="file" multiple="true" data-show-upload="false" data-show-caption="true">
-    				  		</div>
-                            <div class="form-group">
-    				    		<label for="fullName">Full Name</label>
-    				    		<input type="text" name="fullName" class="form-control" id="fullName" placeholder="Full Name"/>
-    				  		</div>
-    				  		<div class="form-group">
-    				    		<label for="email">Email address</label>
-    				    		<input type="email" name="email" class="form-control" id="email" placeholder="Your personal email address"/>
-    				  		</div>
-                            <div class="form-group">
-    				    		<label for="message">Tank Description</label>
-    				    		<textarea name="message" class="form-control" id="message" rows="6" placeholder="Enter details about your tank setup here"></textarea>
-    				  		</div>
-    				  		<div class="submit">
-    				  			<input type="submit" name="submit" class="btn btn-info btn-fill" value="Submit" id="submit" />
-    				  		</div>
+                       </p>
+                       <form method="post" id="form" name="form" action="" enctype="multipart/form-data" >
+    				       <div class="form-group">
+                               <label class="control-label">Select File</label>
+                               <input id="input-2" type="file" name="file[]" class="file" multiple="true" data-show-upload="false" data-show-caption="true">
+    				  	   </div>
+                           <div class="form-group">
+    				           <label for="fullName">Full Name</label>
+    				    	       <input type="text" name="fullName" class="form-control" id="fullName" placeholder="Full Name"/>
+    				  	   </div>
+    				  	   <div class="form-group">
+    				           <label for="email">Email address</label>
+    				    	       <input type="email" name="email" class="form-control" id="email" placeholder="Your personal email address"/>
+    				  	   </div>
+                           <div class="form-group">
+    				           <label for="message">Tank Description</label>
+    				    	       <textarea name="message" class="form-control" id="message" rows="6" placeholder="Enter details about your tank setup here"></textarea>
+    				  	   </div>
+    				  	   <div class="submit">
+    				  	       <input type="submit" name="submit" class="btn btn-info btn-fill" value="Submit" id="submit" />
+    				  	   </div>
 
-                            <div class="space-50"></div>
+                           <div class="space-50"></div>
 
-                            <div id="mce-responses" class="clear">
-		                        <div class="response" id="mce-error-response" style="display:none"></div>
-		                        <div class="response" id="mce-success-response" style="display:none"></div>
-	                        </div>
-    					</form>
+                           <div id="mce-responses" class="clear">
+		                       <div class="response" id="mce-error-response" style="display:none"></div>
+		                       <div class="response" id="mce-success-response" style="display:none"></div>
+	                       </div>
+    			       </form>
                    </div>
                    
                    <!--End mc_embed_signup-->
@@ -456,8 +456,9 @@
         };
 
     </script>
+
     <script>
-        $("#file-0").fileinput({
+        $("#input-2").fileinput({
             'allowedFileExtensions' : ['jpg', 'png','gif'],
         });
     </script>
