@@ -136,7 +136,6 @@
     <link href="assets/css/fishy.css" rel="stylesheet"/>
     <link href="assets/css/fileinput.min.css" media="all" rel ="stylesheet" type="text/css"/>
     <link href="assets/css/login-register.css" rel="stylesheet" />
-    <link href="assets/css/toastr.min.css" rel="stylesheet" />
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"> 
