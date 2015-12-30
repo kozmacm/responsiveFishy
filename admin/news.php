@@ -242,9 +242,9 @@
                     <div class="col-md-12">
                         <form method="post" id="form" name="form" action="" enctype="multipart/form-data" >
                             <p>Here is where you can update the weekly news feed. Do not insert an image using this frame, do it using the checkbox below. </p>
-                            
+                            <div class="form-group">
                                 <textarea id="textbox" name="textbox" class="form-control" rows="10" placeholder="Enter your weekly update here" required></textarea>
-                            
+                            </div>
                             <div class="form-group">
                                 <label class="checkbox checkbox-blue" for="checkbox1">
                                     <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox" >
