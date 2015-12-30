@@ -139,8 +139,7 @@
                     <div class="col-md-12">
                         <p>Here is where you can update the weekly news feed. </p>
                         <div class="form-group"> 
-                            <p>Enter your weekly update text here: </p>   
-                            <textarea id="count_me" class="form-control" rows="10" placeholder="Enter your weekly update here" required></textarea>
+                            <textarea id="textbox" class="form-control" rows="10" placeholder="Enter your weekly update here" required></textarea>
                         </div>
                         <div class="form-group">
                             <label class="checkbox checkbox-blue" for="checkbox1">

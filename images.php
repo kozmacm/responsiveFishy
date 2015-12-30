@@ -35,8 +35,8 @@
     
     <!-- Galleria -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="galleria/galleria-1.4.2.min.js"></script>
-    <script src="galleria/plugins/facebook/galleria.facebook.js"></script>  
+    <script src="plugins/galleria/galleria-1.4.2.min.js"></script>
+    <script src="plugins/galleria/plugins/facebook/galleria.facebook.js"></script>  
 </head>
 
 <body class="images">
@@ -180,7 +180,7 @@
             <div class="row">
 			    <!--<h2 class="section-title"><?php echo $_GET['albumname']; ?></h2> <br>-->
 			    <script>
-                    Galleria.loadTheme('/galleria/themes/classic/galleria.classic.min.js');
+                    Galleria.loadTheme('/plugins/galleria/themes/classic/galleria.classic.min.js');
                     Galleria.run('#galleria', {
                         facebook: 'album:<?php echo $_GET['albumid']; ?>',
                         height: 0.5,
