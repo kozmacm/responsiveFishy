@@ -176,23 +176,32 @@
     <div class="section section-description">
            <div class="container">
                <div class="row">
-                   <div class="col-md-6">
+                   <div class="col-md-12 ">
                        <h2>Weekly Updates</h2>
                    </div>
                </div>
                <div class="row">
-                   <div class="col-md-6">
+                   <div class="col-md-12 ">
                        <p>Checkout our Highlight Videos featuring the New Stock! </p>
                        </p>Click <a href="https://www.facebook.com/media/set/?set=vb.122002154595568&type=2">here </a>or image for New stock and highlight videos. </p>
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-md-12 ">
                        <p>It's hard to believe we're only two weeks away from Christmas but here we are - two weeks away from Christmas!!! </p>
                        <p>Freshwater fish, Saltwater fish, and Inverts are all arriving Weds. There is still an amazing selection of fish we're bringing in and I would urge you to check out Facebook or come visit the store to see what's come in. </p>
-                   </div>
-                   <div class="col-md-6">
                        <p>A quick reminder also; Gift Certificates are still on special for two more weeks  - 35$ gift certificates for only 25$ -  a perfect stocking stuffer!!! </p>
                        <p>We still have Bio-Cubes on sale and tank packages galore so if you're in the market for a new aquarium or want to give the gift of one, now is the time to come check out the specials before they're gone! </p>
                        <p>Have a great week and come check us out!!! </p>
                        <p>Ciao! </p>
                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 ">
+                        <div class="img-container">
+                          <!--<img src="assets/img/entrance.jpg" alt="..." />-->
+                        </div>
+                    </div>
                 </div>
                 
                 <hr>
