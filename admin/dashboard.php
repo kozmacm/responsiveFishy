@@ -73,7 +73,7 @@
                        
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboard.php">
+                    <a>
                         <i class="pe-7s-graph"></i> 
                         <p>Dashboard</p>
                     </a>            
@@ -104,7 +104,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="dashboard.php">Dashboard</a>
+                    <a class="navbar-brand">Dashboard</a>
                 </div>
                 <div class="collapse navbar-collapse">       
                     <ul class="nav navbar-nav navbar-left">

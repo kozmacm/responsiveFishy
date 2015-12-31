@@ -189,7 +189,7 @@
                     </a>            
                 </li>
                 <li class="active">
-                    <a href="news.php">
+                    <a>
                         <i class="pe-7s-news-paper"></i> 
                         <p>Weekly News Updates</p>
                     </a>            
@@ -208,7 +208,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="news.php">Weekly News Updates</a>
+                    <a class="navbar-brand">Weekly News Updates</a>
                 </div>
                 <div class="collapse navbar-collapse">       
                     <ul class="nav navbar-nav navbar-left">

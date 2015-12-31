@@ -113,7 +113,7 @@
                     </a>            
                 </li>
                 <li class="active">
-                    <a href="totm.php">
+                    <a>
                         <i class="pe-7s-photo"></i> 
                         <p>Tank of the Month</p>
                     </a>            
@@ -138,7 +138,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="totm.php">Tank of the Month</a>
+                    <a class="navbar-brand">Tank of the Month</a>
                 </div>
                 <div class="collapse navbar-collapse">       
                     <ul class="nav navbar-nav navbar-left">
