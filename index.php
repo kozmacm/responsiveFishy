@@ -203,7 +203,14 @@
                                $i = $row["id"];
                                $f = $row["file"];
                                $p = $row["post"];
-                               echo $p;
+
+                               //only output the first row of 'news' table
+                               //second row is for news preview only
+                               if ($i == 1)
+                               {
+                                   echo $p;
+                               }
+                               
                            }
                            
                            if (mysqli_num_rows($stmt) == 0) {

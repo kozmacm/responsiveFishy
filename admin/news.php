@@ -74,7 +74,8 @@
                         }
                     }    
                 } 
-                //Adds entry into database in table 'news'
+                //Update entry with id=1 in table 'news'
+                //id=2 will be used for live preview
                 // Check connection
                 if ($mysqli->connect_error) {
                     die("Connection failed: " . $mysqli->connect_error);
@@ -86,13 +87,16 @@
                     $author = 'admin';
                     $ip = $_SERVER['REMOTE_ADDR'];
 
-                    $sql = "INSERT INTO news (post, author, file, ip) 
-                        VALUES ('$text','$author','$file','$ip')";
+                    $sql = "UPDATE news SET post='$text', author='$author', file='$file', ip='$ip' 
+                        WHERE id=1";
+
+                    //$sql = "INSERT INTO news (post, author, file, ip) 
+                    //    VALUES ('$text','$author','$file','$ip')";
 
                     if ($mysqli->query($sql) === TRUE) {} 
                     else 
                     {
-                        echo 'Error: '.$sql.' <br> '.$mysqli.'->error.';
+                        echo "Error updating record: " . $mysqli->error;
                         
                         //echo '<div class="alert alert-danger fade in">
                         //      <a href="#" class="close" data-dismiss="alert">&times;</a>
