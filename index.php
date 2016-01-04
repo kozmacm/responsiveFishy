@@ -188,12 +188,31 @@
                </div>
                <div class="row">
                    <div class="col-md-12 ">
-                       <p>It's hard to believe we're only two weeks away from Christmas but here we are - two weeks away from Christmas!!! </p>
-                       <p>Freshwater fish, Saltwater fish, and Inverts are all arriving Weds. There is still an amazing selection of fish we're bringing in and I would urge you to check out Facebook or come visit the store to see what's come in. </p>
-                       <p>A quick reminder also; Gift Certificates are still on special for two more weeks  - 35$ gift certificates for only 25$ -  a perfect stocking stuffer!!! </p>
-                       <p>We still have Bio-Cubes on sale and tank packages galore so if you're in the market for a new aquarium or want to give the gift of one, now is the time to come check out the specials before they're gone! </p>
-                       <p>Have a great week and come check us out!!! </p>
-                       <p>Ciao! </p>
+                       <?php
+                       // Check connection
+                       if ($mysqli->connect_error) {
+                           die("Connection failed: " . $mysqli->connect_error);
+                       } 
+                       else
+                       {
+                           if (!$stmt = $mysqli->query("SELECT * FROM news")) {
+                               echo "Query Failed!: (" . $mysqli->errno . ") ". $mysqli->error;
+                           }
+                                                                               
+                           while ($row = mysqli_fetch_array($stmt)) {
+                               $i = $row["id"];
+                               $f = $row["file"];
+                               $p = $row["post"];
+                               echo $p;
+                           }
+                           
+                           if (mysqli_num_rows($stmt) == 0) {
+                               echo "No records found.";
+                           }
+                       } 
+                       $stmt->free();
+                       $mysqli->close();    
+                       ?>       
                    </div>
                 </div>
                 <div class="row">
