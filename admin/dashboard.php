@@ -114,7 +114,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    Admin
+                                    <?php echo "Welcome, " . $_SESSION['username'] . "!"; ?>
                                     <b class="caret"></b>
                               </a>
                               <ul class="dropdown-menu">
