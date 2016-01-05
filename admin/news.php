@@ -165,7 +165,7 @@
                 {
                     $file = $_FILES["file"]["name"][$i] . "";
                     $text = $_POST['textbox'];
-                    $author = 'admin';
+                    $author = $_SESSION['username'];//'admin';
                     $ip = $_SERVER['REMOTE_ADDR'];
 
                    // $sql = "UPDATE news SET post='$text', author='$author', file='$file', ip='$ip' 
