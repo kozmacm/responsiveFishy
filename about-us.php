@@ -7,7 +7,7 @@
     if (login_check($mysqli) == true) {
         $logged = 'in';
     } else {
-        $logged = 'out';
+        $logged = 'oeut';
     }
 ?>
 
@@ -179,7 +179,7 @@
                        </p>Welcome to the new and improved Fishy Business website and webstore! In the coming weeks you are going to see improvements in every aspect of Fishy Business Aquatics...so much is coming your way in our effort to better serve both our local customer base and those of you who have, up till now, been beyond our reach! </p>
                        <p>Fishy Business was established in 1986 as Guy Griffin put his childhood dream into motion by creating what has now become the largest aquatic store in South Carolina. With over 5000 square feet of retail shopping, Fishy Business boasts the largest selection of freshwater fish, saltwater fish, corals, live plants, and invertebrates in the area.We only stock the best quality livestock from the best distributors all over the world! </p>
                        <p>What makes Fishy Business truly unique is the passion and knowlege each staff member has for the hobby and for the helping advise and the individual care we put into each of our customers' aquariums. This is what makes us different and this is what makes us special. Our commitment is that we aid every novice aquarist in achieving their dream no matter what size or type of aquarium they have. In every aspect we will use all the resources we have to make this hobby gratifying to each and every person we have the pleasure of meeting. Success is our sole desire - customer satisfaction our only goal! </p>
-                       <p>Fishy Business is now entering a new era in our history as we go forward expanding every aspect of our livestock selection and opening our first online coral store for customers nationwide in the days to come. </p>
+                       <p>Fishy Business is now entering a new era in our history as we go forward expanding every aspect of our livestock selection. </p>
                    </div>
                </div>
            </div>
