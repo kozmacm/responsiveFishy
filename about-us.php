@@ -7,7 +7,7 @@
     if (login_check($mysqli) == true) {
         $logged = 'in';
     } else {
-        $logged = 'oeut';
+        $logged = 'out';
     }
 ?>
 
