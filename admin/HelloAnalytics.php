@@ -5,12 +5,12 @@ function getService()
   // Creates and returns the Analytics service object.
 
   // Load the Google API PHP Client Library.
-  require_once '../plugins/google-api-php-client/src/Google/autoload.php';
-  
+  require_once '../plugins/google-api-php-client-1.1.6/src/Google/autoload.php';
+
   // Use the developers console and replace the values with your
   // service account email, and relative location of your key file.
   $service_account_email = 'fishy-business-service@fishy-business-1182.iam.gserviceaccount.com';
-  $key_file_location = 'keys/Fishy Business-a9f7453a79f4.p12>';
+  $key_file_location = 'keys/Fishy Business-a9f7453a79f4.p12';
 
   // Create and configure a new client object.
   $client = new Google_Client();
@@ -28,7 +28,7 @@ function getService()
   if($client->getAuth()->isAccessTokenExpired()) {
     $client->getAuth()->refreshTokenWithAssertion($cred);
   }
-  
+
   return $analytics;
 }
 
@@ -102,8 +102,8 @@ function printResults(&$results) {
 }
 
 $analytics = getService();
-//$profile = getFirstProfileId($analytics);
-//$results = getResults($analytics, $profile);
-//printResults($results);
+$profile = getFirstProfileId($analytics);
+$results = getResults($analytics, $profile);
+printResults($results);
 
 ?>
