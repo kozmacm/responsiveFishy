@@ -162,7 +162,7 @@
                                 ?>
                                 </table>
 
-                                <table>
+                                <table class='table table-hover'>
                                 <tr>
                                   <th>Total Results</th>
                                   <td><?php echo $ga->getTotalResults() ?></td>
