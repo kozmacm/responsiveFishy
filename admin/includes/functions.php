@@ -73,11 +73,19 @@ function getFirstprofileId(&$analytics) {
 function getResults(&$analytics, $profileId) {
     // Calls the Core Reporting API and queries for the number of sessions
     // for the last seven days.
+    $optParams = array(
+        //'dimensions' => 'ga:source, ga:keyword',
+        //'sort' => '-ga:sessions, ga:source',
+        //'filters' => 'ga:medium==organic',
+        //'max-results' => '25' 
+        );
+
     return $analytics->data_ga->get(
         'ga:' . $profileId,
         '7daysAgo',
         'today',
-        'ga:sessions');
+        'ga:sessions',
+        $optParams);
 }
 
 function printResults(&$results) {
