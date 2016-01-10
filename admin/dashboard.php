@@ -16,7 +16,7 @@
 
     $ga = new gapi("fishy-business-service@fishy-business-1182.iam.gserviceaccount.com", "keys/Fishy Business-a9f7453a79f4.p12");
     //$filter = 'country == United States && browser == Firefox || browser == Chrome';
-    $ga->requestReportData(91085606,array('browser','browserVersion'),array('pageviews','visits'),'-visits',$filter, NULL, NULL, 1, 10);
+    $ga->requestReportData(91085606,array('browser','browserVersion'),array('pageviews','visits'),'-visits',$filter, '30daysAgo', NULL, 1, 10);
 ?>
 
 <!doctype html>
