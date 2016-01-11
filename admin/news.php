@@ -38,25 +38,9 @@
             {
                 echo '<script>alert("Success! Your file '.$_FILES["file"]["name"][$i].' has been sent successfully");</script>';
                 
-                //echo '<div class="alert alert-success fade in">
-                //      <a href="#" class="close" data-dismiss="alert">&times;</a>
-                //      <strong>Success!</strong> Your file '.$_FILES["file"]["name"][$i].' has been sent successfully.
-                //      </div>';
-                             
-                //echo "Upload: " . $_FILES["file"]["name"][$i] . "<br />";
-                //echo "Type: " . $_FILES["file"]["type"][$i] . "<br />";
-                //echo "Size: " . ($_FILES["file"]["size"][$i] / 1024) . " Kb<br />";
-                //echo "Temp file: " . $_FILES["file"]["tmp_name"][$i] . "<br />";
-
                 if (file_exists("../assets/img/news/" . $_FILES["file"]["name"]))
                 {
                     echo '<script>alert("Error: Your file '.$_FILES["file"]["name"][$i].' already exists.");</script>';
-                    
-                    //echo '<div class="alert alert-danger fade in">
-                    //  <a href="#" class="close" data-dismiss="alert">&times;</a>
-                    //  <strong>Error: </strong> Your file '.$_FILES["file"]["name"][$i].' already exists.
-                    //  </div>';
-                    //echo $_FILES["file"]["name"] . " already exists. ";
                 }
                 else
                 {
@@ -74,8 +58,7 @@
                         }
                     }    
                 } 
-                //Update entry with id=1 in table 'news'
-                //id=2 will be used for live preview
+                //Add entry to table 'news'
                 // Check connection
                 if ($mysqli->connect_error) {
                     die("Connection failed: " . $mysqli->connect_error);
@@ -84,11 +67,8 @@
                 {
                     $file = $_FILES["file"]["name"][$i] . "";
                     $text = $_POST['textbox'];
-                    $author = 'admin';
+                    $author = $_SESSION['username'];
                     $ip = $_SERVER['REMOTE_ADDR'];
-
-                   // $sql = "UPDATE news SET post='$text', author='$author', file='$file', ip='$ip' 
-                    //    WHERE id=1";
 
                     $sql = "INSERT INTO news (post, author, file, ip) 
                         VALUES ('$text','$author','$file','$ip')";
@@ -97,13 +77,6 @@
                     else 
                     {
                         echo "Error updating record: " . $mysqli->error;
-                        
-                        //echo '<div class="alert alert-danger fade in">
-                        //      <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        //      <strong>Error: </strong> '.$sql.' <br> '.$mysqli.'->error.
-                        //      </div>';
-
-                        //echo "Error: " . $sql . "<br>" . $mysqli->error;
                     }
                 }
                 //$mysqli->close();            
@@ -111,88 +84,50 @@
         }
         else
         {
-           // echo 'Error: - Invalid File.';
-            
-            //echo '<div class="alert alert-danger fade in">
-            //      <a href="#" class="close" data-dismiss="alert">&times;</a>
-            //      <strong>Error: </strong> - Invalid File.
-            //      </div>';
-                echo '<script>alert("Success! Your file '.$_FILES["file"]["name"][$i].' has been sent successfully");</script>';
-                
-                //echo '<div class="alert alert-success fade in">
-                //      <a href="#" class="close" data-dismiss="alert">&times;</a>
-                //      <strong>Success!</strong> Your file '.$_FILES["file"]["name"][$i].' has been sent successfully.
-                //      </div>';
-                             
-                //echo "Upload: " . $_FILES["file"]["name"][$i] . "<br />";
-                //echo "Type: " . $_FILES["file"]["type"][$i] . "<br />";
-                //echo "Size: " . ($_FILES["file"]["size"][$i] / 1024) . " Kb<br />";
-                //echo "Temp file: " . $_FILES["file"]["tmp_name"][$i] . "<br />";
+            echo '<script>alert("Success! Your file '.$_FILES["file"]["name"][$i].' has been sent successfully");</script>';
+               
+            if (file_exists("../assets/img/news/" . $_FILES["file"]["name"]))
+            {
+                echo '<script>alert("Error: Your file '.$_FILES["file"]["name"][$i].' already exists.");</script>';
+            }
+            else
+            {
+                //Make sure we have a filepath
+                if($tmpFilePath != "")
+                {
+                    //Setup our new file path
+                    $newFilePath = "../assets/img/news/" . $_FILES['file']['name'][$i];
 
-                if (file_exists("../assets/img/news/" . $_FILES["file"]["name"]))
-                {
-                    echo '<script>alert("Error: Your file '.$_FILES["file"]["name"][$i].' already exists.");</script>';
-                    
-                    //echo '<div class="alert alert-danger fade in">
-                    //  <a href="#" class="close" data-dismiss="alert">&times;</a>
-                    //  <strong>Error: </strong> Your file '.$_FILES["file"]["name"][$i].' already exists.
-                    //  </div>';
-                    //echo $_FILES["file"]["name"] . " already exists. ";
-                }
-                else
-                {
-                    //Make sure we have a filepath
-                    if($tmpFilePath != "")
+                    //Upload file to temp dir
+                    if(move_uploaded_file($tmpFilePath, $newFilePath))
                     {
-                        //Setup our new file path
-                        $newFilePath = "../assets/img/news/" . $_FILES['file']['name'][$i];
-
-                        //Upload file to temp dir
-                        if(move_uploaded_file($tmpFilePath, $newFilePath))
-                        {
-                            //Handle other code here
-                            //echo "Stored in: " . "uploads/" . $_FILES["file"]["name"][$i];
-                        }
-                    }    
-                } 
-                //Update entry with id=1 in table 'news'
-                //id=2 will be used for live preview
-                // Check connection
-                if ($mysqli->connect_error) {
-                    die("Connection failed: " . $mysqli->connect_error);
-                } 
-                else
-                {
-                    $file = $_FILES["file"]["name"][$i] . "";
-                    $text = $_POST['textbox'];
-                    $author = $_SESSION['username'];//'admin';
-                    $ip = $_SERVER['REMOTE_ADDR'];
-
-                   // $sql = "UPDATE news SET post='$text', author='$author', file='$file', ip='$ip' 
-                    //    WHERE id=1";
-
-                    $sql = "INSERT INTO news (post, author, file, ip) 
-                        VALUES ('$text','$author','$file','$ip')";
-
-                    if ($mysqli->query($sql) === TRUE) {} 
-                    else 
-                    {
-                        echo "Error updating record: " . $mysqli->error;
-                        
-                        //echo '<div class="alert alert-danger fade in">
-                        //      <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        //      <strong>Error: </strong> '.$sql.' <br> '.$mysqli.'->error.
-                        //      </div>';
-
-                        //echo "Error: " . $sql . "<br>" . $mysqli->error;
+                        //Handle other code here
+                        //echo "Stored in: " . "uploads/" . $_FILES["file"]["name"][$i];
                     }
+                }    
+            } 
+            //Add entry to table 'news'
+            // Check connection
+            if ($mysqli->connect_error) {
+                die("Connection failed: " . $mysqli->connect_error);
+            } 
+            else
+            {
+                $file = $_FILES["file"]["name"][$i] . "";
+                $text = $_POST['textbox'];
+                $author = $_SESSION['username'];//'admin';
+                $ip = $_SERVER['REMOTE_ADDR'];
+
+                $sql = "INSERT INTO news (post, author, file, ip) 
+                    VALUES ('$text','$author','$file','$ip')";
+
+                if ($mysqli->query($sql) === TRUE) {} 
+                else 
+                {
+                    echo "Error updating record: " . $mysqli->error;
                 }
-                //$mysqli->close();     
-
-
-
-
-
+            }
+            //$mysqli->close();
         }
     }
 ?>
