@@ -138,24 +138,24 @@
                             
         <!--put body stuff here-->
         <div class="content">
-            <div class="container-fluid">    
+            <div class="container-fluid"> 
+                <p>This is the secure backend for administrators. You are currently logged in. </p>
                 <div class="row">
                     <div class="col-md-12">
-                        <p>This is the secure backend for administrators. You are currently logged in. </p>
-                        <div class="content table-responsive table-full-width">
+                        <div class="card ">
                             <table class='table table-hover'>
                                 <tr>
-                                  <th>Browser &amp; Browser Version</th>
-                                  <th>Pageviews</th>
-                                  <th>Visits</th>
+                                    <th>Browser &amp; Browser Version</th>
+                                    <th>Pageviews</th>
+                                    <th>Visits</th>
                                 </tr>
                                 <?php
                                 foreach($ga->getResults() as $result):
                                 ?>
                                 <tr>
-                                  <td><?php echo $result ?></td>
-                                  <td><?php echo $result->getPageviews() ?></td>
-                                  <td><?php echo $result->getVisits() ?></td>
+                                    <td><?php echo $result ?></td>
+                                    <td><?php echo $result->getPageviews() ?></td>
+                                    <td><?php echo $result->getVisits() ?></td>
                                 </tr>
                                 <?php
                                 endforeach
@@ -164,20 +164,20 @@
 
                                 <table class='table table-hover'>
                                 <tr>
-                                  <th>Total Results</th>
-                                  <td><?php echo $ga->getTotalResults() ?></td>
+                                    <th>Total Results</th>
+                                    <td><?php echo $ga->getTotalResults() ?></td>
                                 </tr>
                                 <tr>
-                                  <th>Total Pageviews</th>
-                                  <td><?php echo $ga->getPageviews() ?>
+                                    <th>Total Pageviews</th>
+                                    <td><?php echo $ga->getPageviews() ?>
                                 </tr>
                                 <tr>
-                                  <th>Total Visits</th>
-                                  <td><?php echo $ga->getVisits() ?></td>
+                                    <th>Total Visits</th>
+                                    <td><?php echo $ga->getVisits() ?></td>
                                 </tr>
                                 <tr>
-                                  <th>Result Date Range</th>
-                                  <td><?php echo $ga->getStartDate() ?> to <?php echo $ga->getEndDate() ?></td>
+                                    <th>Result Date Range</th>
+                                    <td><?php echo $ga->getStartDate() ?> to <?php echo $ga->getEndDate() ?></td>
                                 </tr>
                             </table>
                         </div>
@@ -323,4 +323,12 @@
     	});
 	</script>
     
+    <script>
+        // Initialize a Line chart in the container with the ID chart1
+        new Chartist.Bar('#chart1', {
+            labels: [$js_array],
+            series: [[100, 120, 180, 200]]
+        });
+    </script>
 </html>
+

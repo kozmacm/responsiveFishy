@@ -203,10 +203,11 @@
                                $i = $row["id"];
                                $f = $row["file"];
                                $p = $row["post"];
+                               $active = $row["active_flag"];
 
                                //only output the first row of 'news' table
                                //second row is for news preview only
-                               if ($i == 1)
+                               if ($active == "Y")
                                {
                                    echo $p;
                                }
