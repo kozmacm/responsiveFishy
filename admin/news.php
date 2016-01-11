@@ -84,28 +84,6 @@
         }
         else
         {
-            echo '<script>alert("Success! Your file '.$_FILES["file"]["name"][$i].' has been sent successfully");</script>';
-               
-            if (file_exists("../assets/img/news/" . $_FILES["file"]["name"]))
-            {
-                echo '<script>alert("Error: Your file '.$_FILES["file"]["name"][$i].' already exists.");</script>';
-            }
-            else
-            {
-                //Make sure we have a filepath
-                if($tmpFilePath != "")
-                {
-                    //Setup our new file path
-                    $newFilePath = "../assets/img/news/" . $_FILES['file']['name'][$i];
-
-                    //Upload file to temp dir
-                    if(move_uploaded_file($tmpFilePath, $newFilePath))
-                    {
-                        //Handle other code here
-                        //echo "Stored in: " . "uploads/" . $_FILES["file"]["name"][$i];
-                    }
-                }    
-            } 
             //Add entry to table 'news'
             // Check connection
             if ($mysqli->connect_error) {
@@ -113,7 +91,6 @@
             } 
             else
             {
-                $file = $_FILES["file"]["name"][$i] . "";
                 $text = $_POST['textbox'];
                 $author = $_SESSION['username'];//'admin';
                 $ip = $_SERVER['REMOTE_ADDR'];
