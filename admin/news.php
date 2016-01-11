@@ -12,78 +12,84 @@
                 <strong>Success!</strong>&nbsp;You have registered a new user.&nbsp;&nbsp;<br>
              </div>";
     }
-
-    for($i=0; $i<count($_FILES['file']['name']); $i++)
-    {
-        //Uploads one or more images or videos to the ../assets/img/news/ folder
-        $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
-        $extension = pathinfo($_FILES['file']['name'][$i], PATHINFO_EXTENSION);
-        $tmpFilePath = $_FILES['file']['tmp_name'][$i];
-
-        if (($_FILES['file']['type'][$i] == "video/mp4") || 
-            ($_FILES['file']['type'][$i] == "audio/mp3") || 
-            ($_FILES['file']['type'][$i] == "audio/wma") || 
-            ($_FILES['file']['type'][$i] == "image/pjpeg") || 
-            ($_FILES['file']['type'][$i] == "image/gif") || 
-            ($_FILES['file']['type'][$i] == "image/jpeg")
-        //Limit size to 2 Mb
-        && ($_FILES['file']['size'][$i] < 2000000)
-        && in_array($extension, $allowedExts))
+    
+    if ($_POST){
+        if(isset($_POST['checkbox1']))
         {
-            if ($_FILES["file"]["error"][$i] > 0)
+            for($i=0; $i<count($_FILES['file']['name']); $i++)
             {
-                echo "Return Code: " . $_FILES["file"]["error"][$i] . "<br />";
-            }
-            else
-            {
-                echo '<script>alert("Success! Your file '.$_FILES["file"]["name"][$i].' has been sent successfully");</script>';
+                //Uploads one or more images or videos to the ../assets/img/news/ folder
+                $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
+                $extension = pathinfo($_FILES['file']['name'][$i], PATHINFO_EXTENSION);
+                $tmpFilePath = $_FILES['file']['tmp_name'][$i];
+
+                if (($_FILES['file']['type'][$i] == "video/mp4") || 
+                    ($_FILES['file']['type'][$i] == "audio/mp3") || 
+                    ($_FILES['file']['type'][$i] == "audio/wma") || 
+                    ($_FILES['file']['type'][$i] == "image/pjpeg") || 
+                    ($_FILES['file']['type'][$i] == "image/gif") || 
+                    ($_FILES['file']['type'][$i] == "image/jpeg")
+                //Limit size to 2 Mb
+                && ($_FILES['file']['size'][$i] < 2000000)
+                && in_array($extension, $allowedExts))
+                {
+                    if ($_FILES["file"]["error"][$i] > 0)
+                    {
+                        echo "Return Code: " . $_FILES["file"]["error"][$i] . "<br />";
+                    }
+                    else
+                    {
+                        echo '<script>alert("Success! Your weekly update and file '.$_FILES["file"]["name"][$i].' have been sent successfully");</script>';
                 
-                if (file_exists("../assets/img/news/" . $_FILES["file"]["name"]))
-                {
-                    echo '<script>alert("Error: Your file '.$_FILES["file"]["name"][$i].' already exists.");</script>';
-                }
-                else
-                {
-                    //Make sure we have a filepath
-                    if($tmpFilePath != "")
-                    {
-                        //Setup our new file path
-                        $newFilePath = "../assets/img/news/" . $_FILES['file']['name'][$i];
-
-                        //Upload file to temp dir
-                        if(move_uploaded_file($tmpFilePath, $newFilePath))
+                        if (file_exists("../assets/img/news/" . $_FILES["file"]["name"]))
                         {
-                            //Handle other code here
-                            //echo "Stored in: " . "uploads/" . $_FILES["file"]["name"][$i];
+                            echo '<script>alert("Error: Your weekly update and file '.$_FILES["file"]["name"][$i].' already exists.");</script>';
                         }
-                    }    
-                } 
-                //Add entry to table 'news'
-                // Check connection
-                if ($mysqli->connect_error) {
-                    die("Connection failed: " . $mysqli->connect_error);
-                } 
-                else
-                {
-                    $file = $_FILES["file"]["name"][$i] . "";
-                    $text = $_POST['textbox'];
-                    $author = $_SESSION['username'];
-                    $ip = $_SERVER['REMOTE_ADDR'];
+                        else
+                        {
+                            //Make sure we have a filepath
+                            if($tmpFilePath != "")
+                            {
+                                //Setup our new file path
+                                $newFilePath = "../assets/img/news/" . $_FILES['file']['name'][$i];
 
-                    $sql = "INSERT INTO news (post, author, file, ip) 
-                        VALUES ('$text','$author','$file','$ip')";
+                                //Upload file to temp dir
+                                if(move_uploaded_file($tmpFilePath, $newFilePath))
+                                {
+                                    //Handle other code here
+                                    //echo "Stored in: " . "uploads/" . $_FILES["file"]["name"][$i];
+                                }
+                            }    
+                        } 
+                        //Add entry to table 'news'
+                        // Check connection
+                        if ($mysqli->connect_error) {
+                            die("Connection failed: " . $mysqli->connect_error);
+                        } 
+                        else
+                        {
+                            $file = $_FILES["file"]["name"][$i] . "";
+                            $text = $_POST['textbox'];
+                            $author = $_SESSION['username'];
+                            $ip = $_SERVER['REMOTE_ADDR'];
 
-                    if ($mysqli->query($sql) === TRUE) {} 
-                    else 
-                    {
-                        echo "Error updating record: " . $mysqli->error;
+                            $sql = "INSERT INTO news (post, author, file, ip) 
+                                VALUES ('$text','$author','$file','$ip')";
+
+                            if ($mysqli->query($sql) === TRUE) {} 
+                            else 
+                            {
+                                echo "Error updating record: " . $mysqli->error;
+                            }
+                        }
+                        //$mysqli->close();            
                     }
                 }
-                //$mysqli->close();            
             }
         }
         else
         {
+            echo '<script>alert("Success! Your weekly update has been sent successfully");</script>';
             //Add entry to table 'news'
             // Check connection
             if ($mysqli->connect_error) {
@@ -240,7 +246,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="checkbox checkbox-blue" for="checkbox1">
-                                    <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox" >
+                                    <input type="checkbox" value="" id="checkbox1" name="checkbox1" data-toggle="checkbox">
                                         I want to include an image.
                                 </label>
                             </div>
