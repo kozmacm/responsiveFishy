@@ -91,6 +91,7 @@
             } 
             else
             {
+                $file = '';
                 $text = $_POST['textbox'];
                 $author = $_SESSION['username'];//'admin';
                 $ip = $_SERVER['REMOTE_ADDR'];
