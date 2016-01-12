@@ -223,6 +223,7 @@
                                        echo "</div>";
                                    }
                                }
+                               
                            }
                            
                            if (mysqli_num_rows($stmt) == 0) {
