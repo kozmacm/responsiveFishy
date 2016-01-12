@@ -12,11 +12,7 @@
                 <a href='#' class='close' data-dismiss='alert'>&times;</a>
                 <strong>Success!</strong>&nbsp;You have registered a new user.&nbsp;&nbsp;<br>
              </div>";
-    }
-
-    $ga = new gapi("fishy-business-service@fishy-business-1182.iam.gserviceaccount.com", "keys/Fishy Business-a9f7453a79f4.p12");
-    //$filter = 'country == United States && browser == Firefox || browser == Chrome';
-    $ga->requestReportData(91085606,array('browser','browserVersion'),array('pageviews','visits'),'-visits',$filter, '30daysAgo', NULL, 1, 10);
+    }   
 ?>
 
 <!doctype html>
@@ -141,21 +137,67 @@
             <div class="container-fluid"> 
                 <p>This is the secure backend for administrators. You are currently logged in. </p>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-4">
                         <div class="card ">
                             <table class='table table-hover'>
                                 <tr>
-                                    <th>Browser &amp; Browser Version</th>
-                                    <th>Pageviews</th>
-                                    <th>Visits</th>
+                                    <th>Demographics</th>
+                                </tr>
+                                <tr>
+                                    <td><a href="">Language</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">Country</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">City</a></td>
+                                </tr>
+                                <tr>
+                                    <th>System</th>
+                                </tr>
+                                <tr>
+                                    <td><a href="">Browser</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">Operating System</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">Service Provider</a></td>
+                                </tr>
+                                <tr>
+                                    <th>Mobile</th>
+                                </tr>
+                                <tr>
+                                    <td><a href="">Operating System</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">Service Provider</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">Screen Resolution</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card ">
+                            <table class='table table-hover'>
+                                <tr>
+                                    <th>Browser</th>
+                                    <th>Sessions</th>
+                                    <th>% New Sessions</th>
                                 </tr>
                                 <?php
-                                foreach($ga->getResults() as $result):
+                                $ga1 = new gapi("fishy-business-service@fishy-business-1182.iam.gserviceaccount.com", "keys/Fishy Business-a9f7453a79f4.p12");
+                                //$filter = 'country == United States && browser == Firefox || browser == Chrome';
+                                $ga1->requestReportData(91085606,array('browser'),array('sessions','percentNewSessions'),'-sessions',$filter, '30daysAgo', NULL, 1, 10);
+
+                                foreach($ga1->getResults() as $result):
                                 ?>
                                 <tr>
                                     <td><?php echo $result ?></td>
-                                    <td><?php echo $result->getPageviews() ?></td>
-                                    <td><?php echo $result->getVisits() ?></td>
+                                    <td><?php echo $result->getSessions() ?></td>
+                                    <td><?php echo $result->getPercentNewSessions() ?></td>
                                 </tr>
                                 <?php
                                 endforeach
@@ -165,19 +207,19 @@
                                 <table class='table table-hover'>
                                 <tr>
                                     <th>Total Results</th>
-                                    <td><?php echo $ga->getTotalResults() ?></td>
+                                    <td><?php echo $ga1->getTotalResults() ?></td>
                                 </tr>
                                 <tr>
-                                    <th>Total Pageviews</th>
-                                    <td><?php echo $ga->getPageviews() ?>
+                                    <th>Total Sessions</th>
+                                    <td><?php echo $ga1->getSessions() ?>
                                 </tr>
                                 <tr>
-                                    <th>Total Visits</th>
-                                    <td><?php echo $ga->getVisits() ?></td>
+                                    <th>Total % New Sessions</th>
+                                    <td><?php echo $ga1->getPercentNewSessions() ?>
                                 </tr>
                                 <tr>
                                     <th>Result Date Range</th>
-                                    <td><?php echo $ga->getStartDate() ?> to <?php echo $ga->getEndDate() ?></td>
+                                    <td><?php echo $ga1->getStartDate() ?> to <?php echo $ga1->getEndDate() ?></td>
                                 </tr>
                             </table>
                         </div>
