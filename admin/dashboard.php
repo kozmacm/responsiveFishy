@@ -137,6 +137,7 @@
             <div class="container-fluid"> 
                 <p>This is the secure backend for administrators. You are currently logged in. </p>
                 <div class="row">
+                    <!--
                     <div class="col-md-4">
                         <div class="card ">
                             <table class='table table-hover'>
@@ -179,7 +180,8 @@
                             </table>
                         </div>
                     </div>
-                    <div class="col-md-8">
+                    -->
+                    <div class="col-md-12">
                         <div class="card ">
                             <table class='table table-hover'>
                                 <tr>
