@@ -135,106 +135,117 @@
         <!--put body stuff here-->
         <div class="content">
             <div class="container-fluid"> 
-                <p>This is the secure backend for administrators. You are currently logged in. </p>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card ">
-                            <table class='table table-hover'>
-                                <tr>
-                                    <th>Demographics</th>
-                                </tr>
-                                <tr>
-                                    <td><a href="dashboard.php?var=language">Language</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="dashboard.php?var=country">Country</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="dashboard.php?var=city">City</a></td>
-                                </tr>
-                                <tr>
-                                    <th>System</th>
-                                </tr>
-                                <tr>
-                                    <td><a href="dashboard.php?var=browser">Browser</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="dashboard.php?var=operatingSystem">Operating System</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="dashboard.php?var=networkLocation">Service Provider</a></td>
-                                </tr>
-                                <tr>
-                                    <th>Mobile</th>
-                                </tr>
-                                <tr>
-                                    <td><a href="dashboard.php?var=operatingSystem&seg=mobile">Operating System</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="dashboard.php?var=networkLocation&seg=mobile">Service Provider</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="dashboard.php?var=screenResolution&seg=mobile">Screen Resolution</a></td>
-                                </tr>
-                            </table>
+                            <div class="header">
+                                <h4 class="title">Google Analytics</h4>
+                                <p class="category">Session Data</p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class='table table-hover'>
+                                    <tr>
+                                        <th>Demographics</th>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="dashboard.php?var=language">Language</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="dashboard.php?var=country">Country</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="dashboard.php?var=city">City</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th>System</th>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="dashboard.php?var=browser">Browser</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="dashboard.php?var=operatingSystem">Operating System</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="dashboard.php?var=networkLocation">Service Provider</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Mobile (includes tablets)</th>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="dashboard.php?var=operatingSystem&seg=mobile">Operating System</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="dashboard.php?var=networkLocation&seg=mobile">Service Provider</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="dashboard.php?var=screenResolution&seg=mobile">Screen Resolution</a></td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-8">
                         <div class="card ">
-                            <table class='table table-hover'>
-                                <tr>
-                                    <th><?php echo $_GET['var']; ?></th>
-                                    <th>Sessions</th>
-                                    <th>% New Sessions</th>
-                                </tr>
-                                <?php
-                                $passed_var = $_GET['var'];
-                                $passed_seg = $_GET['seg'];
-
-                                if ($passed_var == '')
-                                {
-                                    $passed_var = 'browser';
-                                }
-                                if ($passed_seg == 'mobile')
-                                {
-                                    $segment = 'gaid::-14';
-                                }
-                                
-                                $ga1 = new gapi("fishy-business-service@fishy-business-1182.iam.gserviceaccount.com", "keys/Fishy Business-a9f7453a79f4.p12");
-                                //$filter = 'country == United States && browser == Firefox || browser == Chrome';
-                                //$segment = 'gaid::-14';
-                                $ga1->requestReportData(91085606,array($passed_var),array('sessions','percentNewSessions'),'-sessions', $filter, $segment, '30daysAgo', NULL, 1, 10);
-
-                                foreach($ga1->getResults() as $result):
-                                ?>
-                                <tr>
-                                    <td><?php echo $result ?></td>
-                                    <td><?php echo $result->getSessions() ?></td>
-                                    <td><?php echo $result->getPercentNewSessions() ?></td>
-                                </tr>
-                                <?php
-                                endforeach
-                                ?>
-                                </table>
-
+                            <div class="content table-responsive table-full-width">
                                 <table class='table table-hover'>
-                                <tr>
-                                    <th>Total Results</th>
-                                    <td><?php echo $ga1->getTotalResults() ?></td>
-                                </tr>
-                                <tr>
-                                    <th>Total Sessions</th>
-                                    <td><?php echo $ga1->getSessions() ?>
-                                </tr>
-                                <tr>
-                                    <th>Total % New Sessions</th>
-                                    <td><?php echo $ga1->getPercentNewSessions() ?>
-                                </tr>
-                                <tr>
-                                    <th>Result Date Range</th>
-                                    <td><?php echo $ga1->getStartDate() ?> to <?php echo $ga1->getEndDate() ?></td>
-                                </tr>
-                            </table>
+                                    <tr>
+                                        <th>
+                                            <?php 
+                                                $title = $_GET['var'];
+                                                if ($title == '')
+                                                {
+                                                    $title = 'browser';
+                                                }
+                                                echo $title; 
+                                            ?>
+                                        </th>
+                                        <th>Sessions</th>
+                                        <th>% New Sessions</th>
+                                    </tr>
+                                    <?php
+                                    $passed_var = $title;
+                                    $passed_seg = $_GET['seg'];
+
+                                    if ($passed_seg == 'mobile')
+                                    {
+                                        $segment = 'gaid::-14';
+                                    }
+                                
+                                    $ga1 = new gapi("fishy-business-service@fishy-business-1182.iam.gserviceaccount.com", "keys/Fishy Business-a9f7453a79f4.p12");
+                                    //$filter = 'country == United States && browser == Firefox || browser == Chrome';
+                                    //$segment = 'gaid::-14';
+                                    $ga1->requestReportData(91085606,array($passed_var),array('sessions','percentNewSessions'),'-sessions', $filter, $segment, '30daysAgo', NULL, 1, 10);
+
+                                    foreach($ga1->getResults() as $result):
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $result ?></td>
+                                        <td><?php echo $result->getSessions() ?></td>
+                                        <td><?php echo $result->getPercentNewSessions() ?></td>
+                                    </tr>
+                                    <?php
+                                    endforeach
+                                    ?>
+                                </table>
+                                <table class='table table-hover'>
+                                    <tr>
+                                        <th>Total Results</th>
+                                        <td><?php echo $ga1->getTotalResults() ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Total Sessions</th>
+                                        <td><?php echo $ga1->getSessions() ?>
+                                    </tr>
+                                    <tr>
+                                        <th>Total % New Sessions</th>
+                                        <td><?php echo $ga1->getPercentNewSessions() ?>
+                                    </tr>
+                                    <tr>
+                                        <th>Result Date Range</th>
+                                        <td><?php echo $ga1->getStartDate() ?> to <?php echo $ga1->getEndDate() ?></td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
