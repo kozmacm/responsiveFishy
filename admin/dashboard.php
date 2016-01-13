@@ -183,20 +183,18 @@
                         <div class="card ">
                             <table class='table table-hover'>
                                 <tr>
-                                    <th>Browser</th>
+                                    <th><?php echo $_GET['var']; ?></th>
                                     <th>Sessions</th>
                                     <th>% New Sessions</th>
                                 </tr>
                                 <?php
                                 $passed_var = $_GET['var'];
                                 $passed_seg = $_GET['seg'];
-                                
-                                //default is to show 'browser' data
-                                if ($passed_var == '');
+
+                                if ($passed_var == '')
                                 {
                                     $passed_var = 'browser';
                                 }
-                                //check whether the 'seg' variable was set as mobile
                                 if ($passed_seg == 'mobile')
                                 {
                                     $segment = 'gaid::-14';
