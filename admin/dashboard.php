@@ -190,6 +190,13 @@
                                 <?php
                                 $passed_var = $_GET['var'];
                                 $passed_seg = $_GET['seg'];
+                                
+                                //default is to show 'browser' data
+                                if ($passed_var == '');
+                                {
+                                    $passed_var = 'browser';
+                                }
+                                //check whether the 'seg' variable was set as mobile
                                 if ($passed_seg == 'mobile')
                                 {
                                     $segment = 'gaid::-14';
