@@ -140,7 +140,7 @@
                         <div class="card ">
                             <div class="header">
                                 <h4 class="title">Google Analytics</h4>
-                                <p class="category">Session Data</p>
+                                <p class="category">Filter Criteria</p>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class='table table-hover'>
@@ -186,6 +186,10 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card ">
+                            <div class="header">
+                                <h4 class="title">Session Data</h4>
+                                <p class="category">Top 10 Results</p>
+                            </div>
                             <div class="content table-responsive table-full-width">
                                 <table class='table table-hover'>
                                     <tr>
