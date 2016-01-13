@@ -12,7 +12,7 @@
                 <a href='#' class='close' data-dismiss='alert'>&times;</a>
                 <strong>Success!</strong>&nbsp;You have registered a new user.&nbsp;&nbsp;<br>
              </div>";
-    }   
+    }
 ?>
 
 <!doctype html>
@@ -137,7 +137,6 @@
             <div class="container-fluid"> 
                 <p>This is the secure backend for administrators. You are currently logged in. </p>
                 <div class="row">
-                    <!--
                     <div class="col-md-4">
                         <div class="card ">
                             <table class='table table-hover'>
@@ -145,43 +144,42 @@
                                     <th>Demographics</th>
                                 </tr>
                                 <tr>
-                                    <td><a href="">Language</a></td>
+                                    <td><a href="dashboard.php?var=language">Language</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="">Country</a></td>
+                                    <td><a href="dashboard.php?var=country">Country</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="">City</a></td>
+                                    <td><a href="dashboard.php?var=city">City</a></td>
                                 </tr>
                                 <tr>
                                     <th>System</th>
                                 </tr>
                                 <tr>
-                                    <td><a href="">Browser</a></td>
+                                    <td><a href="dashboard.php?var=browser">Browser</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="">Operating System</a></td>
+                                    <td><a href="dashboard.php?var=operatingSystem">Operating System</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="">Service Provider</a></td>
+                                    <td><a href="dashboard.php?var=networkLocation">Service Provider</a></td>
                                 </tr>
                                 <tr>
                                     <th>Mobile</th>
                                 </tr>
                                 <tr>
-                                    <td><a href="">Operating System</a></td>
+                                    <td><a href="dashboard.php?var=operatingSystem&seg=mobile">Operating System</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="">Service Provider</a></td>
+                                    <td><a href="dashboard.php?var=networkLocation&seg=mobile">Service Provider</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="">Screen Resolution</a></td>
+                                    <td><a href="dashboard.php?var=screenResolution&seg=mobile">Screen Resolution</a></td>
                                 </tr>
                             </table>
                         </div>
                     </div>
-                    -->
-                    <div class="col-md-12">
+                    <div class="col-md-8">
                         <div class="card ">
                             <table class='table table-hover'>
                                 <tr>
@@ -190,9 +188,17 @@
                                     <th>% New Sessions</th>
                                 </tr>
                                 <?php
+                                $passed_var = $_GET['var'];
+                                $passed_seg = $_GET['seg'];
+                                if ($passed_seg == 'mobile')
+                                {
+                                    $segment = 'gaid::-14';
+                                }
+                                
                                 $ga1 = new gapi("fishy-business-service@fishy-business-1182.iam.gserviceaccount.com", "keys/Fishy Business-a9f7453a79f4.p12");
                                 //$filter = 'country == United States && browser == Firefox || browser == Chrome';
-                                $ga1->requestReportData(91085606,array('browser'),array('sessions','percentNewSessions'),'-sessions',$filter, '30daysAgo', NULL, 1, 10);
+                                //$segment = 'gaid::-14';
+                                $ga1->requestReportData(91085606,array($passed_var),array('sessions','percentNewSessions'),'-sessions', $filter, $segment, '30daysAgo', NULL, 1, 10);
 
                                 foreach($ga1->getResults() as $result):
                                 ?>

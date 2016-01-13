@@ -114,13 +114,14 @@ class gapi {
    * @param Array $metrics Google Analytics metrics e.g. array('pageviews')
    * @param Array $sort_metric OPTIONAL: Dimension or dimensions to sort by e.g.('-visits')
    * @param String $filter OPTIONAL: Filter logic for filtering results
+   * @param String $segment OPTIONAL: Filter logic for filtering results by segment
    * @param String $start_date OPTIONAL: Start of reporting period
    * @param String $end_date OPTIONAL: End of reporting period
    * @param Int $start_index OPTIONAL: Start index of results
    * @param Int $max_results OPTIONAL: Max results returned
    */
-  public function requestReportData($report_id, $dimensions=null, $metrics, $sort_metric=null, $filter=null, $start_date=null, $end_date=null, $start_index=1, $max_results=10000) {
-    $parameters = array('ids'=>'ga:' . $report_id);
+  public function requestReportData($report_id, $dimensions=null, $metrics, $sort_metric=null, $filter=null, $segment=null, $start_date=null, $end_date=null, $start_index=1, $max_results=10000) {
+    $parameters = array('v'=>'2','ids'=>'ga:' . $report_id);
 
     if (is_array($dimensions)) {
       $dimensions_string = '';
@@ -171,6 +172,16 @@ class gapi {
       if ($filter!==false) {
         $parameters['filters'] = $filter;
       }
+    }
+
+    // Segment
+    if($segment!=null)
+    {
+    	$segment = $this->processSegment($segment);
+    	if($segment!==false)
+    	{
+    		$parameters['segment'] = $segment;
+    	}
     }
 
     if ($start_date==null) {
@@ -246,6 +257,42 @@ class gapi {
       return urlencode($filter);
     }
     else {
+      return false;
+    }
+  }
+
+  /**
+  * Process segment string, clean parameters and convert to Google Analytics
+  * compatible format
+  *
+  * @param String $segment
+  * @return String Compatible segment string
+  */
+  protected function processSegment($segment)
+  {
+  	//eg: dynamic::ga:pagePath!@OVKEY;ga:pagePath!@OVMTC;ga:pagePath!@OVKWID;ga:referralPath!@OVRAW;ga:pagePath!@OVADID
+    $valid_operators = '(!~|=~|==|!=|>|<|>=|<=|=@|!@)';
+    
+    if(substr($segment,0,4) != 'gaid') //Leave segment ID references intact
+    {
+    // Temporarily remove the dynamic prefix if it exists, everything else is plain params
+    $segment = str_replace('dynamic::','',$segment);
+    
+    $segment = preg_replace('/\s\s+/',' ',trim($segment)); //Clean duplicate whitespace
+    $segment = str_replace(array(',',';'),array('\,','\;'),$segment); //Escape Google Analytics reserved characters
+    $segment = preg_replace('/(&&\s*|\|\|\s*|^)([a-z]+)(\s*' . $valid_operators . ')/i','$1ga:$2$3',$segment); //Prefix ga: to metrics and dimensions
+    $segment = preg_replace('/[\'\"]/i','',$segment); //Clear invalid quote characters
+    $segment = preg_replace(array('/\s*&&\s*/','/\s*\|\|\s*/','/\s*' . $valid_operators . '\s*/'),array(';',',','$1'),$segment); //Clean up operators    
+  	
+  	$segment = 'dynamic::'.$segment;
+  	}
+      
+    if(strlen($segment)>0)
+    {
+      return urlencode($segment);
+    }
+    else 
+    {
       return false;
     }
   }
