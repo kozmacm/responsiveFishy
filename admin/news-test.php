@@ -254,9 +254,15 @@
                                 <input id="fileInput" type="file" name="file[]" class="file" data-show-upload="false" data-show-caption="true" >
                             </div> 
                             <div class="form-group">    
+                                <input type="submit" name="preview" class="btn btn-info btn-fill" value="Preview" id="preview" />
                                 <input type="submit" name="submit" class="btn btn-info btn-fill" value="Submit" id="submit" />
                             </div>
                         </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" id="changetext">
+
                     </div>
                 </div>
             </div>
