@@ -36,25 +36,9 @@
             {
                 echo '<script>alert("Success! Your file '.$_FILES["file"]["name"][$i].' has been sent successfully");</script>';
                 
-                //echo '<div class="alert alert-success fade in">
-                //      <a href="#" class="close" data-dismiss="alert">&times;</a>
-                //      <strong>Success!</strong> Your file '.$_FILES["file"]["name"][$i].' has been sent successfully.
-                //      </div>';
-                             
-                //echo "Upload: " . $_FILES["file"]["name"][$i] . "<br />";
-                //echo "Type: " . $_FILES["file"]["type"][$i] . "<br />";
-                //echo "Size: " . ($_FILES["file"]["size"][$i] / 1024) . " Kb<br />";
-                //echo "Temp file: " . $_FILES["file"]["tmp_name"][$i] . "<br />";
-
                 if (file_exists("uploads/" . $_FILES["file"]["name"]))
                 {
                     echo '<script>alert("Error: Your file '.$_FILES["file"]["name"][$i].' already exists.");</script>';
-                    
-                    //echo '<div class="alert alert-danger fade in">
-                    //  <a href="#" class="close" data-dismiss="alert">&times;</a>
-                    //  <strong>Error: </strong> Your file '.$_FILES["file"]["name"][$i].' already exists.
-                    //  </div>';
-                    //echo $_FILES["file"]["name"] . " already exists. ";
                 }
                 else
                 {
@@ -93,14 +77,7 @@
                     if ($mysqli->query($sql) === TRUE) {} 
                     else 
                     {
-                        echo 'Error: '.$sql.' <br> '.$mysqli.'->error.';
-                        
-                        //echo '<div class="alert alert-danger fade in">
-                        //      <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        //      <strong>Error: </strong> '.$sql.' <br> '.$mysqli.'->error.
-                        //      </div>';
-
-                        //echo "Error: " . $sql . "<br>" . $mysqli->error;
+                        echo "<script>alert('Error: '.$sql.' <br> '.$mysqli.'->error.');</script>";
                     }
                 }
                 //$mysqli->close();            
@@ -108,12 +85,7 @@
         }
         else
         {
-            echo 'Error: - Invalid File.';
-            
-            //echo '<div class="alert alert-danger fade in">
-            //      <a href="#" class="close" data-dismiss="alert">&times;</a>
-            //      <strong>Error: </strong> - Invalid File.
-            //      </div>';
+            echo "<script>alert('Error: - Invalid File.');</script>";
         }
     }
 ?>
@@ -333,11 +305,11 @@
                <div class="row">
                    <div class="col-md-12">
                        <p>
-                           <span class="asterisk">*</span> indicates required<br><br>
+                           All fields are required<br><br>
                        </p>
                        <form method="post" id="form" name="form" action="" enctype="multipart/form-data" >
     				       <div class="form-group">
-                               <label class="control-label">Select File</label>
+                               <label class="control-label">Select File (Less than 2Mb)</label>
                                <input id="input-2" type="file" name="file[]" class="file" multiple="true" data-show-upload="false" data-show-caption="true">
     				  	   </div>
                            <div class="form-group">
