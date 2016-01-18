@@ -163,7 +163,9 @@
 <div class="wrapper">
     <div class="parallax filter-black">
         <div class="parallax-image">
-            <img src="assets/img/thumb.jpg" alt="..." />
+            <!--<img src="assets/img/thumb.jpg">-->
+            <img src="assets/img/backgroundthumb.jpg">
+
         </div>    
         <div class="small-info">
             <h1>Fishy Business</h1>
