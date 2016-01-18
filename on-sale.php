@@ -164,7 +164,7 @@
     <div class="parallax filter-black">
         <div class="parallax-image">
             <!--<img src="assets/img/thumb.jpg">-->
-            <img src="assets/img/backgroundOnSale.jpg">
+            <img src="assets/img/backgroundOnSale.JPG">
         </div>    
         <div class="small-info">
             <h1>On Sale</h1>
