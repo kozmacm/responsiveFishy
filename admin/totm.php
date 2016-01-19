@@ -113,6 +113,12 @@
                     </a>            
                 </li>
                 <li class="active">
+                    <a href="on-sale.php">
+                        <i class="pe-7s-graph"></i> 
+                        <p>On Sale</p>
+                    </a>            
+                </li>
+                <li class="active">
                     <a>
                         <i class="pe-7s-photo"></i> 
                         <p>Tank of the Month</p>

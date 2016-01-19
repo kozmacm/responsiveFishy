@@ -18,7 +18,7 @@
         {
             for($i=0; $i<count($_FILES['file']['name']); $i++)
             {
-                //Uploads one or more images or videos to the ../assets/img/news/ folder
+                //Uploads one or more images or videos to the ../assets/img/sales/ folder
                 $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
                 $extension = pathinfo($_FILES['file']['name'][$i], PATHINFO_EXTENSION);
                 $tmpFilePath = $_FILES['file']['tmp_name'][$i];
@@ -41,7 +41,7 @@
                     {
                         echo '<script>alert("Success! Your weekly update and file '.$_FILES["file"]["name"][$i].' have been sent successfully");</script>';
                 
-                        if (file_exists("../assets/img/news/" . $_FILES["file"]["name"]))
+                        if (file_exists("../assets/img/sales/" . $_FILES["file"]["name"]))
                         {
                             echo '<script>alert("Error: Your weekly update and file '.$_FILES["file"]["name"][$i].' already exists.");</script>';
                         }
@@ -51,7 +51,7 @@
                             if($tmpFilePath != "")
                             {
                                 //Setup our new file path
-                                $newFilePath = "../assets/img/news/" . $_FILES['file']['name'][$i];
+                                $newFilePath = "../assets/img/sales/" . $_FILES['file']['name'][$i];
 
                                 //Upload file to temp dir
                                 if(move_uploaded_file($tmpFilePath, $newFilePath))
@@ -61,7 +61,7 @@
                                 }
                             }    
                         } 
-                        //Add entry to table 'news'
+                        //Add entry to table 'sales'
                         // Check connection
                         if ($mysqli->connect_error) {
                             die("Connection failed: " . $mysqli->connect_error);
@@ -73,7 +73,7 @@
                             $author = $_SESSION['username'];
                             $ip = $_SERVER['REMOTE_ADDR'];
 
-                            $sql = "INSERT INTO news (post, author, file, ip) 
+                            $sql = "INSERT INTO sales (post, author, file, ip) 
                                 VALUES ('$text','$author','$file','$ip')";
 
                             if ($mysqli->query($sql) === TRUE) {} 
@@ -90,7 +90,7 @@
         else
         {
             echo '<script>alert("Success! Your weekly update has been sent successfully");</script>';
-            //Add entry to table 'news'
+            //Add entry to table 'sales'
             // Check connection
             if ($mysqli->connect_error) {
                 die("Connection failed: " . $mysqli->connect_error);
@@ -102,7 +102,7 @@
                 $author = $_SESSION['username'];//'admin';
                 $ip = $_SERVER['REMOTE_ADDR'];
 
-                $sql = "INSERT INTO news (post, author, file, ip) 
+                $sql = "INSERT INTO sales (post, author, file, ip) 
                     VALUES ('$text','$author','$file','$ip')";
 
                 if ($mysqli->query($sql) === TRUE) {} 
@@ -149,7 +149,7 @@
     <link href="../assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
     
 </head>
-<body class="news"> 
+<body class="sales"> 
 <?php if (login_check($mysqli) == true) : ?>
 <?php
     if (!empty($error_msg)) {
@@ -173,12 +173,17 @@
                     Fishy Business
                 </a>
             </div>
-                       
             <ul class="nav">
                 <li class="active">
                     <a href="dashboard.php">
                         <i class="pe-7s-graph"></i> 
                         <p>Dashboard</p>
+                    </a>            
+                </li>
+                <li class="active">
+                    <a>
+                        <i class="pe-7s-graph"></i> 
+                        <p>On Sale</p>
                     </a>            
                 </li>
                 <li class="active">
@@ -207,7 +212,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand">Weekly News Updates</a>
+                    <a class="navbar-brand">Weekly sales Updates</a>
                 </div>
                 <div class="collapse navbar-collapse">       
                     <ul class="nav navbar-nav navbar-left">
@@ -240,14 +245,14 @@
                 <div class="row">
                     <div class="col-md-12">
                         <form method="post" id="form" name="form" action="" enctype="multipart/form-data" >
-                            <p>Here is where you can update the weekly news feed. Do not insert an image using this frame, do it using the checkbox below. </p>
+                            <p>Here is where you can update the weekly sales. Do not insert a sales flyer using this frame, do it using the checkbox below. </p>
                             <div class="form-group">
                                 <textarea id="textbox" name="textbox" class="form-control" rows="10" placeholder="Enter your weekly update here" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="checkbox checkbox-blue" for="checkbox1">
                                     <input type="checkbox" value="" id="checkbox1" name="checkbox1" data-toggle="checkbox">
-                                        I want to include an image.
+                                        I want to include a sales flyer.
                                 </label>
                             </div>
                             <div class="form-group" id="file_container">
@@ -324,7 +329,7 @@
     <script src="../assets/js/fileinput.min.js" type="text/javascript"></script>
     <script src="../assets/js/login-register.js" type="text/javascript"></script>
 	<script src="../plugins/ckeditor/ckeditor.js"></script>
-    <script src="../assets/js/news-backend.js"></script>
+    <script src="../assets/js/sales-backend.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
