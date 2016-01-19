@@ -242,6 +242,78 @@
                             
         <!--put body stuff here-->
         <div class="content">
+            <div class="container-fluid">
+                <div class="row">                   
+                    <div class="col-md-12">
+                        <div class="card card-plain">
+                            <div class="header">
+                                <h4 class="title">Current Weekly News Update</h4>
+                                <p class="category">Here you will find the current weekly news update! </p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <?php
+                                    // Check connection
+                                    if ($mysqli->connect_error) {
+                                        die("Connection failed: " . $mysqli->connect_error);
+                                    } 
+                                    else
+                                    {
+                                        if (!$stmt = $mysqli->query("SELECT * FROM news")) {
+                                            echo "Query Failed!: (" . $mysqli->errno . ") ". $mysqli->error;
+                                        }
+                                                                                
+                                        echo "<table class='table table-hover'>";
+                                        echo "<thead>
+                                                <th>Image</th>
+                                    	        <th>News</th>
+                                    	        <th>Author</th>
+                                    	        <th>IP</th>
+                                    	        <th>Date</th>
+                                                </thead>
+                                                <tbody>";
+                                        while ($row = mysqli_fetch_array($stmt)) {
+                                            $i = $row["id"];
+                                            $f = $row["file"];
+                                            $p = $row["post"];
+                                            $a = $row["author"];
+                                            $z = $row["ip"];
+                                            $d = $row["date_posted"];
+                                            $active = $row["active_flag"];
+
+                                            if ($active == "Y")
+                                            {
+                                                echo "<tr id='$i'>";
+                                                if ($f == "")
+                                                {
+                                                    echo "<td>No Sales Flyer Included</td>";
+                                                }
+                                                else
+                                                {
+                                                    echo "<td> <a href='../assets/img/sales/$f'><img class='thumbnail' src='../assets/img/sales/$f' alt='$f' /> </td>";
+                                                }
+                                                
+                                                echo "<td>$p</td>";
+                                                echo "<td>$a</td>";
+                                                echo "<td>$z</td>";
+                                                echo "<td>$d</td>";
+                                                echo "</tr>";
+                                            }
+                                        }
+                                        echo "</tbody>";
+                                        echo "</table>";
+
+                                        if (mysqli_num_rows($stmt) == 0) {
+                                            echo "No records found.";
+                                        }
+                                    } 
+                                $stmt->free();
+                                $mysqli->close();    
+                                ?>       
+                            </div>
+                        </div>
+                    </div>                
+                </div>                    
+            </div>
             <div class="container-fluid">    
                 <div class="row">
                     <div class="col-md-12">

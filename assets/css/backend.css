@@ -989,3 +989,12 @@
 .news .exceeded {
     color: red;
 }
+.news .thumbnail {
+  width: 100px;
+  height: 100px;
+}
+
+.sales .thumbnail {
+  width: 100px;
+  height: 200px;
+}
