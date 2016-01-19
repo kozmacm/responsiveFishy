@@ -176,154 +176,166 @@
     <div class="space-50"></div>
 
     <div class="section section-description">
-           <div class="container">
-               <div class="row">
-                   <div class="col-md-12 ">
-                       <h2>Weekly Updates</h2>
-                   </div>
-               </div>
-               <div class="row">
-                   <div class="col-md-12 ">
-                       <p>Checkout our Highlight Videos featuring the New Stock! </p>
-                       </p>Click <a href="https://www.facebook.com/media/set/?set=vb.122002154595568&type=2">here </a>or image for New stock and highlight videos. </p>
-                   </div>
-               </div>
-               <div class="row">
-                   <div class="col-md-12 ">
-                       <?php
-                       // Check connection
-                       if ($mysqli->connect_error) {
-                           die("Connection failed: " . $mysqli->connect_error);
-                       } 
-                       else
-                       {
-                           if (!$stmt = $mysqli->query("SELECT * FROM news")) {
-                               echo "Query Failed!: (" . $mysqli->errno . ") ". $mysqli->error;
-                           }
-                                                                               
-                           while ($row = mysqli_fetch_array($stmt)) {
-                               $i = $row["id"];
-                               $f = $row["file"];
-                               $p = $row["post"];
-                               $active = $row["active_flag"];
-
-                               //output row of 'news' table that is flagged as active
-                               if ($active == "Y")
-                               {
-                                   echo $p;
-
-                                   if ($f != "")
-                                   {
-                                       echo "</div>";
-                                       echo "</div>";
-                                       echo "<div class='row'>";
-                                       echo "<div class='col-md-6 col-md-offset-3 '>";
-                                       echo "<div class='img-container'>";
-                                       echo "<img src='assets/img/news/$f' alt='$f' />";
-                                       echo "</div>";
-                                       echo "</div>";
-                                       echo "</div>";
-                                   }
-                               }
-                           }
-                           
-                           if (mysqli_num_rows($stmt) == 0) {
-                               echo "No records found.";
-                           }
-                       } 
-                       $stmt->free();
-                       //$mysqli->close();    
-                       ?>       
-                   </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <h2>Weekly Updates</h2>
                 </div>
-                
-                <hr>
-                <div class="space-50"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 ">
+                    <p>Checkout our Highlight Videos featuring the New Stock! </p>
+                    </p>Click <a href="https://www.facebook.com/media/set/?set=vb.122002154595568&type=2">here </a>or image for New stock and highlight videos. </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 ">
+                    <?php
+                    // Check connection
+                    if ($mysqli->connect_error) {
+                        die("Connection failed: " . $mysqli->connect_error);
+                    } 
+                    else
+                    {
+                        if (!$stmt = $mysqli->query("SELECT * FROM news")) {
+                            echo "Query Failed!: (" . $mysqli->errno . ") ". $mysqli->error;
+                        }
+                                                                               
+                        while ($row = mysqli_fetch_array($stmt)) {
+                            $i = $row["id"];
+                            $f = $row["file"];
+                            $p = $row["post"];
+                            $active = $row["active_flag"];
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2>New Aquarium Designs</h2>
-                        <p>Fishy Business is moving in a new direction with our aquarium designs with the introduction of our Fishy Business Limited Edition Customs! Each of these stand combinations is a work of art and because of this, we are limiting the color, design, and quantity of each one of these new productions. These pieces are all branded with a signature from the artist and are available on a first come - first serve basis. No two designs are the same. </p>
-                        <p>"The Book Case" is our first in the series and currently houses a 120 gallon aquarium. </p>
-                   </div>
-                   <div class="col-md-6">
-                      <div id="description-carousel" class="carousel fade" data-ride="carousel">                            
-                              <!-- Wrapper for slides -->
-                              <div class="carousel-inner">
-                                <div class="item active">
-                                  <img src="assets/img/newAquarium2.jpg" alt="..." />
-                                </div>
-                                <div class="item">
-                                  <img src="assets/img/newAquarium3.jpg" alt="..." />
-                                </div>
-                                <div class="item">
-                                  <img src="assets/img/newAquarium1.jpg" alt="..." />
-                                </div>
-                              </div>
+                            //output row of 'news' table that is flagged as active
+                            if ($active == "Y")
+                            {
+                                echo $p;
+
+                                if ($f != "")
+                                {
+                                    echo "</div>";
+                                    echo "</div>";
+                                    echo "<div class='row'>";
+                                    echo "<div class='col-md-6 col-md-offset-3 '>";
+                                    echo "<div class='img-container'>";
+                                    echo "<img src='assets/img/news/$f' alt='$f' />";
+                                    echo "</div>";
+                                    echo "</div>";
+                                    echo "</div>";
+                                }
+                            }
+                        }
+                           
+                        if (mysqli_num_rows($stmt) == 0) {
+                            echo "No records found.";
+                        }
+                    } 
+                    $stmt->free();
+                    //$mysqli->close();    
+                    ?>       
+                </div>
+            </div>
+                
+            <hr>
+            <div class="space-50"></div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>New Aquarium Designs</h2>
+                    <p>Fishy Business is moving in a new direction with our aquarium designs with the introduction of our Fishy Business Limited Edition Customs! Each of these stand combinations is a work of art and because of this, we are limiting the color, design, and quantity of each one of these new productions. These pieces are all branded with a signature from the artist and are available on a first come - first serve basis. No two designs are the same. </p>
+                    <p>"The Book Case" is our first in the series and currently houses a 120 gallon aquarium. </p>
+                </div>
+                <div class="col-md-6">
+                    <div id="description-carousel" class="carousel fade" data-ride="carousel">                            
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="assets/img/newAquarium2.jpg" alt="..." />
+                            </div>
+                            <div class="item">
+                                <img src="assets/img/newAquarium3.jpg" alt="..." />
+                            </div>
+                            <div class="item">
+                                <img src="assets/img/newAquarium1.jpg" alt="..." />
+                            </div>
+                            </div>
                             
-                              <ol class="carousel-indicators">
-                                <li data-target="#description-carousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#description-carousel" data-slide-to="1"></li>
-                                <li data-target="#description-carousel" data-slide-to="2"></li>
-                              </ol>
-                        </div>
-                   </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>"Gothique" is our second piece in another series and this particular design currently houses a 210 gallon aquarium. </p>
-                        <p>"Contemporary" is our third design, currently housing a 90 gallon. </p>
-                    </div>
-                    <div class="col-md-6">
-                        <p>As we move forward with these new and exciting aquarium designs, I would urge you to keep checking back with us as new designs will be appearing here and on our Facebook page! </p>
+                            <ol class="carousel-indicators">
+                            <li data-target="#description-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#description-carousel" data-slide-to="1"></li>
+                            <li data-target="#description-carousel" data-slide-to="2"></li>
+                            </ol>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>"Gothique" is our second piece in another series and this particular design currently houses a 210 gallon aquarium. </p>
+                    <p>"Contemporary" is our third design, currently housing a 90 gallon. </p>
+                </div>
+                <div class="col-md-6">
+                    <p>As we move forward with these new and exciting aquarium designs, I would urge you to keep checking back with us as new designs will be appearing here and on our Facebook page! </p>
+                </div>
+            </div>
 
-                <!--<div class="space-50"></div>-->
-                <hr>
-                <div class="space-50"></div>
+            <!--<div class="space-50"></div>-->
+            <hr>
+            <div class="space-50"></div>
                 
-                <div class="row">
-                   <div class="col-md-6">
-                      <div class="img-container">
-                          <img src="assets/img/entrance.jpg" alt="..." />
-                      </div>
-                   </div>
-                   <div class="col-md-6">
-                       <?php
-                       // Check connection
-                       if ($mysqli->connect_error) {
-                           die("Connection failed: " . $mysqli->connect_error);
-                       } 
-                       else
-                       {
-                           if (!$stmt = $mysqli->query("SELECT * FROM sales")) {
-                               echo "Query Failed!: (" . $mysqli->errno . ") ". $mysqli->error;
-                           }
-                                                                               
-                           while ($row = mysqli_fetch_array($stmt)) {
-                               $i = $row["id"];
-                               $f = $row["file"];
-                               $p = $row["post"];
-                               $active = $row["active_flag"];
+            <div class="row">
+                <?php
+                // Check connection
+                if ($mysqli->connect_error) {
+                    die("Connection failed: " . $mysqli->connect_error);
+                } 
+                else
+                {
+                    if (!$stmt = $mysqli->query("SELECT * FROM sales")) {
+                        echo "Query Failed!: (" . $mysqli->errno . ") ". $mysqli->error;
+                    }
+                                                                              
+                    while ($row = mysqli_fetch_array($stmt)) {
+                        $i = $row["id"];
+                        $f = $row["file"];
+                        $p = $row["post"];
+                        $active = $row["active_flag"];
+                                                    //output row of 'news' table that is flagged as active
+                        if ($active == "Y")
+                        {
+                            echo "<div class='col-md-6'>";
+                            echo "    <div class='img-container'>";
 
-                               //output row of 'news' table that is flagged as active
-                               if ($active == "Y")
-                               {
-                                   echo $p;
-                               }
-                           }
+                            if ($f != "")
+                            {
+                                echo "        <a href='assets/img/sales/$f'>
+                                                <img src='assets/img/sales/$f' alt='$f' /> </a>Click image for printable flyer...";
+                            }
+                            else
+                            {
+                                echo "        <a href='assets/img/sales/flyer-nosale.jpg'>
+                                                <img src='assets/img/sales/flyer-nosale.jpg' alt='...' /> </a>Click image for printable flyer...";
+                            }
+
+                            echo "    </div>";
+                            echo "</div>";
+                            echo "<div class='col-md-6'>";
+                            echo "    <div>";
+                            echo          $p;
+                            echo "    </div>";
+                            echo "</div>";
+                        }
+                    }
                            
-                           if (mysqli_num_rows($stmt) == 0) {
-                               echo "No records found.";
-                           }
-                       } 
-                       $stmt->free();
-                       $mysqli->close();    
-                       ?>                     
-                   </div>
-               </div>
-           </div>
+                    if (mysqli_num_rows($stmt) == 0) {
+                        echo "No records found.";
+                    }
+                } 
+                $stmt->free();
+                $mysqli->close();
+                ?> 
+            </div>
+        </div>
     </div><!-- section -->
 
     <div class="section section-gray">
