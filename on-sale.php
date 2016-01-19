@@ -178,8 +178,8 @@
                <div class="row">
                    <div class="col-md-6">
                        <div class="img-container">
-                           <a href="assets/img/flyer-nosale.jpg">
-                           <img src="assets/img/flyer-nosale.jpg" alt="..." /> </a>Click image for printable flyer...
+                           <a href="assets/img/sales/flyer-nosale.jpg">
+                           <img src="assets/img/sales/flyer-nosale.jpg" alt="..." /> </a>Click image for printable flyer...
                        </div>
                    </div>
 
