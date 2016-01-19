@@ -70,8 +70,7 @@
                 <a href="../index.php" class="simple-text">
                     Fishy Business
                 </a>
-            </div>
-                       
+            </div>       
             <ul class="nav">
                 <li class="active">
                     <a>
@@ -81,7 +80,7 @@
                 </li>
                 <li class="active">
                     <a href="on-sale.php">
-                        <i class="pe-7s-graph"></i> 
+                        <i class="pe-7s-cash"></i> 
                         <p>On Sale</p>
                     </a>            
                 </li>

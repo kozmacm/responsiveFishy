@@ -182,7 +182,7 @@
                 </li>
                 <li class="active">
                     <a>
-                        <i class="pe-7s-graph"></i> 
+                        <i class="pe-7s-cash"></i> 
                         <p>On Sale</p>
                     </a>            
                 </li>
