@@ -185,23 +185,50 @@
 
                    <div class="col-md-6">
                        <div>
-                           <h2>Tank Specials!</h2>
-                           <p>
-                               55 Gallon Tank 99.00 <br>
-                               75 Gallon Tank 129.00 <br>
-                               125 Gallon Tank 299.00 <br>
-                               <br>
-                               75 Gallon R.R. 239.00 <br>
-                               90 Gallon R.R. 289.00 <br>
-                               125 Gallon R.R. 399.00 <br>
-                               180 Gallon R.R. 699.00
-                           </p>
-                           <h2>Super Tank Combo!</h2>
-                           <p>
-                               29 Gallon Bio Cube complete mini reef - sand, 15lbs of live rock, <br>
-                               tank kit, Nutra Seawater - 399.99
-                           </p>
-                           </p></p>
+                           <?php
+                           // Check connection
+                           if ($mysqli->connect_error) {
+                               die("Connection failed: " . $mysqli->connect_error);
+                           } 
+                           else
+                           {
+                               if (!$stmt = $mysqli->query("SELECT * FROM sales")) {
+                                   echo "Query Failed!: (" . $mysqli->errno . ") ". $mysqli->error;
+                               }
+                                                                               
+                               while ($row = mysqli_fetch_array($stmt)) {
+                                   $i = $row["id"];
+                                   $f = $row["file"];
+                                   $p = $row["post"];
+                                   $active = $row["active_flag"];
+
+                                   //output row of 'news' table that is flagged as active
+                                   if ($active == "Y")
+                                   {
+                                       echo $p;
+
+                                       if ($f != "")
+                                       {
+                                           echo "</div>";
+                                           echo "</div>";
+                                           echo "<div class='row'>";
+                                           echo "<div class='col-md-6 col-md-offset-3 '>";
+                                           echo "<div class='img-container'>";
+                                           echo "<img src='assets/img/news/$f' alt='$f' />";
+                                           echo "</div>";
+                                           echo "</div>";
+                                           echo "</div>";
+                                       }
+                                   }
+                               }
+                           
+                               if (mysqli_num_rows($stmt) == 0) {
+                                   echo "No records found.";
+                               }
+                           } 
+                           $stmt->free();
+                           $mysqli->close();    
+                           ?>
                        </div>
                    </div>
                </div>
