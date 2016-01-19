@@ -387,8 +387,7 @@
                <div class="row">
                    <div class="col-md-6">
                       <div class="img-container">
-                          <a href="biocube.php">
-                          <img src="assets/img/biocube29.jpg" alt="..." /> </a>
+                          <img src="assets/img/biocube29.jpg" alt="..." />
                       </div>
                    </div>
                    <div class="col-md-6">
