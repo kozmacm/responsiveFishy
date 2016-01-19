@@ -176,15 +176,8 @@
            <div class="container">
                <h2 class="section-title">Current Sales Flyer</h2>
                <div class="row">
-                   <div class="col-md-6">
-                       <div class="img-container">
-                           <a href="assets/img/sales/flyer-nosale.jpg">
-                           <img src="assets/img/sales/flyer-nosale.jpg" alt="..." /> </a>Click image for printable flyer...
-                       </div>
-                   </div>
-
-                   <div class="col-md-6">
-                       <div>
+                   
+                       
                            <?php
                            // Check connection
                            if ($mysqli->connect_error) {
@@ -205,7 +198,27 @@
                                    //output row of 'news' table that is flagged as active
                                    if ($active == "Y")
                                    {
-                                       echo $p;
+                                       echo "<div class='col-md-6'>";
+                                       echo "    <div class='img-container'>";
+
+                                       if ($f != "")
+                                       {
+                                           echo "        <a href='assets/img/sales/$f'>
+                                                         <img src='assets/img/sales/$f' alt='$f' /> </a>Click image for printable flyer...";
+                                       }
+                                       else
+                                       {
+                                           echo "        <a href='assets/img/sales/flyer-nosale.jpg'>
+                                                         <img src='assets/img/sales/flyer-nosale.jpg' alt='...' /> </a>Click image for printable flyer...";
+                                       }
+
+                                       echo "    </div>";
+                                       echo "</div>";
+                                       echo "<div class='col-md-6'>";
+                                       echo "    <div>";
+                                       echo          $p;
+                                       echo "    </div>";
+                                       echo "</div>";
                                    }
                                }
                            
@@ -214,10 +227,8 @@
                                }
                            } 
                            $stmt->free();
-                           $mysqli->close();    
-                           ?>
-                       </div>
-                   </div>
+                           $mysqli->close();
+                           ?> 
                </div>
             </div>
     
