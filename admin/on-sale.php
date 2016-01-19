@@ -316,25 +316,30 @@
             <div class="container-fluid">    
                 <div class="row">
                     <div class="col-md-12">
-                        <form method="post" id="form" name="form" action="" enctype="multipart/form-data" >
-                            <p>Here is where you can update the weekly sales. Do not insert a sales flyer using this frame, do it using the checkbox below. </p>
-                            <div class="form-group">
-                                <textarea id="textbox" name="textbox" class="form-control" rows="10" placeholder="Enter your weekly update here" required></textarea>
+                        <div class="card card-plain">
+                            <div class="header">
+                                <h4 class="title">Update Current Sales</h4>
+                                <p class="category">Here is where you can update the weekly sales. Do not insert a sales flyer using this frame, do it using the checkbox below. </p>
                             </div>
-                            <div class="form-group">
-                                <label class="checkbox checkbox-blue" for="checkbox1">
-                                    <input type="checkbox" value="" id="checkbox1" name="checkbox1" data-toggle="checkbox">
-                                        I want to include a sales flyer.
-                                </label>
-                            </div>
-                            <div class="form-group" id="file_container">
-                                <input id="fileInput" type="file" name="file[]" class="file" data-show-upload="false" data-show-caption="true" >
-                            </div> 
-                            <div class="form-group">    
-                                <input type="submit" name="preview" class="btn btn-info btn-fill" value="Preview" id="preview" />
-                                <input type="submit" name="submit" class="btn btn-info btn-fill" value="Submit" id="submit" />
-                            </div>
-                        </form>
+                            <form method="post" id="form" name="form" action="" enctype="multipart/form-data" >
+                                <div class="form-group">
+                                    <textarea id="textbox" name="textbox" class="form-control" rows="10" placeholder="Enter your weekly update here" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="checkbox checkbox-blue" for="checkbox1">
+                                        <input type="checkbox" value="" id="checkbox1" name="checkbox1" data-toggle="checkbox">
+                                            I want to include a sales flyer.
+                                    </label>
+                                </div>
+                                <div class="form-group" id="file_container">
+                                    <input id="fileInput" type="file" name="file[]" class="file" data-show-upload="false" data-show-caption="true" >
+                                </div> 
+                                <div class="form-group">    
+                                    <input type="submit" name="preview" class="btn btn-info btn-fill" value="Preview" id="preview" />
+                                    <input type="submit" name="submit" class="btn btn-info btn-fill" value="Submit" id="submit" />
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
