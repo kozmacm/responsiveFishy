@@ -311,19 +311,6 @@
                                if ($active == "Y")
                                {
                                    echo $p;
-
-                                   if ($f != "")
-                                   {
-                                       echo "</div>";
-                                       echo "</div>";
-                                       echo "<div class='row'>";
-                                       echo "<div class='col-md-6 col-md-offset-3 '>";
-                                       echo "<div class='img-container'>";
-                                       echo "<img src='assets/img/news/$f' alt='$f' />";
-                                       echo "</div>";
-                                       echo "</div>";
-                                       echo "</div>";
-                                   }
                                }
                            }
                            
