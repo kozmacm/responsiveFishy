@@ -193,7 +193,7 @@
                     </a>            
                 </li>
                 <li class="active">
-                    <a>
+                    <a href="news.php">
                         <i class="pe-7s-news-paper"></i> 
                         <p>Weekly News Updates</p>
                     </a>            
