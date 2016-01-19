@@ -255,7 +255,7 @@
                         <i class="fa fa-twitter"></i>
                     </a>
                     <a href="http://www.youtube.com/channel/UCKAoquCimTvJs8_J9iLX1Ag?feature=CAQQwRs%3D" class="btn btn-social btn-pinterest btn-simple">
-                        <i class="fa fa-pinterest"></i>
+                        <i class="fa fa-youtube"></i>
                     </a>
                 </div>
                 <div class="copyright">
