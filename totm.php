@@ -310,7 +310,7 @@
                        </p>
                        <form method="post" id="form" name="form" action="" enctype="multipart/form-data" >
     				       <div class="form-group">
-                               <label class="control-label">Select File (Less than 2Mb)</label>
+                               <label class="control-label">Select up to 3 files (Each file must be < 2Mb)</label>
                                <input id="input-2" type="file" name="file[]" class="file" multiple="true" data-show-upload="false" data-show-caption="true">
     				  	   </div>
                            <div class="form-group">
