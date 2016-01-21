@@ -163,7 +163,7 @@
 <div class="wrapper">
     <div class="parallax filter-black">
         <div class="parallax-image">
-            <img src="assets/img/thumb.jpg">
+            <img src="assets/img/JacksElectricCornfield.jpg">
             <!--<img src="assets/img/backgroundthumb.jpg">-->
         </div>    
         <div class="small-info">
