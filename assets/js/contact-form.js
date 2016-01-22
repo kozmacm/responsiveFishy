@@ -4,6 +4,7 @@ $(document).ready(function () {
         var email = $("#email").val();
         var message = $("#message").val();
 
+        
 
         // Returns successful data submission message when the entered information is stored in database.
         var dataString = 'name1=' + name + '&email1=' + email + '&message1=' + message;
@@ -24,11 +25,14 @@ $(document).ready(function () {
                 data: dataString,
                 cache: false,
                 success: function (result) {
+                    //disable button to prevent double submit
+                    $("#submit").attr('disabled',true);
+
                     $.notify({
-	                    title: '<strong>Mail Sent!</strong>',
-	                    message: 'Thank you ' + name + ', we will contact you shortly.'
-                    },{
-	                    type: 'success'
+                        title: '<strong>Mail Sent!</strong>',
+                        message: 'Thank you ' + name + ', we will contact you shortly.'
+                    }, {
+                        type: 'success'
                     });
                 }
             });
