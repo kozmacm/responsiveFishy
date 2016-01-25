@@ -308,13 +308,13 @@
 
                             if ($f != "")
                             {
-                                echo "        <a href='assets/img/sales/$f'>
-                                                <img src='assets/img/sales/$f' alt='$f' /> </a>Click image for printable flyer...";
+                                echo "        <a href='on-sale.php'>
+                                                <img src='assets/img/sales/$f' alt='$f' /> </a>";
                             }
                             else
                             {
-                                echo "        <a href='assets/img/sales/flyer-nosale.jpg'>
-                                                <img src='assets/img/sales/flyer-nosale.jpg' alt='...' /> </a>Click image for printable flyer...";
+                                echo "        <a href='on-sale.php'>
+                                                <img src='assets/img/sales/flyer-nosale.jpg' alt='No current sales flyer' /> </a>";
                             }
 
                             echo "    </div>";

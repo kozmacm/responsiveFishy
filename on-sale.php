@@ -206,7 +206,7 @@
                                else
                                {
                                    echo "        <a href='assets/img/sales/flyer-nosale.jpg'>
-                                                   <img src='assets/img/sales/flyer-nosale.jpg' alt='...' /> </a>Click image for printable flyer...";
+                                                   <img src='assets/img/sales/flyer-nosale.jpg' alt='...' /> </a>";
                                }
 
                                echo "    </div>";
