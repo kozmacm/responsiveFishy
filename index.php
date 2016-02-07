@@ -169,7 +169,7 @@
         </div>    
         <div class="small-info">
             <h1>Fishy Business</h1>
-            <h3>Oldest full-line aquatic-only store in Columbia.</h3>    
+            <h3>Largest Aquarium store in South Carolina.</h3>    
         </div>
     </div>
     
