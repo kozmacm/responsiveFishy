@@ -169,7 +169,7 @@
         </div>    
         <div class="small-info">
             <h1>Fishy Business</h1>
-            <h3>Largest Aquarium store in South Carolina.</h3>    
+            <h3>Largest Aquarium Store in South Carolina.</h3>    
         </div>
     </div>
     
@@ -179,7 +179,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 ">
-                    <h2>Weekly Updates</h2>
+                    <h2>Monthly Updates</h2>
                 </div>
             </div>
             <div class="row">
@@ -314,7 +314,8 @@
                             else
                             {
                                 echo "        <a href='on-sale.php'>
-                                                <img src='assets/img/sales/flyer-nosale.jpg' alt='No current sales flyer' /> </a>";
+                                                <!--img src='assets/img/sales/flyer-nosale.jpg' alt='No current sales flyer' /-->
+                                                 </a>";
                             }
 
                             echo "    </div>";
