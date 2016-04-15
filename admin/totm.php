@@ -226,6 +226,7 @@
                                         }
                                     } 
                                 $stmt->free();
+
                                 //$mysqli->close();    
                                 ?>       
                             </div>
