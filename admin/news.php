@@ -87,7 +87,7 @@
                 }
             }
         }
-        else
+        else //no file was included
         {
             echo '<script>alert("Success! Your weekly update has been sent successfully");</script>';
             //Add entry to table 'news'

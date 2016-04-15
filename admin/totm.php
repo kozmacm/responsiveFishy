@@ -32,13 +32,15 @@
     {
         $id = $_POST['promote_id'];
         $file = $_POST['promote_file'];
+        $name = $_POST['promote_name'];
+        $email = $_POST['promote_email'];
         $desc = $_POST['promote_desc'];
         
         //delete record from database
         $sql = $mysqli->query("DELETE FROM uploads WHERE id=".$id);
 
         //update record with id=1 in totm table
-        $sql = $mysqli->query("UPDATE totm SET file='$file', description='$desc' WHERE id='1'");
+        $sql = $mysqli->query("UPDATE totm SET file='$file', name='$name', email='$email', description='$desc' WHERE id='1'");
         
         //delete old totm file that is getting replaced in database
         array_map('unlink', glob("../assets/img/totm/*"));
@@ -197,16 +199,22 @@
                                         echo "<thead>
                                                 <th>Image</th>
                                     	        <th>Filename</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
                                     	        <th>Description</th>
                                                 </thead>
                                                 <tbody>";
                                         while ($row = mysqli_fetch_array($stmt)) {
                                             $i = $row["id"];
                                             $f = $row["file"];
+                                            $n = $row["name"];
+                                            $e = $row["email"];
                                             $d = $row["description"];
-                                            echo "<tr id='$i' file='$f' desc='$d'>";
+                                            echo "<tr id='$i' file='$f' name='$n' email='$e' desc='$d'>";
                                             echo "<td> <a href='../assets/img/totm/" . $row["file"] . "'><img class='thumbnail' src='../assets/img/totm/" . $row["file"] . "' alt='" . $row["file"] . "' /> </td>";
                                             echo "<td>" . $row["file"] . "</td>";
+                                            echo "<td>" . $row["name"] . "</td>";
+                                            echo "<td>" . $row["email"] . "</td>";
                                             echo "<td>" . $row["description"] . "</td>";
                                             echo "</tr>";
                                         }
@@ -259,8 +267,10 @@
                                         while ($row = mysqli_fetch_array($stmt)) {
                                             $i = $row["id"];
                                             $f = $row["file"];
+                                            $n = $row["name"];
+                                            $e = $row["email"];
                                             $d = $row["description"];
-                                            echo "<tr id='$i' file='$f' desc='$d'>";
+                                            echo "<tr id='$i' file='$f' name='$n' email='$e' desc='$d'>";
                                             echo "<td> <a href='../uploads/" . $row["file"] . "'><img class='thumbnail' src='../uploads/" . $row["file"] . "' alt='" . $row["file"] . "' /> </td>";
                                             echo "<td>" . $row["name"] . "</td>";
                                             echo "<td>" . $row["email"] . "</td>";
