@@ -464,22 +464,17 @@
     <div class="social-line">
          <div class="container">
             <div class="row">
-                 <div class="col-md-3">
+                 <div class="col-md-4">
                      <a href="http://www.facebook.com/FishyBusinessSC/" class="btn btn-round btn-fill btn-social btn-facebook">
                          <i class="fa fa-facebook-square"></i> Facebook
                      </a>
                  </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                      <a href="https://twitter.com/fishyguys" class="btn btn-round btn-fill btn-social btn-twitter">
                          <i class="fa fa-twitter"></i> Twitter
                      </a>
                  </div>
-                  <div class="col-md-3">
-                     <a href="" class="btn btn-round btn-fill btn-social btn-google">
-                         <i class="fa fa-google-plus-square"></i> Google+
-                     </a>
-                 </div>
-                 <div class="col-md-3">
+                 <div class="col-md-4">
                      <a href="http://www.youtube.com/channel/UCKAoquCimTvJs8_J9iLX1Ag?feature=CAQQwRs%3D" class="btn btn-round btn-fill btn-social btn-youtube">
                          <i class="fa fa-youtube"></i> YouTube
                      </a>
