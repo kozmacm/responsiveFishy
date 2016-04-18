@@ -261,8 +261,6 @@
                         //output row of 'news' table that is flagged as active
                         if ($active == "Y")
                         {
-                            echo "";
-
                             if ($f != "")
                             {
                                 echo "<div class='col-md-6'>

@@ -192,11 +192,10 @@
                            $f = $row["file"];
                            $p = $row["post"];
                            $active = $row["active_flag"];
-                                                       //output row of 'news' table that is flagged as active
+                           
+                           //output row of 'news' table that is flagged as active
                            if ($active == "Y")
-                        {
-                            echo "";
-
+                           {
                             if ($f != "")
                             {
                                 echo "<div class='col-md-6'>
