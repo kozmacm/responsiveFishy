@@ -238,6 +238,66 @@
             </div>
                 
             <hr>
+            <!--<div class="space-50"></div>-->
+
+            <div class="row">
+                <?php
+                // Check connection
+                if ($mysqli->connect_error) {
+                    die("Connection failed: " . $mysqli->connect_error);
+                } 
+                else
+                {
+                    if (!$stmt = $mysqli->query("SELECT * FROM sales")) {
+                        echo "Query Failed!: (" . $mysqli->errno . ") ". $mysqli->error;
+                    }
+                                                                              
+                    while ($row = mysqli_fetch_array($stmt)) {
+                        $i = $row["id"];
+                        $f = $row["file"];
+                        $p = $row["post"];
+                        $active = $row["active_flag"];
+                        
+                        //output row of 'news' table that is flagged as active
+                        if ($active == "Y")
+                        {
+                            echo "";
+
+                            if ($f != "")
+                            {
+                                echo "<div class='col-md-6'>
+                                          <div class='img-container'>        
+                                              <a href='on-sale.php'>
+                                                  <img src='assets/img/sales/$f' alt='$f' /> </a>
+                                          </div>
+                                      </div>";
+                                echo "<div class='col-md-6'>";
+                                echo "    <div>";
+                                echo          $p;
+                                echo "    </div>";
+                                echo "</div>";
+                            }
+                            else
+                            {
+                                echo "<div class='col-md-12'>";
+                                echo "    <div>";
+                                echo          $p;
+                                echo "    </div>";
+                                echo "</div>";
+                            }
+                        }
+                    }
+                           
+                    if (mysqli_num_rows($stmt) == 0) {
+                        echo "No records found.";
+                    }
+                } 
+                $stmt->free();
+                $mysqli->close();
+                ?> 
+            </div>
+
+            <hr>
             <div class="space-50"></div>
 
             <div class="row">
@@ -279,63 +339,7 @@
                 </div>
             </div>
 
-            <!--<div class="space-50"></div>-->
-            <hr>
-            <div class="space-50"></div>
-                
-            <div class="row">
-                <?php
-                // Check connection
-                if ($mysqli->connect_error) {
-                    die("Connection failed: " . $mysqli->connect_error);
-                } 
-                else
-                {
-                    if (!$stmt = $mysqli->query("SELECT * FROM sales")) {
-                        echo "Query Failed!: (" . $mysqli->errno . ") ". $mysqli->error;
-                    }
-                                                                              
-                    while ($row = mysqli_fetch_array($stmt)) {
-                        $i = $row["id"];
-                        $f = $row["file"];
-                        $p = $row["post"];
-                        $active = $row["active_flag"];
-                                                    //output row of 'news' table that is flagged as active
-                        if ($active == "Y")
-                        {
-                            echo "<div class='col-md-6'>";
-                            echo "    <div class='img-container'>";
-
-                            if ($f != "")
-                            {
-                                echo "        <a href='on-sale.php'>
-                                                <img src='assets/img/sales/$f' alt='$f' /> </a>";
-                            }
-                            else
-                            {
-                                echo "        <a href='on-sale.php'>
-                                                <!--img src='assets/img/sales/flyer-nosale.jpg' alt='No current sales flyer' /-->
-                                                 </a>";
-                            }
-
-                            echo "    </div>";
-                            echo "</div>";
-                            echo "<div class='col-md-6'>";
-                            echo "    <div>";
-                            echo          $p;
-                            echo "    </div>";
-                            echo "</div>";
-                        }
-                    }
-                           
-                    if (mysqli_num_rows($stmt) == 0) {
-                        echo "No records found.";
-                    }
-                } 
-                $stmt->free();
-                $mysqli->close();
-                ?> 
-            </div>
+            <!--<div class="space-50"></div>--> 
         </div>
     </div><!-- section -->
 

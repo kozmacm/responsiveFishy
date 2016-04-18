@@ -174,7 +174,7 @@
 
     <div class="section">
            <div class="container">
-               <h2 class="section-title">Current Sales Flyer</h2>
+               <!--<h2 class="section-title">Current Sales</h2>-->
                <div class="row">
                    <?php
                    // Check connection
@@ -194,30 +194,32 @@
                            $active = $row["active_flag"];
                                                        //output row of 'news' table that is flagged as active
                            if ($active == "Y")
-                           {
-                               echo "<div class='col-md-6'>";
-                               echo "    <div class='img-container'>";
+                        {
+                            echo "";
 
-                               if ($f != "")
-                               {
-                                   echo "        <a href='assets/img/sales/$f'>
-                                                   <img src='assets/img/sales/$f' alt='$f' /> </a>Click image for printable flyer...";
-                               }
-                               else
-                               {
-                                   echo "        <a href='assets/img/sales/flyer-nosale.jpg'>
-                                                   <!--src='assets/img/sales/flyer-nosale.jpg' alt='...' /-->
-                                                    </a>";
-                               }
-
-                               echo "    </div>";
-                               echo "</div>";
-                               echo "<div class='col-md-6'>";
-                               echo "    <div>";
-                               echo          $p;
-                               echo "    </div>";
-                               echo "</div>";
-                           }
+                            if ($f != "")
+                            {
+                                echo "<div class='col-md-6'>
+                                          <div class='img-container'>        
+                                              <a href='on-sale.php'>
+                                                  <img src='assets/img/sales/$f' alt='$f' /> </a>
+                                          </div>
+                                      </div>";
+                                echo "<div class='col-md-6'>";
+                                echo "    <div>";
+                                echo          $p;
+                                echo "    </div>";
+                                echo "</div>";
+                            }
+                            else
+                            {
+                                echo "<div class='col-md-12'>";
+                                echo "    <div>";
+                                echo          $p;
+                                echo "    </div>";
+                                echo "</div>";
+                            }
+                        }
                        }
                            
                        if (mysqli_num_rows($stmt) == 0) {
