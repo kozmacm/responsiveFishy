@@ -241,7 +241,7 @@
             <hr>
             <!--<div class="space-50"></div>-->
 
-            <div class="row">
+            <div class="row section-gray">
                 <?php
                 // Check connection
                 if ($mysqli->connect_error) {
