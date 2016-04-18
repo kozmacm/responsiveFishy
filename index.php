@@ -186,7 +186,7 @@
             <div class="row">
                 <div class="col-md-12 ">
                     <p>Checkout our Highlight Videos featuring the New Stock! </p>
-                    </p>Click <a href="https://www.facebook.com/media/set/?set=vb.122002154595568&type=2">here </a>or image for New stock and highlight videos. </p>
+                    </p>Click <a href="https://www.facebook.com/media/set/?set=vb.122002154595568&type=2">here </a>or image for New stock and highlight videos. </p> </br>
                 </div>
             </div>
             <div class="row">
