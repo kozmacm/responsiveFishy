@@ -66,13 +66,13 @@
                     $file = $_FILES["file"]["name"][$i] . "";
                     $size = $_FILES["file"]["size"][$i] . "";
                     $type = $_FILES["file"]["type"][$i] . "";
-                    $fullName = $_POST['fullName'];
+                    $name = $_POST['name'];
                     $email = $_POST['email'];
                     $message = $_POST['message'];
                     $ip = $_SERVER['REMOTE_ADDR'];
 
                     $sql = "INSERT INTO uploads (file, size, type, name, email, description, ip) 
-                        VALUES ('$file','$size','$type','$fullName','$email','$message','$ip')";
+                        VALUES ('$file','$size','$type','$name','$email','$message','$ip')";
 
                     if ($mysqli->query($sql) === TRUE) {} 
                     else 

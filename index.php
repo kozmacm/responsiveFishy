@@ -169,6 +169,7 @@
         </div>    
         <div class="small-info">
             <h1>Fishy Business</h1>
+            <!--<a href="index.php"><img src="assets/img/logo-med.png" alt="..." /></a>-->
             <h3>Largest Aquarium Store in South Carolina.</h3>    
         </div>
     </div>
