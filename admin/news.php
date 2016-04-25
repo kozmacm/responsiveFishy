@@ -75,7 +75,36 @@
                             $active = 1;
 
                             //remove active flag from previous news edit
-                            
+                            // Check connection
+                            if ($mysqli->connect_error) {
+                                die("Connection failed: " . $mysqli->connect_error);
+                            } 
+                            else
+                            {
+                                if (!$stmt = $mysqli->query("SELECT * FROM news")) {
+                                    echo "Query Failed!: (" . $mysqli->errno . ") ". $mysqli->error;
+                                }
+                              
+                                while ($row = mysqli_fetch_array($stmt)) {
+                                    $i = $row["id"];
+                                    $flag = $row["active_flag"];
+
+                                    if ($flag == "Y")
+                                    {
+                                        //change flag to 'N'
+                                        $sql1 = "UPDATE news SET active_flag='N' WHERE id='$i'";
+
+                                        if ($mysqli->query($sql1) === TRUE) {
+                                            echo "Record updated successfully";
+                                        } else {
+                                            echo "Error updating record: " . $mysqli->error;
+                                        }
+                                    }
+                                }
+                
+                                if (mysqli_num_rows($stmt) == 0) {
+                                    echo "No records found.";
+                            }
 
                             //Add entry to table 'news'
                             $sql = "INSERT INTO news (post, author, file, ip, active_flag) 
@@ -101,7 +130,6 @@
             $author = $_SESSION['username'];
             $ip = $_SERVER['REMOTE_ADDR'];
             $active = 1;
-            $inactive = 0;
             
             //remove active flag from previous news edit
             // Check connection
@@ -120,9 +148,6 @@
 
                     if ($flag == "Y")
                     {
-                        echo "$i ";
-                        echo "$flag <br>";
-                        
                         //change flag to 'N'
                         $sql1 = "UPDATE news SET active_flag='N' WHERE id='$i'";
 
