@@ -61,7 +61,7 @@
                                 }
                             }    
                         } 
-                        //Add entry to table 'news'
+                        
                         // Check connection
                         if ($mysqli->connect_error) {
                             die("Connection failed: " . $mysqli->connect_error);
@@ -72,9 +72,14 @@
                             $text = $_POST['textbox'];
                             $author = $_SESSION['username'];
                             $ip = $_SERVER['REMOTE_ADDR'];
+                            $active = 1;
 
-                            $sql = "INSERT INTO news (post, author, file, ip) 
-                                VALUES ('$text','$author','$file','$ip')";
+                            //remove active flag from previous news edit
+                            
+
+                            //Add entry to table 'news'
+                            $sql = "INSERT INTO news (post, author, file, ip, active_flag) 
+                                VALUES ('$text','$author','$file','$ip', $active)";
 
                             if ($mysqli->query($sql) === TRUE) {} 
                             else 
@@ -90,20 +95,52 @@
         else //no file was included
         {
             echo '<script>alert("Success! Your weekly update has been sent successfully");</script>';
-            //Add entry to table 'news'
+            
+            $file = '';
+            $text = $_POST['textbox'];
+            $author = $_SESSION['username'];
+            $ip = $_SERVER['REMOTE_ADDR'];
+            $active = 1;
+            $inactive = 0;
+            
+            //remove active flag from previous news edit
             // Check connection
             if ($mysqli->connect_error) {
                 die("Connection failed: " . $mysqli->connect_error);
             } 
             else
             {
-                $file = '';
-                $text = $_POST['textbox'];
-                $author = $_SESSION['username'];//'admin';
-                $ip = $_SERVER['REMOTE_ADDR'];
+                if (!$stmt = $mysqli->query("SELECT * FROM news")) {
+                    echo "Query Failed!: (" . $mysqli->errno . ") ". $mysqli->error;
+                }
+                              
+                while ($row = mysqli_fetch_array($stmt)) {
+                    $i = $row["id"];
+                    $flag = $row["active_flag"];
 
-                $sql = "INSERT INTO news (post, author, file, ip) 
-                    VALUES ('$text','$author','$file','$ip')";
+                    if ($flag == "Y")
+                    {
+                        echo "$i ";
+                        echo "$flag <br>";
+                        
+                        //change flag to 'N'
+                        $sql1 = "UPDATE news SET active_flag='N' WHERE id='$i'";
+
+                        if ($mysqli->query($sql1) === TRUE) {
+                            echo "Record updated successfully";
+                        } else {
+                            echo "Error updating record: " . $mysqli->error;
+                        }
+                    }
+                }
+                
+                if (mysqli_num_rows($stmt) == 0) {
+                    echo "No records found.";
+                }
+              
+                //Add entry to table 'news'
+                $sql = "INSERT INTO news (post, author, file, ip, active_flag) 
+                    VALUES ('$text','$author','$file','$ip', $active)";
 
                 if ($mysqli->query($sql) === TRUE) {} 
                 else 
@@ -278,9 +315,9 @@
                                             $a = $row["author"];
                                             $z = $row["ip"];
                                             $d = $row["date_posted"];
-                                            $active = $row["active_flag"];
+                                            $ac = $row["active_flag"];
 
-                                            if ($active == "Y")
+                                            if ($ac == "Y")
                                             {
                                                 echo "<tr id='$i'>";
                                                 if ($f == "")
