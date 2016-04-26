@@ -16,7 +16,6 @@
     if ($_POST){
         if(isset($_POST['checkbox1']))
         {
-            $file = $_FILES["file"]["name"][$i] . "";
             $text = $_POST['textbox'];
             $author = $_SESSION['username'];
             $ip = $_SERVER['REMOTE_ADDR'];
@@ -45,6 +44,8 @@
                     }
                     else
                     {
+                        $file = $_FILES["file"]["name"][$i] . "";
+
                         echo '<script>alert("Success! Your weekly update and file '.$_FILES["file"]["name"][$i].' have been sent successfully");</script>';
                 
                         if (file_exists("../assets/img/news/" . $_FILES["file"]["name"]))
