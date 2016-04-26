@@ -218,10 +218,15 @@
                                     echo "</div>";
                                     echo "</div>";
                                     echo "<div class='row'>";
-                                    echo "<div class='col-md-6 col-md-offset-3 '>";
-                                    echo "<div class='img-container'>";
-                                    echo "<img src='assets/img/news/$f' alt='$f' />";
+                                    echo "    <div class='col-md-6 col-md-offset-3 '>";
+                                    echo "        <div class='img-container'>";
+                                    echo "            <img src='assets/img/news/$f' alt='$f' />";
+                                    echo "        </div>";
+                                    echo "    </div>";
                                     echo "</div>";
+                                }
+                                else
+                                {
                                     echo "</div>";
                                     echo "</div>";
                                 }
@@ -235,8 +240,10 @@
                     $stmt->free();
                     //$mysqli->close();    
                     ?>       
-                </div>
-            </div>
+            <!--    
+                    </div>
+            </div> 
+            -->
                 
             <hr>
             <!--<div class="space-50"></div>-->
@@ -267,7 +274,8 @@
                                 echo "<div class='col-md-6'>
                                           <div class='img-container'>        
                                               <a href='on-sale.php'>
-                                                  <img src='assets/img/sales/$f' alt='$f' /> </a>
+                                                  <img src='assets/img/sales/$f' alt='$f' /> 
+                                              </a>
                                           </div>
                                       </div>";
                                 echo "<div class='col-md-6'>";
