@@ -346,7 +346,7 @@
                                                 }
                                                 else
                                                 {
-                                                    echo "<td> <a href='../assets/img/sales/$f'><img class='thumbnail' src='../assets/img/sales/$f' alt='$f' /> </td>";
+                                                    echo "<td> <a href='../assets/img/news/$f'><img class='thumbnail' src='../assets/img/news/$f' alt='$f' /> </td>";
                                                 }
                                                 
                                                 echo "<td>$p</td>";
