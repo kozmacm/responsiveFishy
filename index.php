@@ -248,6 +248,13 @@
             <hr>
             <!--<div class="space-50"></div>-->
 
+            <div class="space-50"></div>
+
+     <div class="row section-gray">
+         <?php include 'RedSea.php';?>
+
+         </div>
+        <div class="space-50"></div>
             <div class="row section-gray">
                 <?php
                 // Check connection
