@@ -222,13 +222,6 @@
                                     echo "        <div class='img-container'>";
                                     echo "            <img src='assets/img/news/$f' alt='$f' />";
                                     echo "        </div>";
-                                    echo "    </div>";
-                                    echo "</div>";
-                                }
-                                else
-                                {
-                                    echo "</div>";
-                                    echo "</div>";
                                 }
                             }
                         }
@@ -240,21 +233,13 @@
                     $stmt->free();
                     //$mysqli->close();    
                     ?>       
-            <!--    
-                    </div>
+                </div>
             </div> 
-            -->
+            
                 
             <hr>
             <!--<div class="space-50"></div>-->
 
-            <div class="space-50"></div>
-
-         <div class="row">
-             <?php include 'RedSea.php';?>
-
-             </div>
-        <div class="space-50"></div>
             <div class="row section-gray">
                 <?php
                 // Check connection
@@ -309,6 +294,15 @@
                 $stmt->free();
                 $mysqli->close();
                 ?> 
+            </div>
+
+            <hr>
+            <div class="space-50"></div>
+
+            <div class="row">
+                <div class="col-md-12 ">
+                    <?php //include 'RedSea.php';?>
+                </div>
             </div>
 
             <hr>
