@@ -250,10 +250,10 @@
 
             <div class="space-50"></div>
 
-     <div class="row section-gray">
-         <?php include 'RedSea.php';?>
+         <div class="row">
+             <?php include 'RedSea.php';?>
 
-         </div>
+             </div>
         <div class="space-50"></div>
             <div class="row section-gray">
                 <?php
