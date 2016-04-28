@@ -301,7 +301,7 @@
 
             <div class="row">
                 <div class="col-md-12 ">
-                    <?php //include 'RedSea.php';?>
+                    <?php include 'RedSea.php';?>
                 </div>
             </div>
 
