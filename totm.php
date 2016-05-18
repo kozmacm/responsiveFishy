@@ -271,6 +271,7 @@
                                                                               
                            while ($row = mysqli_fetch_array($stmt)) {
                                $file = "assets/img/totm/" . $row['file'];
+                               $na = $row['name'];
                                $desc = $row['description'];
                                                                      
                                echo "<div class='col-md-12'>    
@@ -283,6 +284,7 @@
                                      <div class='space-50'></div>
                                      <div class='col-md-12'>
                                          <div>
+                                             <p>Congratulations to " . $na . ", the current winner of our Tank of the Month Contest!</p></br>
                                              <p>" . $desc . "</p>
                                          </div>
                                      </div>
