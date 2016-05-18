@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html dir="ltr">
 <head>
@@ -248,6 +247,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4dadce', end
 		})();
 		
 	</script>
+
+    <script src="assets/js/responsiveiframe.js"></script>
+    <script>
+      var ri = responsiveIframe();
+      ri.allowResponsiveEmbedding();
+    </script>
+
 </head>
 <body class="page page-id-15112 page-template page-template-page-templates page-template-compare_iframe page-template-page-templatescompare_iframe-php">
 	<div class="site"><div id="compare">

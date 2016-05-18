@@ -295,14 +295,14 @@
                 $mysqli->close();
                 ?> 
             </div>
-
+            <!--
             <hr>
             <div class="space-50"></div>
 
-            <!--
+            
             <div class="row">
                 <div class="col-md-12 ">
-                    <?php //include 'RedSea.php';?>
+                    <iframe id="redSea" src="RedSea.php" style="width: 100%; padding: 0px;margin: 0; border: none; display: block;height:auto; overflow: hidden;"></iframe>
                 </div>
             </div>
             -->
@@ -685,5 +685,15 @@
 </script>
 
 <!-- Google Analytics End -->
+    <script src="assets/js/responsiveiframe.js"></script>
+
+    <script>
+      ;(function($){          
+          $(function(){
+            $('#redSea').responsiveIframe({ xdomain: '*'});
+          });        
+      })(jQuery);
+    </script>
+
 
 </html>
