@@ -1,6 +1,6 @@
 <?php
-    include_once '../includes/db_connect.php';
-    include_once '../includes/functions.php';
+    include_once 'includes/db_connect.php';
+    include_once 'includes/functions.php';
  
     sec_session_start();
  
@@ -53,15 +53,15 @@
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     
-    <link href="../bootstrap3/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/css/gsdk.css" rel="stylesheet"/>
-    <link href="../assets/css/fishy.css" rel="stylesheet"/>
-    <link href="../assets/css/login-register.css" rel="stylesheet" />
+    <link href="bootstrap3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/gsdk.css" rel="stylesheet"/>
+    <link href="assets/css/fishy.css" rel="stylesheet"/>
+    <link href="assets/css/login-register.css" rel="stylesheet" />
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"> 
     <link href='https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans:400,300' rel='stylesheet' type='text/css'>  
-    <link href="../assets/css/pe-icon-7-stroke.css" rel="stylesheet" />  
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />  
 </head>
 
 <body class="contact-us">
@@ -368,30 +368,30 @@
 </div> <!-- wrapper --> 
 </body>
     <!--  jQuery and Bootstrap core files    -->
-    <script src="../assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-	<script src="../assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
-	<script src="../bootstrap3/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+	<script src="bootstrap3/js/bootstrap.min.js" type="text/javascript"></script>
 		
 	<!--  Plugins -->
-	<script src="../assets/js/gsdk-checkbox.js"></script>
-	<script src="../assets/js/gsdk-morphing.js"></script>
-	<script src="../assets/js/gsdk-radio.js"></script>
-	<script src="../assets/js/gsdk-bootstrapswitch.js"></script>
-	<script src="../assets/js/bootstrap-select.js"></script>
-	<script src="../assets/js/bootstrap-datepicker.js"></script>
-    <script src="../assets/js/bootstrap-notify.js"></script>
-	<script src="../assets/js/chartist.min.js"></script>
-    <script src="../assets/js/jquery.tagsinput.js"></script>
-    <script src="../assets/js/retina.min.js"></script>
-    <script src="../assets/js/login-register.js" type="text/javascript"></script>
-    <script type="text/JavaScript" src="../assets/js/sha512.js"></script> 
-    <script type="text/JavaScript" src="../assets/js/forms.js"></script>
+	<script src="assets/js/gsdk-checkbox.js"></script>
+	<script src="assets/js/gsdk-morphing.js"></script>
+	<script src="assets/js/gsdk-radio.js"></script>
+	<script src="assets/js/gsdk-bootstrapswitch.js"></script>
+	<script src="assets/js/bootstrap-select.js"></script>
+	<script src="assets/js/bootstrap-datepicker.js"></script>
+    <script src="assets/js/bootstrap-notify.js"></script>
+	<script src="assets/js/chartist.min.js"></script>
+    <script src="assets/js/jquery.tagsinput.js"></script>
+    <script src="assets/js/retina.min.js"></script>
+    <script src="assets/js/login-register.js" type="text/javascript"></script>
+    <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
+    <script type="text/JavaScript" src="assets/js/forms.js"></script>
     <script src="contact-form.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     
 	<!--  Get Shit Done Kit PRO Core javascript 	 -->
-	<script src="../assets/js/get-shit-done.js"></script>
+	<script src="assets/js/get-shit-done.js"></script>
     
     <script type="text/javascript">
         var parallax_map;
