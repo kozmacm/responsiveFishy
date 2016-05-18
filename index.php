@@ -295,7 +295,7 @@
                 $mysqli->close();
                 ?> 
             </div>
-
+            <!--
             <hr>
             <div class="space-50"></div>
 
@@ -305,7 +305,7 @@
                     <iframe id="redSea" src="RedSea.php" style="width: 100%; padding: 0px;margin: 0; border: none; display: block;height:auto; overflow: hidden;"></iframe>
                 </div>
             </div>
-            
+            -->
 
             <hr>
             <div class="space-50"></div>
