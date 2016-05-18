@@ -9,23 +9,18 @@
     } else {
         $logged = 'out';
     }
-
-    //Send email and generate alert on form submit
-    if(isset($_POST['submit'])){
+    
+    if($_POST)
+    {
+        //Fetching Values from URL
         $to = "support@fishybusinesssc.com"; // this is your Email address
-        $from = $_POST['email']; // this is the sender's Email address
-        $name = $_POST['name'];
+        $from = $_POST['email1']; // this is the sender's Email address
+        $name = $_POST['name1'];
         $subject = "Web Inquiry";
-        $message = $name . " wrote the following:" . "\n\n" . $_POST['message'];
+        $message = $name . " wrote the following:" . "\n\n" . $_POST['message1'];
     
         $headers = "From:" . $from;
         mail($to,$subject,$message,$headers);
-    
-        echo '<script language="javascript">';
-        echo 'alert("Message successfully sent")';
-        echo '</script>';
-        //echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
-        // You can also use header('Location: thank_you.php'); to redirect to another page.
     }
 ?>
 
@@ -54,15 +49,7 @@
 </head>
 
 <body class="contact-us">
-    <script>
-    <?php if ($error) { ?>
-    window.onload = function() {
-        alert('<?php echo $error?>');
-    }        
-    <?php } ?>
-    </script>
-
-
+    
 <nav class="navbar navbar-inverse navbar-transparent navbar-fixed-top" role="navigation">
     <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -127,12 +114,12 @@
                             <i class="pe-7s-info"></i> Register
                         </a>
                     </li>
-                    -->
                     <li>
                         <a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">
                             <i class="pe-7s-info"></i> Login
                         </a>
                     </li>
+                    -->
                   </ul>
             </li>
             <li><a href="mailing-list.php" class="btn btn-round btn-default">Join our mailing list!</a></li>
@@ -143,6 +130,7 @@
 </nav>
 
 <!-- begin login/register modal -->
+<!--
 <div class="modal fade login" id="loginModal">
     <div class="modal-dialog login animated">
         <div class="modal-content">
@@ -175,6 +163,7 @@
                     <a href="javascript: showRegisterForm();">create an account</a>
                     ?</span>
                     -->
+<!--
                 </div>
                 <div class="forgot register-footer" style="display:none">
                     <span>Already have an account?</span>
@@ -203,7 +192,7 @@
                        <p>
                            You can contact us with anything related to our Products. We'll get in touch with you as soon as possible.<br><br>
                         </p>
-                        <form role="form" id="contact-form" method="post" >
+                        <form role="form" id="contact-form" >
     						<div class="form-group">
     				    		<label for="name">Your name</label>
     				    		<input type="text" name="name" class="form-control" id="name" placeholder="First Name and Last Name"/>
@@ -217,7 +206,7 @@
     				    		<textarea name="message" class="form-control" id="message" rows="6"></textarea>
     				  		</div>
     				  		<div class="submit">
-    				  			<input type="submit" name="submit" class="btn btn-info btn-fill" value="Contact Us" />
+    				  			<input id="submit" type="submit" name="submit" class="btn btn-info btn-fill" value="Contact Us" />
     				  		</div>
     					</form>
                    </div>
@@ -370,12 +359,14 @@
 	<script src="assets/js/gsdk-bootstrapswitch.js"></script>
 	<script src="assets/js/bootstrap-select.js"></script>
 	<script src="assets/js/bootstrap-datepicker.js"></script>
+    <script src="assets/js/bootstrap-notify.js"></script>
 	<script src="assets/js/chartist.min.js"></script>
     <script src="assets/js/jquery.tagsinput.js"></script>
     <script src="assets/js/retina.min.js"></script>
     <script src="assets/js/login-register.js" type="text/javascript"></script>
     <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
     <script type="text/JavaScript" src="assets/js/forms.js"></script>
+    <script src="assets/js/contact-form.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     
 	<!--  Get Shit Done Kit PRO Core javascript 	 -->
@@ -413,5 +404,18 @@
     <script src="https://use.typekit.net/[your kit code here].js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     -->
-    
+       <!-- Google Analytics Start -->
+   
+   <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54741406-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Google Analytics End -->
 </html>
