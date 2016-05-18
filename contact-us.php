@@ -386,7 +386,7 @@
     <script src="assets/js/login-register.js" type="text/javascript"></script>
     <script type="text/JavaScript" src="assets/js/sha512.js"></script> 
     <script type="text/JavaScript" src="assets/js/forms.js"></script>
-    <script src="contact-form.js"></script>
+    <script src="assets/js/contact-form.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     
