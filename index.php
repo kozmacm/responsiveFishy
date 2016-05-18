@@ -542,7 +542,7 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="col-md-3 col-md-offset-1">
+                <div class="col-md-3">
                     <h5 class="title"> Location</h5>
                     <nav>
                         <ul>
@@ -558,8 +558,8 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="col-md-3">
-                    <h5 class="title"> Hours</h5>
+                <div class="col-md-2">
+                    <h5 class="title">Store Hours</h5>
                     <nav>
                         <ul>
                             <li>
@@ -576,28 +576,12 @@
                    
                 </div>
 
-                 <div class="col-md-3">
-                    <h5 class="title">Latest News</h5>
-                    <nav>
-                        <ul>
-                            <li>
-                                <a href="#" >
-                                   <i class="fa fa-twitter"></i> <b>Fishy Business</b>
-                                   Welcome to our newly redesigned website, easier to read on all of your devices from smartphone to desktop!...
-                                   <hr class="hr-small">
-                                </a>
-                            </li>
-                            <li>
-                                  <a href="#" >
-                                   <i class="fa fa-twitter"></i>
-                                   We've just been featured on <b> CK Developing's Website</b>! Thank you everybody for supporting us over the years...
-                                </a>
-                            </li>
-                          
-                        </ul>
-                    </nav>
+                <div class="col-md-5">
+                    <h5 class="title">Latest Facebook Updates</h5>
+                        <div class="facebook">
+                            <div class="fb-page" data-href="https://www.facebook.com/FishyBusinessSC" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/FishyBusinessSC"><a href="https://www.facebook.com/FishyBusinessSC">Fishy Business</a></blockquote></div></div>
+                        </div>
                 </div>
-
             </div>
             <hr />
             <div class="copyright">
@@ -695,5 +679,23 @@
       })(jQuery);
     </script>
 
+    <!--facebook plugin-->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '47159412308',
+          xfbml      : true,
+          version    : 'v2.6'
+        });
+      };
+
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=47159412308";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
 
 </html>
