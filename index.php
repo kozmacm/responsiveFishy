@@ -579,7 +579,7 @@
                 <div class="col-md-5">
                     <h5 class="title">Latest Facebook Updates</h5>
                         <div class="facebook">
-                            <div class="fb-page" data-href="https://www.facebook.com/FishyBusinessSC" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/FishyBusinessSC"><a href="https://www.facebook.com/FishyBusinessSC">Fishy Business</a></blockquote></div></div>
+                            <div class="fb-page" data-href="https://www.facebook.com/FishyBusinessSC" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-height="300"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/FishyBusinessSC"><a href="https://www.facebook.com/FishyBusinessSC">Fishy Business</a></blockquote></div></div>
                         </div>
                 </div>
             </div>
