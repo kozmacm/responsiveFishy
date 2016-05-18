@@ -10,6 +10,51 @@
         $logged = 'out';
     }
     
+    $secret = '6Ld0OCATAAAAAODLPcH8WlimOziv01_eqpoe__w2'; 
+
+    if(isset($_POST['g-recaptcha-response']))
+    {
+        var_export($_POST);
+        $recaptcha = new \ReCaptcha\ReCaptcha($secret);
+        $resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
+        if ($resp->isSuccess())
+        {
+            //Fetching Values from URL
+            //$to = "support@fishybusinesssc.com"; // this is your Email address
+            $to = "ckozma@live.com"; // this is your Email address
+            $from = $_POST['email1']; // this is the sender's Email address
+            $name = $_POST['name1'];
+            $subject = "Web Inquiry";
+            $message = $name . " wrote the following:" . "\n\n" . $_POST['message1'];
+    
+            $headers = "From:" . $from;
+            mail($to,$subject,$message,$headers);
+        }
+        else
+        {
+            foreach ($resp->getErrorCodes() as $code) 
+            { 
+                echo '<tt>' , $code , '</tt> '; 
+            } 
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
     if($_POST)
     {
         //Fetching Values from URL
@@ -22,6 +67,7 @@
         $headers = "From:" . $from;
         mail($to,$subject,$message,$headers);
     }
+    */
 ?>
 
 <!doctype html>
@@ -205,6 +251,8 @@
     				    		<label for="message">Your message</label>
     				    		<textarea name="message" class="form-control" id="message" rows="6"></textarea>
     				  		</div>
+                            <!--insert reCaptcha here-->
+                            <div class="g-recaptcha form-group" data-sitekey="6Ld0OCATAAAAAK6PypHklEawJUj1uGNQ7coh_e9F"></div>
     				  		<div class="submit">
     				  			<input id="submit" type="submit" name="submit" class="btn btn-info btn-fill" value="Contact Us" />
     				  		</div>
@@ -368,6 +416,7 @@
     <script type="text/JavaScript" src="assets/js/forms.js"></script>
     <script src="assets/js/contact-form.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     
 	<!--  Get Shit Done Kit PRO Core javascript 	 -->
 	<script src="assets/js/get-shit-done.js"></script>
