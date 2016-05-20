@@ -369,29 +369,37 @@
     <div class="space-50"></div>
 
     <div class="section section-description">
-           <div class="container">
-               <div class="row">
-                    <div class="col-md-6">
-                        <p>Introducing the New</p>
-                        <h2>Red Sea REEFER&#8482 Systems</h2>
-                    </div>
-                   <div class="col-md-6">
-                      <div class="video-container">
-                          <iframe width="560" height="315" src="https://www.youtube.com/embed/DJypjaV_6n4" frameborder="0" allowfullscreen></iframe>
-                      </div>
-                   </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Introducing the New</p>
+                    <h2>Red Sea REEFER&#8482 Systems</h2>
                 </div>
+                <div class="col-md-6">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/DJypjaV_6n4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
             
-                <div class="space-50"></div>
+            <div class="space-50"></div>
                 
-                <div class="row">
-                   <div class="col-md-12">
-                      <div class="img-container">
-                          <img src="assets/img/redsea.png" alt="..." />
-                      </div>
-                   </div>
-               </div>
-           </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="img-container">
+                        <img src="assets/img/redsea.png" alt="..." />
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-50"></div>
+            
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="configurator.php"><button type="button" class="btn btn-primary btn-fill btn-block">Choose Your Aquarium</button></a>
+                </div>
+            </div>
+        </div>
     </div><!-- section -->
     
     <hr>
