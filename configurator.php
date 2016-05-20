@@ -37,7 +37,7 @@
 
 <body class="">
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-transparent navbar-fixed-top" role="navigation">
     <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -161,12 +161,9 @@
 <!-- /.login/register modal -->
 
 <div class="wrapper">
-    <div class="space-50"></div>
-    <div class="space-50"></div>
-
     <div class="filter-black">
         <div class="parallax-image">
-            <img src="http://www.redseafish.com/wp-content/uploads/2015/12/compre-banner-new_eng.jpg">
+            <img src="assets/img/compare-banner.jpg">
         </div>    
     </div>
 
