@@ -172,7 +172,7 @@
                <h2 class="section-title">Red Sea Reef Systems</h2>
                <p>Compare and select for the perfect reef!</p>
                <div class="row">
-                   <div class="col-md-12 ">
+                   <div class="col-md-12">
                        <iframe id="redSea" src="RedSea.php" style="width: 1084px; padding: 0px;margin: 0; border: none; display: block;height:1084px; overflow: hidden;"></iframe>
                    </div>
                </div>
