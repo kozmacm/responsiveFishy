@@ -161,7 +161,7 @@
 <!-- /.login/register modal -->
 
 <div class="wrapper">
-    <div class="parallax filter-black">
+    <div class="parallax filter-transparent">
         <div class="parallax-image">
             <!--<img src="assets/img/thumb.jpg">-->
             <img src="assets/img/backgroundAboutUs.JPG">

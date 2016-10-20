@@ -161,7 +161,7 @@
 <!-- /.login/register modal -->
 
 <div class="wrapper">
-    <div class="filter-black">
+    <div class="filter-transparent">
         <div class="parallax-image">
             <img src="assets/img/compare-banner.jpg">
         </div>    
