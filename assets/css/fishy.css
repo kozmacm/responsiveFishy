@@ -74,6 +74,22 @@
   margin-bottom: 60px;
 }
 
+.filter-transparent {
+  position: relative;
+}
+
+.filter-transparent:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+  /*background-color: rgba(0, 0, 0, 0.66);*/
+  content: "";
+}
+
 .filter-black {
   position: relative;
 }
@@ -86,7 +102,7 @@
   height: 100%;
   display: block;
   z-index: 1;
-  /*background-color: rgba(0, 0, 0, 0.66);*/
+  background-color: rgba(0, 0, 0, 0.66);
   content: "";
 }
 
