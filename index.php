@@ -311,7 +311,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h2>New Aquarium Designs</h2>
-                    <p>Fishy Business is moving in a new direction with our aquarium designs with the introduction of our Fishy Business Limited Edition Customs! Each of these stand combinations is a work of art and because of this, we are limiting the color, design, and quantity of each one of these new productions. These pieces are all branded with a signature from the artist and are available on a first come - first serve basis. No two designs are the same. </p>
+                    <p>Fishy Business is proud to introduce our new line of Fishy Business Limited Edition Customs! Each of these stand combinations is a work of art and because of this, we are limiting the color, design, and quantity of each one of these new productions. These pieces are all branded with a signature from the artist and are available on a first come - first serve basis. No two designs are the same. </p>
                     <p>"The Book Case" is our first in the series and currently houses a 120 gallon aquarium. </p>
                 </div>
                 <div class="col-md-6">
