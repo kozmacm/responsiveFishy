@@ -311,7 +311,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h2>New Aquarium Designs</h2>
-                    <p>Fishy Business is moving in a new direction with our aquarium designs with the introduction of our Fishy Business Limited Edition Customs! Each of these stand combinations is a work of art and because of this, we are limiting the color, design, and quantity of each one of these new productions. These pieces are all branded with a signature from the artist and are available on a first come - first serve basis. No two designs are the same. </p>
+                    <p>Fishy Business is proud to introduce our new line of Fishy Business Limited Edition Customs! Each of these stand combinations is a work of art and because of this, we are limiting the color, design, and quantity of each one of these new productions. These pieces are all branded with a signature from the artist and are available on a first come - first serve basis. No two designs are the same. </p>
                     <p>"The Book Case" is our first in the series and currently houses a 120 gallon aquarium. </p>
                 </div>
                 <div class="col-md-6">
@@ -415,7 +415,7 @@
                        <h2>BioCube Aquariums</h2>
                        </p>With all the necessary components built-in, spend your time setting up your ideal environment, then plug it in and enjoy the results. </p>
                        <p>The Oceanic BioCube features high-quality components and can be used for saltwater or freshwater setups. Enhanced filtration system features dual filter intakes to draw aquarium water from the surface and mid-water for improved water circulation and filtration. Replaceable 2-stage filter cartridge provides easy-to-maintain mechanical and chemical filtration. Bio-ball wet/dry filtration system improves gas exchange and provides efficient biological filtration. Viewing window for filtration water pump to ensure optimum performance. UL-Listed submersible pumps. </p>                    
-                       <p><strong>29 GALLON BIO-CUBE Kit/ Live Sand/ Live Rock/ Live Seawater 399.00</strong> </p>
+                       <p><strong>32 GALLON BIO-CUBE Kit/ Live Sand/ Live Rock/ Live Seawater 399.00</strong> </p>
                    </div>
                </div>
            </div>
