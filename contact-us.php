@@ -208,7 +208,7 @@
            <div class="container">
                <div class="row">
                    <div class="col-md-5 col-md-offset-1">
-                   <h2 class="section-title"></h2>
+                   <h2 class="section-title">Location</h2>
                         <div class="contact-info">
                             <h5><i class="fa fa-map-marker text-muted"></i> Address</h5>
                             <p class="text-muted"> 652 Bush River Road #K<br>
