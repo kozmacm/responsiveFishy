@@ -8,7 +8,7 @@
         border-radius: 0;
         color: $info-color;
         margin-left: -1px;
-        
+
         &:hover,
         &:focus{
             background-color: #F5F5F5;
@@ -19,17 +19,27 @@
     > li.active > a:focus {
         background-color: $info-color;
         color: #FFFFFF;
-    }    
+    }
     > li:first-child > a{
-        border-radius: 4px 0 0 4px;
+        border-radius: $border-radius-base 0 0 $border-radius-base;
         margin: 0;
     }
     > li:last-child > a{
-        border-radius: 0 4px 4px 0;
+        border-radius: 0 $border-radius-base $border-radius-base 0;
     }
-
 }
-
+.nav-stacked{
+    > li:first-child > a{
+        border-radius: $border-radius-base $border-radius-base 0 0;
+        margin-left: -1px;
+    }
+    > li:last-child > a{
+        border-radius: 0 0 $border-radius-base $border-radius-base;
+    }
+    >li+li{
+        margin-top: -1px;
+    }
+}
 .pagination.pagination-no-border > li > a,
 .pagination.pagination-no-border > li > span{
     border: 0;
@@ -47,61 +57,61 @@
 }
 
 .nav-pills-blue > li.active > a,
-.nav-pills-blue > li.active > a:hover, 
-.nav-pills-blue > li.active > a:focus, 
-.pagination-blue > li.active > a, 
-.pagination-blue > li.active > span, 
-.pagination-blue > li.active > a:hover, 
-.pagination-blue > li.active > span:hover, 
-.pagination-blue > li.active > a:focus, 
+.nav-pills-blue > li.active > a:hover,
+.nav-pills-blue > li.active > a:focus,
+.pagination-blue > li.active > a,
+.pagination-blue > li.active > span,
+.pagination-blue > li.active > a:hover,
+.pagination-blue > li.active > span:hover,
+.pagination-blue > li.active > a:focus,
 .pagination-blue > li.active > span:focus{
    background-color: $primary-color;
 }
 
 .nav-pills-azure > li.active > a,
-.nav-pills-azure > li.active > a:hover, 
-.nav-pills-azure > li.active > a:focus, 
-.pagination-azure > li.active > a, 
-.pagination-azure > li.active > span, 
-.pagination-azure > li.active > a:hover, 
-.pagination-azure > li.active > span:hover, 
-.pagination-azure > li.active > a:focus, 
+.nav-pills-azure > li.active > a:hover,
+.nav-pills-azure > li.active > a:focus,
+.pagination-azure > li.active > a,
+.pagination-azure > li.active > span,
+.pagination-azure > li.active > a:hover,
+.pagination-azure > li.active > span:hover,
+.pagination-azure > li.active > a:focus,
 .pagination-azure > li.active > span:focus{
    background-color: $info-color;
 }
 
 .nav-pills-green >  li.active > a,
-.nav-pills-green >  li.active > a:hover, 
-.nav-pills-green >  li.active > a:focus, 
-.pagination-green > li.active > a, 
-.pagination-green > li.active > span, 
-.pagination-green > li.active > a:hover, 
-.pagination-green > li.active > span:hover, 
-.pagination-green > li.active > a:focus, 
+.nav-pills-green >  li.active > a:hover,
+.nav-pills-green >  li.active > a:focus,
+.pagination-green > li.active > a,
+.pagination-green > li.active > span,
+.pagination-green > li.active > a:hover,
+.pagination-green > li.active > span:hover,
+.pagination-green > li.active > a:focus,
 .pagination-green > li.active > span:focus{
    background-color: $success-color;
 }
 
 .nav-pills-orange > li.active > a,
-.nav-pills-orange > li.active > a:hover, 
-.nav-pills-orange > li.active > a:focus, 
-.pagination-orange > li.active > a, 
-.pagination-orange > li.active > span, 
-.pagination-orange > li.active > a:hover, 
-.pagination-orange > li.active > span:hover, 
-.pagination-orange > li.active > a:focus, 
+.nav-pills-orange > li.active > a:hover,
+.nav-pills-orange > li.active > a:focus,
+.pagination-orange > li.active > a,
+.pagination-orange > li.active > span,
+.pagination-orange > li.active > a:hover,
+.pagination-orange > li.active > span:hover,
+.pagination-orange > li.active > a:focus,
 .pagination-orange > li.active > span:focus{
    background-color: $warning-color;
 }
 
 .nav-pills-red > li.active > a,
-.nav-pills-red > li.active > a:hover, 
-.nav-pills-red > li.active > a:focus, 
-.pagination-red > li.active > a, 
-.pagination-red > li.active > span, 
-.pagination-red > li.active > a:hover, 
-.pagination-red > li.active > span:hover, 
-.pagination-red > li.active > a:focus, 
+.nav-pills-red > li.active > a:hover,
+.nav-pills-red > li.active > a:focus,
+.pagination-red > li.active > a,
+.pagination-red > li.active > span,
+.pagination-red > li.active > a:hover,
+.pagination-red > li.active > span:hover,
+.pagination-red > li.active > a:focus,
 .pagination-red > li.active > span:focus{
    background-color: $danger-color;
 }
@@ -123,14 +133,14 @@
 
 .nav-text, .nav-icons{
     margin: $margin-bottom;
-    
+
     > li > a{
         display: block;
         padding: 0px $padding-base-horizontal;
         color: $dark-gray;
         text-align: center;
         @include opacity(0.8);
-        
+
         &:hover,
         &:focus{
             background-color: $transparent-bg;
@@ -141,7 +151,7 @@
         padding-left: 0;
     }
     > li.active a{
-       color: $info-color;  
+       color: $info-color;
     }
 }
 .nav-icons > li{
@@ -180,14 +190,14 @@
 
 .nav-text{
     margin: $margin-bottom;
-    
+
     > li > a{
         font-size: $font-size-h6;
         text-transform: uppercase;
         padding: 3px 0;
         text-align: left;
         font-weight: $font-weight-semi;
-        
+
     }
     > li:first-child > a{
         padding-top: 0;

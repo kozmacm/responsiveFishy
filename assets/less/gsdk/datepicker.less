@@ -6,14 +6,14 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  */
- 
-/*  
+
+/*
  *
  *   SCSS by Creative Tim
  *   http://www.creative-tim.com
- *   
+ *
  */
- 
+
 .datepicker {
     top: 0;
     left: 0;
@@ -22,16 +22,16 @@
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    
+
     > div {
       display: none;
     }
-    
+
     table {
          width: 100%;
          margin: 0;
     }
-    
+
     td,
     th {
         text-align: center;
@@ -40,14 +40,14 @@
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
         border-radius: 4px;
-    }  
-    
+    }
+
     td{
         border-top: 1px solid @medium-gray;
-        text-align: center;   
+        text-align: center;
         p{
             font-size: @font-size-small;
-            font-weight: @font-weight-normal;            
+            font-weight: @font-weight-normal;
             border-radius: 50%;
             height: 29px;
             line-height: 29px;
@@ -58,24 +58,24 @@
             cursor: pointer;
         }
     }
-    
+
     th{
          font-weight: @font-weight-light;
-          
+
          &.switch-datepicker{
              font-size: @font-paragraph;
         }
     }
-    
-    .prev p, 
+
+    .prev p,
     .next p{
         font-size: @font-size-h3;
     }
-    
+
     p:hover{
          background: #eeeeee;
     }
-    
+
     .day.disabled {
          color: #eeeeee;
     }
@@ -85,13 +85,13 @@
         color: #999999;
         border-top: 0;
     }
-    
+
     td.active p,
     td.active:hover p{
         color: #ffffff;
         background-color: @info-color;
     }
-    
+
     td.blue p,
     td.blue:hover p{
       background-color: @primary-color;
@@ -112,7 +112,7 @@
     td.red:hover p{
       background-color: @danger-color;
     }
-    
+
     span {
         display: block;
         width: 55px;
@@ -124,7 +124,7 @@
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
         border-radius: 4px;
-        
+
         &.old {
             color: #999999;
         }
@@ -174,26 +174,28 @@
     thead tr:first-child th:hover {
       background: #eeeeee;
     }
-    
-    &.dropdown-menu{    
-        border-radius: @border-radius-bottom; 
+
+    &.dropdown-menu{
+        border-radius: @border-radius-bottom;
         .box-shadow(none);
         .transform-origin(none);
         .transform-scale(1);
         .transition(@fast-transition-time, @transition-linear);
         margin-top: -20px;
+        opacity: 0;
+        visibility: hidden;
     }
-    
+
     &.dropdown-menu.open{
         .opacity(1);
         visibility: visible;
         margin-top: -1px;
-    } 
-    
+    }
+
     .table-condensed > tbody > tr > td{
         padding: 2px;
     }
-    
+
     .table-condensed > thead > tr > th{
         padding: 0;
     }
@@ -211,11 +213,3 @@
     padding: 0 0 3px;
     display: block;
 }
-
-
-
-
-
-
-
-

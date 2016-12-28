@@ -208,17 +208,17 @@ function initDemoChartist(){
 
 
 function initGoogleMaps(){
-    var myLatlng = new google.maps.LatLng(34.029499, -81.098535);
+    var myLatlng = new google.maps.LatLng(44.433530, 26.093928);
     var mapOptions = {
       zoom: 14,
       center: myLatlng,
-      scrollwheel: false}
-    
+      scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
+    }
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
     
     var marker = new google.maps.Marker({
         position: myLatlng,
-        title:"Fishy Business"
+        title:"Hello World!"
     });
     
     // To add the marker to the map, call setMap();
