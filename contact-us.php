@@ -87,6 +87,11 @@
                      Home
                 </a>
             </li>
+            <li>
+                <a href="contact-us.php">
+                    <i class="pe-7s-mail-open-file"></i> Location
+                </a>
+            </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     More 
