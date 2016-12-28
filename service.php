@@ -60,7 +60,7 @@
             </li>
             <li>
                 <a href="contact-us.php">
-                    <i class="pe-7s-mail-open-file"></i> Location
+                    <i class="pe-7s-map-2"></i> Location
                 </a>
             </li>
             <li class="dropdown">
