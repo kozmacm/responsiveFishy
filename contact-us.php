@@ -204,12 +204,30 @@
            </div>
             <div id="contactUsMap" class="big-map"></div>
     </div>
-
     <div class="section">
            <div class="container">
-               <h2 class="section-title">Send us a message</h2>
                <div class="row">
+                   <div class="col-md-5 col-md-offset-1">
+                   <h2 class="section-title"></h2>
+                        <div class="contact-info">
+                            <h5><i class="fa fa-map-marker text-muted"></i> Address</h5>
+                            <p class="text-muted"> 652 Bush River Road #K<br>
+                                Columbia, SC 29210
+                            </p><br>
+                            <h5><i class="fa fa-phone text-muted"></i> Live Support</h5>
+                            <p class="text-muted"> In-Store or by Phone<br>
+                                (803) 731-4004<br>
+                                Mon - Fri, 11:00am-6:00pm<br>
+                                Sat, 11:00am-4:00pm<br>
+                                Sun, 1:30pm-4:00pm
+                            </p><br>
+                            <h5><i class="fa fa-building text-muted"></i> Business Info</h5>
+                            <p class="text-muted"> Fishy Business, LLC.
+                            </p>
+                        </div>
+                   </div>
                    <div class="col-md-6">
+                   <h2 class="section-title">Send us a message</h2>
                        <p>
                            You can contact us with anything related to our Products. We'll get in touch with you as soon as possible.<br><br>
                         </p>
@@ -234,24 +252,6 @@
     				  			<input id="submit" type="submit" name="submit" class="btn btn-info btn-fill" value="Contact Us" />
     				  		</div>
     					</form>
-                   </div>
-                   <div class="col-md-4 col-md-offset-2">
-                        <div class="contact-info">
-                            <h5><i class="fa fa-map-marker text-muted"></i> Address</h5>
-                            <p class="text-muted"> 652 Bush River Road #K<br>
-                                Columbia, SC 29210
-                            </p><br>
-                            <h5><i class="fa fa-phone text-muted"></i> Live Support</h5>
-                            <p class="text-muted"> In-Store or by Phone<br>
-                                (803) 731-4004<br>
-                                Mon - Fri, 11:00am-6:00pm<br>
-                                Sat, 11:00am-4:00pm<br>
-                                Sun, 1:30pm-4:00pm
-                            </p><br>
-                            <h5><i class="fa fa-building text-muted"></i> Business Info</h5>
-                            <p class="text-muted"> Fishy Business, LLC.
-                            </p>
-                        </div>
                    </div>
                </div>
            </div>
