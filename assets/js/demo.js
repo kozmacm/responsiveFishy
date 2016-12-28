@@ -208,7 +208,7 @@ function initDemoChartist(){
 
 
 function initGoogleMaps(){
-    var myLatlng = new google.maps.LatLng(44.433530, 26.093928);
+    var myLatlng = new google.maps.LatLng(34.029499, -81.098535);
     var mapOptions = {
       zoom: 14,
       center: myLatlng,
@@ -218,7 +218,7 @@ function initGoogleMaps(){
     
     var marker = new google.maps.Marker({
         position: myLatlng,
-        title:"Hello World!"
+        title:"Fishy Business"
     });
     
     // To add the marker to the map, call setMap();
