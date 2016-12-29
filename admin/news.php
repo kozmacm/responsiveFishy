@@ -46,11 +46,11 @@
                     {
                         $file = $_FILES["file"]["name"][$i] . "";
 
-                        echo '<script>alert("Success! Your weekly update and file '.$_FILES["file"]["name"][$i].' have been sent successfully");</script>';
+                        echo '<script>alert("Success! Your monthly update and file '.$_FILES["file"]["name"][$i].' have been sent successfully");</script>';
                 
                         if (file_exists("../assets/img/news/" . $_FILES["file"]["name"]))
                         {
-                            echo '<script>alert("Error: Your weekly update and file '.$_FILES["file"]["name"][$i].' already exists.");</script>';
+                            echo '<script>alert("Error: Your monthly update and file '.$_FILES["file"]["name"][$i].' already exists.");</script>';
                         }
                         else
                         {
@@ -118,7 +118,7 @@
         }
         else //no file was included
         {
-            echo '<script>alert("Success! Your weekly update has been sent successfully");</script>';
+            echo '<script>alert("Success! Your monthly update has been sent successfully");</script>';
             
             $file = '';
             $text = $_POST['textbox'];
@@ -253,7 +253,7 @@
                 <li class="active">
                     <a>
                         <i class="pe-7s-news-paper"></i> 
-                        <p>Weekly News Updates</p>
+                        <p>Monthly News Updates</p>
                     </a>            
                 </li>
             </ul> 
@@ -270,7 +270,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand">Weekly News Updates</a>
+                    <a class="navbar-brand">Monthly News Updates</a>
                 </div>
                 <div class="collapse navbar-collapse">       
                     <ul class="nav navbar-nav navbar-left">
@@ -304,8 +304,8 @@
                     <div class="col-md-12">
                         <div class="card card-plain">
                             <div class="header">
-                                <h4 class="title">Current Weekly News Update</h4>
-                                <p class="category">Here you will find the current weekly news update! </p>
+                                <h4 class="title">Current Monthly News Update</h4>
+                                <p class="category">Here you will find the current monthly news update! </p>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <?php
@@ -376,12 +376,12 @@
                     <div class="col-md-12">
                         <div class="card card-plain">
                             <div class="header">
-                                <h4 class="title">Update Weekly News Feed</h4>
-                                <p class="category">Here is where you can update the weekly news feed. Do not insert an image using this frame, do it using the checkbox below. </p>
+                                <h4 class="title">Update Monthly News Feed</h4>
+                                <p class="category">Here is where you can update the monthly news feed. Do not insert an image using this frame, do it using the checkbox below. </p>
                             </div>
                             <form method="post" id="form" name="form" action="" enctype="multipart/form-data" >
                                 <div class="form-group">
-                                    <textarea id="textbox" name="textbox" class="form-control" rows="10" placeholder="Enter your weekly update here" required></textarea>
+                                    <textarea id="textbox" name="textbox" class="form-control" rows="10" placeholder="Enter your monthly update here" required></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label class="checkbox checkbox-blue" for="checkbox1">

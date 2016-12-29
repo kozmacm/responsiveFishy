@@ -46,11 +46,11 @@
                     {
                         $file = $_FILES["file"]["name"][$i] . "";
 
-                        echo '<script>alert("Success! Your weekly update and file '.$_FILES["file"]["name"][$i].' have been sent successfully");</script>';
+                        echo '<script>alert("Success! Your monthly update and file '.$_FILES["file"]["name"][$i].' have been sent successfully");</script>';
                 
                         if (file_exists("../assets/img/sales/" . $_FILES["file"]["name"]))
                         {
-                            echo '<script>alert("Error: Your weekly update and file '.$_FILES["file"]["name"][$i].' already exists.");</script>';
+                            echo '<script>alert("Error: Your monthly update and file '.$_FILES["file"]["name"][$i].' already exists.");</script>';
                         }
                         else
                         {
@@ -117,7 +117,7 @@
         }
         else
         {
-            echo '<script>alert("Success! Your weekly update has been sent successfully");</script>';
+            echo '<script>alert("Success! Your monthly update has been sent successfully");</script>';
             
             $file = '';
             $text = $_POST['textbox'];
@@ -251,7 +251,7 @@
                 <li class="active">
                     <a href="news.php">
                         <i class="pe-7s-news-paper"></i> 
-                        <p>Weekly News Updates</p>
+                        <p>Monthly News Updates</p>
                     </a>            
                 </li>
             </ul> 
@@ -375,11 +375,11 @@
                         <div class="card card-plain">
                             <div class="header">
                                 <h4 class="title">Update Current Sales</h4>
-                                <p class="category">Here is where you can update the weekly sales. Do not insert a sales flyer using this frame, do it using the checkbox below. </p>
+                                <p class="category">Here is where you can update the monthly sales. Do not insert a sales flyer using this frame, do it using the checkbox below. </p>
                             </div>
                             <form method="post" id="form" name="form" action="" enctype="multipart/form-data" >
                                 <div class="form-group">
-                                    <textarea id="textbox" name="textbox" class="form-control" rows="10" placeholder="Enter your weekly update here" required></textarea>
+                                    <textarea id="textbox" name="textbox" class="form-control" rows="10" placeholder="Enter your monthly update here" required></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label class="checkbox checkbox-blue" for="checkbox1">

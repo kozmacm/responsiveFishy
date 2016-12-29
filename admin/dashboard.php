@@ -93,7 +93,7 @@
                 <li class="active">
                     <a href="news.php">
                         <i class="pe-7s-news-paper"></i> 
-                        <p>Weekly News Updates</p>
+                        <p>Monthly News Updates</p>
                     </a>            
                 </li>
             </ul> 
