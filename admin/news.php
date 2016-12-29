@@ -229,13 +229,18 @@
                 <a href="../index.php" class="simple-text">
                     Fishy Business
                 </a>
-            </div>
-                       
+            </div>            
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboard.php">
+                    <a>
                         <i class="pe-7s-graph"></i> 
                         <p>Dashboard</p>
+                    </a>            
+                </li>
+                <li class="active">
+                    <a href="news.php">
+                        <i class="pe-7s-news-paper"></i> 
+                        <p>Monthly News Updates</p>
                     </a>            
                 </li>
                 <li class="active">
@@ -251,9 +256,9 @@
                     </a>            
                 </li>
                 <li class="active">
-                    <a>
-                        <i class="pe-7s-news-paper"></i> 
-                        <p>Monthly News Updates</p>
+                    <a href="users.php">
+                        <i class="pe-7s-users"></i> 
+                        <p>Users</p>
                     </a>            
                 </li>
             </ul> 

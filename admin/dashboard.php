@@ -79,6 +79,12 @@
                     </a>            
                 </li>
                 <li class="active">
+                    <a href="news.php">
+                        <i class="pe-7s-news-paper"></i> 
+                        <p>Monthly News Updates</p>
+                    </a>            
+                </li>
+                <li class="active">
                     <a href="on-sale.php">
                         <i class="pe-7s-cash"></i> 
                         <p>On Sale</p>
@@ -91,9 +97,9 @@
                     </a>            
                 </li>
                 <li class="active">
-                    <a href="news.php">
-                        <i class="pe-7s-news-paper"></i> 
-                        <p>Monthly News Updates</p>
+                    <a href="users.php">
+                        <i class="pe-7s-users"></i> 
+                        <p>Users</p>
                     </a>            
                 </li>
             </ul> 

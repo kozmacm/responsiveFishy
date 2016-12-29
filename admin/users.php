@@ -13,41 +13,6 @@
                 <strong>Success!</strong>&nbsp;You have registered a new user.&nbsp;&nbsp;<br>
              </div>";
     }
-
-    //if an item from TOTM table is deleted
-    if (isset($_POST['delete_id'])) 
-    {
-        $id = $_POST['delete_id'];
-        $file = $_POST['delete_file'];
-        
-        //delete record from database
-        $sql = $mysqli->query("DELETE FROM uploads WHERE id=".$id);
-
-        //delete file
-        unlink('../uploads/' . $file);
-    }
-
-    //if an item from TOTM table is chosen for TOTM
-    if (isset($_POST['promote_id'])) 
-    {
-        $id = $_POST['promote_id'];
-        $file = $_POST['promote_file'];
-        $name = $_POST['promote_name'];
-        $email = $_POST['promote_email'];
-        $desc = $_POST['promote_desc'];
-        
-        //delete record from database
-        $sql = $mysqli->query("DELETE FROM uploads WHERE id=".$id);
-
-        //update record with id=1 in totm table
-        $sql = $mysqli->query("UPDATE totm SET file='$file', name='$name', email='$email', description='$desc' WHERE id='1'");
-        
-        //delete old totm file that is getting replaced in database
-        array_map('unlink', glob("../assets/img/totm/*"));
-
-        //move file to assets/img/totm folder for safekeeping
-        rename('../uploads/' . $file, '../assets/img/totm/' . $file);
-    }
 ?>
 
 <!doctype html>
@@ -57,7 +22,7 @@
 	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>TOTM - Fishy Business</title>
+	<title>Users - Fishy Business</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -82,7 +47,7 @@
     <link href="../assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
     
 </head>
-<body class="totm"> 
+<body class="users"> 
 <?php if (login_check($mysqli) == true) : ?>
 <?php
     if (!empty($error_msg)) {
@@ -105,7 +70,7 @@
                 <a href="../index.php" class="simple-text">
                     Fishy Business
                 </a>
-            </div>       
+            </div>              
             <ul class="nav">
                 <li class="active">
                     <a>
@@ -151,7 +116,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand">Tank of the Month</a>
+                    <a class="navbar-brand">Users</a>
                 </div>
                 <div class="collapse navbar-collapse">       
                     <ul class="nav navbar-nav navbar-left">
@@ -185,8 +150,8 @@
                     <div class="col-md-12">
                         <div class="card card-plain">
                             <div class="header">
-                                <h4 class="title">Current Tank of the Month</h4>
-                                <p class="category">This is your current tank of the month. </p>
+                                <h4 class="title">Admin User List</h4>
+                                <p class="category">This is your current list of administrator users. </p>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <?php
@@ -196,31 +161,22 @@
                                     } 
                                     else
                                     {
-                                        if (!$stmt = $mysqli->query("SELECT * FROM totm")) {
+                                        if (!$stmt = $mysqli->query("SELECT * FROM users")) {
                                             echo "Query Failed!: (" . $mysqli->errno . ") ". $mysqli->error;
                                         }
                                                                                 
                                         echo "<table class='table table-hover'>";
                                         echo "<thead>
-                                                <th>Image</th>
-                                    	        <th>Filename</th>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                    	        <th>Description</th>
-                                                </thead>
-                                                <tbody>";
+                                                <th>Username</th>
+                                    	        <th>Email Address</th>
+                                              </thead>
+                                              <tbody>";
                                         while ($row = mysqli_fetch_array($stmt)) {
-                                            $i = $row["id"];
-                                            $f = $row["file"];
-                                            $n = $row["name"];
+                                            $u = $row["username"];
                                             $e = $row["email"];
-                                            $d = $row["description"];
-                                            echo "<tr id='$i' file='$f' name='$n' email='$e' desc='$d'>";
-                                            echo "<td> <a href='../assets/img/totm/" . $row["file"] . "'><img class='thumbnail' src='../assets/img/totm/" . $row["file"] . "' alt='" . $row["file"] . "' /> </td>";
-                                            echo "<td>" . $row["file"] . "</td>";
-                                            echo "<td>" . $row["name"] . "</td>";
+                                            echo "<tr username='$u' email='$e'>";
+                                            echo "<td>" . $row["username"] . "</td>";
                                             echo "<td>" . $row["email"] . "</td>";
-                                            echo "<td>" . $row["description"] . "</td>";
                                             echo "</tr>";
                                         }
                                         echo "</tbody>";
@@ -232,72 +188,6 @@
                                     } 
                                 $stmt->free();
 
-                                //$mysqli->close();    
-                                ?>       
-                            </div>
-                        </div>
-                    </div>                
-                </div>                    
-            </div>
-            <div class="container-fluid">
-                <div class="row">                   
-                    <div class="col-md-12">
-                        <div class="card card-plain">
-                            <div class="header">
-                                <h4 class="title">Current Entries</h4>
-                                <p class="category">Here you will find the current entries for the Tank of the Month contest. Select one as the new Tank of The Month and delete the rest. Keep it clean around here! </p>
-                            </div>
-                            <div class="content table-responsive table-full-width">
-                                <?php
-                                    // Check connection
-                                    if ($mysqli->connect_error) {
-                                        die("Connection failed: " . $mysqli->connect_error);
-                                    } 
-                                    else
-                                    {
-                                        if (!$stmt = $mysqli->query("SELECT * FROM uploads")) {
-                                            echo "Query Failed!: (" . $mysqli->errno . ") ". $mysqli->error;
-                                        }
-                                                                                
-                                        echo "<table class='table table-hover'>";
-                                        echo "<thead>
-                                                <th>Image</th>
-                                    	        <th>Name</th>
-                                    	        <th>Email</th>
-                                    	        <th>IP</th>
-                                    	        <th>Date</th>
-                                                <th>Description</th>
-                                                <th>Action</th>
-                                                </thead>
-                                                <tbody>";
-                                        while ($row = mysqli_fetch_array($stmt)) {
-                                            $i = $row["id"];
-                                            $f = $row["file"];
-                                            $n = $row["name"];
-                                            $e = $row["email"];
-                                            $d = $row["description"];
-                                            echo "<tr id='$i' file='$f' name='$n' email='$e' desc='$d'>";
-                                            echo "<td> <a href='../uploads/" . $row["file"] . "'><img class='thumbnail' src='../uploads/" . $row["file"] . "' alt='" . $row["file"] . "' /> </td>";
-                                            echo "<td>" . $row["name"] . "</td>";
-                                            echo "<td>" . $row["email"] . "</td>";
-                                            echo "<td>" . $row["ip"] . "</td>";
-                                            echo "<td>" . $row["date"] . "</td>";
-                                            echo "<td>" . $row["description"] . "</td>";
-                                            echo "<td>
-                                                      <button class='btn btn-round btn-danger deleteitem'>Delete</button>
-                                                      <div class='space-20'></div>
-                                                      <button class='btn btn-round btn-success chooseitem'>Select</button>
-                                                  </td>";
-                                            echo "</tr>";
-                                        }
-                                        echo "</tbody>";
-                                        echo "</table>";
-
-                                        if (mysqli_num_rows($stmt) == 0) {
-                                            echo "No records found.";
-                                        }
-                                    } 
-                                $stmt->free();
                                 $mysqli->close();    
                                 ?>       
                             </div>

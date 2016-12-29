@@ -231,13 +231,19 @@
             </div>
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboard.php">
+                    <a>
                         <i class="pe-7s-graph"></i> 
                         <p>Dashboard</p>
                     </a>            
                 </li>
                 <li class="active">
-                    <a>
+                    <a href="news.php">
+                        <i class="pe-7s-news-paper"></i> 
+                        <p>Monthly News Updates</p>
+                    </a>            
+                </li>
+                <li class="active">
+                    <a href="on-sale.php">
                         <i class="pe-7s-cash"></i> 
                         <p>On Sale</p>
                     </a>            
@@ -249,9 +255,9 @@
                     </a>            
                 </li>
                 <li class="active">
-                    <a href="news.php">
-                        <i class="pe-7s-news-paper"></i> 
-                        <p>Monthly News Updates</p>
+                    <a href="users.php">
+                        <i class="pe-7s-users"></i> 
+                        <p>Users</p>
                     </a>            
                 </li>
             </ul> 
